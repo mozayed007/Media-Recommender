@@ -1,0 +1,5142 @@
+[
+    {
+        "id": 8957,
+        "title": "Susume! Gachimuchi Sankyoudai",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/7/24815.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/7/24815l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u9032\u3081\uff01\u30ac\u30c1\u30e0\u30c1\uff13\u5144\u5f1f"
+        },
+        "start_date": "2010-06-02",
+        "end_date": "2010-06-02",
+        "synopsis": "A short comedy show about 3 brothers who work out at a gym.",
+        "mean": 5.14,
+        "rank": 11955,
+        "popularity": 14826,
+        "num_list_users": 364,
+        "num_scoring_users": 145,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            }
+        ],
+        "created_at": "2010-06-08T18:10:23+00:00",
+        "updated_at": "2021-07-09T06:51:41+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2010,
+            "season": "spring"
+        },
+        "average_episode_duration": 192,
+        "rating": "pg_13",
+        "studios": [
+            {
+                "id": 73,
+                "name": "TMS Entertainment"
+            }
+        ]
+    },
+    {
+        "id": 10237,
+        "title": "Ki-Fighter Taerang",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/4/28222.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/4/28222l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Ki Fighter",
+            "ja": "\u30ad\u30fb\u30d5\u30a1\u30a4\u30bf\u30fc \u30c6\u30e9\u30f3"
+        },
+        "start_date": "2002-08-21",
+        "end_date": "2003-03-19",
+        "synopsis": "The Grand Evil was sealed in a cave behind an energized shield. But now, thousand years have passed and he is about to regain his former power to break away free from the shield. In order to prevent this disaster, the Elders of Fantasia have to take measure to keep the radioactive power in the shield. They send out nymph warriors to find and fetch Ki-fighter cocoons hidden somewhere in the word. \n\nDuring the mission, the nymphs come across with TaeRang, the Ki-Fighter, our heroic kid. He turns out to be the one who has a power to defeat of the Grand Evil, TaeRang sets on his way to find other weak creatures and their villages that are endangered by the unjust evil power. TeaRang is the one wise and brave kid to set it all to justice. \n\n(Source: ANN)",
+        "rank": 18405,
+        "popularity": 16467,
+        "num_list_users": 240,
+        "num_scoring_users": 50,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2011-01-23T16:35:03+00:00",
+        "updated_at": "2021-10-04T05:58:16+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 26,
+        "start_season": {
+            "year": 2002,
+            "season": "summer"
+        },
+        "average_episode_duration": 1500,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 13309,
+        "title": "Kyoto Animation: Hoshi-hen",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/9/73732.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/9/73732l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Kyoto Animation CM: Hoshi-hen"
+            ],
+            "en": "Twinkling Stars",
+            "ja": "\u4eac\u90fd\u30a2\u30cb\u30e1\u30fc\u30b7\u30e7\u30f3CM\u300c\u661f\u7de8\u300d"
+        },
+        "start_date": "2011-08-19",
+        "end_date": "2011-08-19",
+        "synopsis": "An incomplete storyboard rests on a desk. Within it, are a boy and girl who suddenly jump to life and escape the confines of the sheet of paper in order to kickstart their story\u2014one defined by their own actions. As they journey across the desk, the world around them begins to transform and signals the start of their vivid new adventure.\n\n[Written by MAL Rewrite]",
+        "mean": 5.8,
+        "rank": 9971,
+        "popularity": 7909,
+        "num_list_users": 4307,
+        "num_scoring_users": 2269,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2012-03-17T15:49:36+00:00",
+        "updated_at": "2019-12-22T18:06:13+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2011,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 30,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 2,
+                "name": "Kyoto Animation"
+            }
+        ]
+    },
+    {
+        "id": 13821,
+        "title": "Kamiusagi Rope tsuka, Natsuyasumi Rasuichi tte Maji ssuka!?",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/13/72178.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/13/72178l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Paper Rabbit Rope: Wait Last One For Summer Vacation For Real!?",
+            "ja": "\u7d19\u514e\u30ed\u30da\u3000\u3064\u304b\u3001\u590f\u4f11\u307f\u30e9\u30b9\u30a4\u30c1\u3063\u3066\u30de\u30b8\u3063\u3059\u304b\uff01\uff1f"
+        },
+        "start_date": "2012-05-12",
+        "end_date": "2012-05-12",
+        "synopsis": "An actual movie of the Kamiusagi Rope series, featuring Rope and Akira, as they experience a thrilling adventure in their downtown.",
+        "rank": 18263,
+        "popularity": 14757,
+        "num_list_users": 371,
+        "num_scoring_users": 69,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2012-04-15T15:29:10+00:00",
+        "updated_at": "2012-04-23T22:07:45+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2012,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 5100,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 17405,
+        "title": "Hino Hideshi Toukaidou Yotsuya Kaidan",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/7/46545.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/7/46545l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u65e5\u91ce\u65e5\u51fa\u5fd7 \u6771\u6d77\u9053 \u56db\u8c37\u602a\u8ac7"
+        },
+        "start_date": "2000-07-20",
+        "end_date": "2000-07-20",
+        "synopsis": "Based on Kaidan Yotsuya (Classic Japanese ghost story).",
+        "rank": 17685,
+        "popularity": 12741,
+        "num_list_users": 710,
+        "num_scoring_users": 68,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 14,
+                "name": "Horror"
+            }
+        ],
+        "created_at": "2013-02-07T12:31:17+00:00",
+        "updated_at": "2021-11-01T16:38:52+00:00",
+        "media_type": "ova",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2000,
+            "season": "summer"
+        },
+        "average_episode_duration": 4200,
+        "studios": []
+    },
+    {
+        "id": 18941,
+        "title": "Shimajirou no Wow!",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/9/50737.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/9/50737l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u3057\u307e\u3058\u308d\u3046\u306e\u308f\u304a!"
+        },
+        "start_date": "2012-04-02",
+        "synopsis": "Fourth season of the Shimajirou children's television series.",
+        "rank": 14458,
+        "popularity": 14119,
+        "num_list_users": 440,
+        "num_scoring_users": 51,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2013-06-01T18:46:07+00:00",
+        "updated_at": "2016-04-15T22:09:18+00:00",
+        "media_type": "tv",
+        "status": "currently_airing",
+        "num_episodes": 0,
+        "start_season": {
+            "year": 2012,
+            "season": "spring"
+        },
+        "broadcast": {
+            "day_of_the_week": "monday",
+            "start_time": "07:30"
+        },
+        "source": "other",
+        "average_episode_duration": 1500,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 229,
+                "name": "The Answer Studio"
+            }
+        ]
+    },
+    {
+        "id": 25085,
+        "title": "Meiken Lassie Specials",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/2/64145.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/2/64145l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Sekai Meisaku Gekijou Kanketsu Ban: Meiken Lassie",
+                "World Masterpiece Theater Complete Edition: Lassie"
+            ],
+            "en": "",
+            "ja": "\u4e16\u754c\u540d\u4f5c\u5287\u5834\u30fb\u5b8c\u7d50\u7248 \u540d\u72ac\u30e9\u30c3\u30b7\u30fc"
+        },
+        "start_date": "2001-07",
+        "end_date": "2001-07",
+        "synopsis": "A summary of the Meiken Lassie full series aired as a TV specials. ",
+        "rank": 12959,
+        "popularity": 15787,
+        "num_list_users": 288,
+        "num_scoring_users": 38,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 71,
+                "name": "Pets"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2014-07-03T13:20:26+00:00",
+        "updated_at": "2020-11-27T02:06:59+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 2,
+        "start_season": {
+            "year": 2001,
+            "season": "summer"
+        },
+        "average_episode_duration": 2700,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 22,
+                "name": "Nippon Animation"
+            }
+        ]
+    },
+    {
+        "id": 25597,
+        "title": "Vampiyan Kids Specials",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/7/65117.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/7/65117l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Vampiyan Kids Episodes 22, 23, 24, 25 and 26",
+                "Nanchatte VAMPIYAN",
+                "Vampire Kids"
+            ],
+            "en": "Vampiyan Kids",
+            "ja": "\u30d0\u30f3\u30d1\u30a4\u30e4\u30f3\u30fb\u30ad\u30c3\u30ba"
+        },
+        "start_date": "2002-10-25",
+        "end_date": "2002-11-25",
+        "synopsis": "DVD-only specials released on the 6th and 7th discs that are sometimes considered episode 24, 25, and 26 as a whole. And episode 22, 23, and 24 chronologically.",
+        "rank": 15354,
+        "popularity": 16248,
+        "num_list_users": 254,
+        "num_scoring_users": 37,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2014-07-29T05:36:30+00:00",
+        "updated_at": "2021-11-20T18:54:32+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 3,
+        "start_season": {
+            "year": 2002,
+            "season": "fall"
+        },
+        "source": "original",
+        "average_episode_duration": 1380,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 10,
+                "name": "Production I.G"
+            }
+        ]
+    },
+    {
+        "id": 26109,
+        "title": "Kokoro no Koukyougaku",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/6/65983.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/6/65983l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u3053\u3053\u308d\u306e\u4ea4\u97ff\u697d"
+        },
+        "start_date": "2002",
+        "end_date": "2002",
+        "synopsis": "An educational film about child abuse in Japan. ",
+        "rank": 18532,
+        "popularity": 17891,
+        "num_list_users": 157,
+        "num_scoring_users": 20,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2014-08-23T09:43:41+00:00",
+        "updated_at": "2014-08-23T09:43:41+00:00",
+        "media_type": "ova",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 2580,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 18,
+                "name": "Toei Animation"
+            }
+        ]
+    },
+    {
+        "id": 27389,
+        "title": "Oretachi, Tomodachi!",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/9/66491.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/9/66491l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u304a\u308c\u305f\u3061, \u3068\u3082\u3060\u3061!"
+        },
+        "start_date": "2006-12-08",
+        "end_date": "2006-12-08",
+        "synopsis": "Based on the children's picture book of the same name by Uchida Rintaro (Story) and Nana Furuya (Illustrations).",
+        "rank": 13667,
+        "popularity": 17553,
+        "num_list_users": 177,
+        "num_scoring_users": 22,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2014-09-05T09:22:37+00:00",
+        "updated_at": "2019-10-22T14:06:13+00:00",
+        "media_type": "ova",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2006,
+            "season": "fall"
+        },
+        "average_episode_duration": 3120,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 28925,
+        "title": "Youkai Watch: Best 10",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/11/69761.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/11/69761l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u30a2\u30c9\u8857\u30c3\u30af\u5929\u56fd \u30d9\u30b9\u30c810"
+        },
+        "start_date": "2014-12-19",
+        "end_date": "2014-12-19",
+        "synopsis": "Countdown of the ten best Youkai Watch moments.\n",
+        "mean": 5.71,
+        "rank": 10327,
+        "popularity": 12728,
+        "num_list_users": 713,
+        "num_scoring_users": 208,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 37,
+                "name": "Supernatural"
+            }
+        ],
+        "created_at": "2014-12-20T07:58:49+00:00",
+        "updated_at": "2015-07-07T16:34:49+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2014,
+            "season": "fall"
+        },
+        "source": "game",
+        "average_episode_duration": 740,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 28,
+                "name": "OLM"
+            }
+        ]
+    },
+    {
+        "id": 29181,
+        "title": "Henna Ie!",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/12/70223.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/12/70223l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u3078\u3093\u306a\u5bb6\uff01"
+        },
+        "start_date": "1983-02-01",
+        "end_date": "1983-02-01",
+        "synopsis": "Music video featured on NHK's Minna no Uta program.\n",
+        "mean": 5.02,
+        "rank": 12158,
+        "popularity": 16314,
+        "num_list_users": 250,
+        "num_scoring_users": 126,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2015-01-01T20:49:01+00:00",
+        "updated_at": "2018-05-04T15:43:23+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1983,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 137,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 29437,
+        "title": "Detective Conan: Happy New Year Special",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/4/82692.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/4/82692l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Meitantei Conan Tokubetsu-hen: Kinga Shinnen Mouri Kogorou"
+            ],
+            "en": "",
+            "ja": "\u540d\u63a2\u5075\u30b3\u30ca\u30f3 \u7279\u5225\u7de8 \u300c\u8b39\u8cc0\u65b0\u5e74 \u6bdb\u5229\u5c0f\u4e94\u90ce\u300d"
+        },
+        "start_date": "2015-01-03",
+        "end_date": "2015-01-03",
+        "synopsis": "Special episode consisting of two short stories. The first being an expanded version of Detective Conan: The Fugitive Kogorou Mouri, which was never aired on TV till now. The second half being a brand new New Years Day segment.",
+        "mean": 7,
+        "rank": 3999,
+        "popularity": 8194,
+        "num_list_users": 3893,
+        "num_scoring_users": 1461,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 39,
+                "name": "Detective"
+            },
+            {
+                "id": 7,
+                "name": "Mystery"
+            },
+            {
+                "id": 27,
+                "name": "Shounen"
+            }
+        ],
+        "created_at": "2015-01-11T07:57:54+00:00",
+        "updated_at": "2021-06-01T19:16:02+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2015,
+            "season": "winter"
+        },
+        "average_episode_duration": 1460,
+        "rating": "pg_13",
+        "studios": [
+            {
+                "id": 73,
+                "name": "TMS Entertainment"
+            }
+        ]
+    },
+    {
+        "id": 30973,
+        "title": "Urashima Tarou (1952)",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u6d66\u5cf6\u592a\u90ce"
+        },
+        "start_date": "1952",
+        "end_date": "1952",
+        "synopsis": "An adaptation of the classic Japanese folktale Urashima Tarou.",
+        "rank": 15329,
+        "popularity": 15243,
+        "num_list_users": 328,
+        "num_scoring_users": 84,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 13,
+                "name": "Historical"
+            }
+        ],
+        "created_at": "2015-06-13T08:05:38+00:00",
+        "updated_at": "2016-04-06T19:58:48+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "other",
+        "average_episode_duration": 0,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 32253,
+        "title": "Ama Gli Animali",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Love the Animals",
+            "ja": ""
+        },
+        "start_date": "1983",
+        "end_date": "1983",
+        "synopsis": "A clay animation film by Yusaki Fusako.",
+        "rank": 16208,
+        "popularity": 17429,
+        "num_list_users": 184,
+        "num_scoring_users": 38,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2015-12-08T04:17:28+00:00",
+        "updated_at": "2018-11-01T22:33:51+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 70,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 32765,
+        "title": "Cherry Blossom (Music)",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/6/78593.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/6/78593l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "Cherry Blossom"
+        },
+        "start_date": "2013-03-22",
+        "end_date": "2013-03-22",
+        "synopsis": "A short video advertising the release of Toshl's album Cherry Blossom. ",
+        "mean": 4.89,
+        "rank": 12305,
+        "popularity": 14166,
+        "num_list_users": 434,
+        "num_scoring_users": 237,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2016-02-19T01:14:59+00:00",
+        "updated_at": "2016-05-29T02:51:50+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2013,
+            "season": "winter"
+        },
+        "source": "music",
+        "average_episode_duration": 74,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 33789,
+        "title": "Peeping Life x Sanyo",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/12/81375.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/12/81375l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Sanyo Bussan",
+                "CRAsuper Umi Monogatari with Momotarou Densetsu"
+            ],
+            "en": "",
+            "ja": "Peeping Life\u00d7SANYO"
+        },
+        "start_date": "2016-07-03",
+        "end_date": "2017-07-06",
+        "synopsis": "A Peeping Life and Sanyo collaboration made to promote Sanyo's summer ocean themed pachinko line with a Momotarou Densetsu pachinko game machine.",
+        "rank": 13813,
+        "popularity": 15045,
+        "num_list_users": 344,
+        "num_scoring_users": 65,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2016-08-06T06:28:28+00:00",
+        "updated_at": "2021-06-18T01:38:49+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 6,
+        "start_season": {
+            "year": 2016,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 300,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 36093,
+        "title": "Car Radio",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/7/87219.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/7/87219l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Car Radio",
+            "ja": "\u30ab\u30fc\u30e9\u30b8\u30aa"
+        },
+        "start_date": "2013-09-18",
+        "end_date": "2013-09-18",
+        "synopsis": "Official music video for Saitou Kazuyoshi's song Car Radio.",
+        "mean": 5.39,
+        "rank": 11352,
+        "popularity": 16463,
+        "num_list_users": 240,
+        "num_scoring_users": 129,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2017-08-06T10:20:02+00:00",
+        "updated_at": "2017-08-06T10:20:02+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2013,
+            "season": "summer"
+        },
+        "source": "music",
+        "average_episode_duration": 268,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 36349,
+        "title": "Gum Shaara",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/9/87770.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/9/87770l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u30ac\u30e0\u30b7\u30e3\u30fc\u30e9"
+        },
+        "start_date": "1991-08-01",
+        "end_date": "1991-08-01",
+        "synopsis": "Official Minna no Uta music video for Gum Shaara sung by Kobayashi Katsuya.",
+        "rank": 17433,
+        "popularity": 17916,
+        "num_list_users": 156,
+        "num_scoring_users": 69,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2017-09-20T04:59:18+00:00",
+        "updated_at": "2018-05-04T15:44:42+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1991,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 144,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 1726,
+                "name": "Three-d"
+            }
+        ]
+    },
+    {
+        "id": 37117,
+        "title": "Bakutsuri Bar Hunter",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1043/94347.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1043/94347l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u7206\u91e3\u30d0\u30fc\u30cf\u30f3\u30bf\u30fc"
+        },
+        "start_date": "2018-10-02",
+        "end_date": "2019-03-26",
+        "synopsis": "",
+        "rank": 16391,
+        "popularity": 14052,
+        "num_list_users": 449,
+        "num_scoring_users": 74,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2018-01-15T03:07:22+00:00",
+        "updated_at": "2021-07-27T00:32:10+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 25,
+        "start_season": {
+            "year": 2018,
+            "season": "fall"
+        },
+        "broadcast": {
+            "day_of_the_week": "tuesday",
+            "start_time": "17:55"
+        },
+        "source": "manga",
+        "average_episode_duration": 1440,
+        "rating": "pg",
+        "studios": [
+            {
+                "id": 18,
+                "name": "Toei Animation"
+            },
+            {
+                "id": 36,
+                "name": "Gallop"
+            }
+        ]
+    },
+    {
+        "id": 39677,
+        "title": "Chuizhi Shijie",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1850/100436.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1850/100436l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Chui Zhi Shi Jie",
+                "\u5782\u76f4\u4e16\u754c\u4e4bDZH\u7f8e\u5c11\u5e74"
+            ],
+            "en": "Vertical World",
+            "ja": "\u5782\u76f4\u4e16\u754c"
+        },
+        "start_date": "2019-06-18",
+        "end_date": "2019-08-27",
+        "synopsis": "",
+        "rank": 16770,
+        "popularity": 15329,
+        "num_list_users": 321,
+        "num_scoring_users": 28,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 61,
+                "name": "Idols (Male)"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            },
+            {
+                "id": 37,
+                "name": "Supernatural"
+            }
+        ],
+        "created_at": "2019-04-05T09:47:49+00:00",
+        "updated_at": "2021-03-15T00:00:56+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 12,
+        "start_season": {
+            "year": 2019,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 240,
+        "rating": "pg_13",
+        "studios": [
+            {
+                "id": 1325,
+                "name": "Haoliners Animation League"
+            }
+        ]
+    },
+    {
+        "id": 40701,
+        "title": "Monochro\u221eBlue Sky",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1164/104333.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1164/104333l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Monochrome\u221eBlue Sky"
+            ],
+            "en": "",
+            "ja": "\u30e2\u30ce\u30af\u30ed\u221e\u30d6\u30eb\u30fc\u30b9\u30ab\u30a4"
+        },
+        "start_date": "2010-09-17",
+        "end_date": "2010-09-17",
+        "synopsis": "MMD music video for the song Monochro\u221eBlue Sky by Noboru\u2191-P, featuring Hatsune Miku. The song was included on Farm Records' Vocaloid compilation album \"EX:P2 \uff5eEx:Producers2\uff5e\".",
+        "mean": 5.82,
+        "rank": 9845,
+        "popularity": 15949,
+        "num_list_users": 277,
+        "num_scoring_users": 151,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2019-11-13T00:24:43+00:00",
+        "updated_at": "2019-11-13T00:24:43+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2010,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 139,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 41981,
+        "title": "Yakousei Haizu feat. Hatsune Miku",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1608/107528.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1608/107528l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "DECO*27 - \u591c\u884c\u6027\u30cf\u30a4\u30ba feat. \u521d\u97f3\u30df\u30af"
+        },
+        "start_date": "2019-02-01",
+        "synopsis": "Music video for the song \"Yakousei Haizu\" from DECO*27.",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-05-13T23:52:20+00:00",
+        "updated_at": "2020-05-13T23:52:20+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 237,
+        "studios": []
+    },
+    {
+        "id": 42749,
+        "title": "Watage no Osanpo",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1454/109006.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1454/109006l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u308f\u305f\u3052\u306e\u304a\u6563\u6b65"
+        },
+        "start_date": "2005-04-01",
+        "end_date": "2005-04-01",
+        "synopsis": "Music video for the song Watage no Osanpo by Inotomo (Tomoko Inoue) that was featured on NHK's Minna no Uta program. The video was animated by Keiko Tamamura.",
+        "rank": 15432,
+        "popularity": 18857,
+        "num_list_users": 93,
+        "num_scoring_users": 44,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-08-28T02:15:13+00:00",
+        "updated_at": "2020-08-28T02:15:13+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2005,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 145,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 2041,
+                "name": "Enjin Productions"
+            }
+        ]
+    },
+    {
+        "id": 43005,
+        "title": "Ookina Onaka",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1364/109581.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1364/109581l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u304a\u304a\u304d\u306a\u304a\u306a\u304b"
+        },
+        "start_date": "2016-06-01",
+        "end_date": "2016-06-01",
+        "synopsis": "Music video for the song Ookina Onaka by Japanese music group CRaNE that was featured on NHK's Minna no Uta program. The video was animated by Osamu Sakai.",
+        "rank": 13656,
+        "popularity": 18800,
+        "num_list_users": 96,
+        "num_scoring_users": 48,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-10-03T04:00:48+00:00",
+        "updated_at": "2020-10-03T04:00:48+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2016,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 145,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 43261,
+        "title": "Kan Chai Gu Niang",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1094/118053.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1094/118053l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u780d\u67f4\u59d1\u5a18"
+        },
+        "start_date": "1960",
+        "end_date": "1960",
+        "synopsis": "",
+        "rank": 18276,
+        "popularity": 19722,
+        "num_list_users": 41,
+        "num_scoring_users": 7,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-10-07T10:13:56+00:00",
+        "updated_at": "2021-09-25T19:26:15+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 964,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 43517,
+        "title": "Wasshoi Nippon",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1461/109835.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1461/109835l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u308f\u3063\u3057\u3087\u3044\u30cb\u30c3\u30dd\u30f3"
+        },
+        "start_date": "1997-04-04",
+        "end_date": "1997-04-04",
+        "synopsis": "Music video for the song Wasshoi Nippon by Hako Yamasaki that was featured on NHK's Minna no Uta program. The video was animated by Hiroshi Nishimura.",
+        "rank": 15429,
+        "popularity": 18856,
+        "num_list_users": 93,
+        "num_scoring_users": 35,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-10-20T02:49:39+00:00",
+        "updated_at": "2020-10-20T02:49:39+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1997,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 145,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 44285,
+        "title": "Guo Bao Tegong 4: Kai Zhi Hun",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1325/123017.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1325/123017l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Fruity Robo 4: Soul of Armor",
+            "ja": "\u679c\u5b9d\u7279\u653b4\u4e4b\u94e0\u4e4b\u9b42"
+        },
+        "start_date": "2017-09-12",
+        "synopsis": "",
+        "rank": 17442,
+        "popularity": 20312,
+        "num_list_users": 26,
+        "num_scoring_users": 2,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 18,
+                "name": "Mecha"
+            }
+        ],
+        "created_at": "2020-12-05T06:53:07+00:00",
+        "updated_at": "2022-04-18T16:11:44+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 52,
+        "source": "original",
+        "average_episode_duration": 1580,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 44541,
+        "title": "Lianmeng De Yongshi",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1728/122944.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1728/122944l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Warrior of Alliance",
+            "ja": "\u806f\u76df\u7684\u52c7\u58eb"
+        },
+        "synopsis": "",
+        "rank": 18756,
+        "popularity": 20692,
+        "num_list_users": 20,
+        "num_scoring_users": 2,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2020-12-11T13:15:04+00:00",
+        "updated_at": "2022-04-17T19:01:04+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 6,
+        "source": "original",
+        "average_episode_duration": 1440,
+        "rating": "pg_13",
+        "studios": []
+    },
+    {
+        "id": 44797,
+        "title": "Sulinna Qiyu Ji",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u82cf\u7433\u5a1c\u5947\u9047\u8bb0"
+        },
+        "synopsis": "The cartoon \"Su Linna's Adventure\" is about a ten-year-old girl Su Linna accidentally encountering space ambassador Le Lexiong and an outer space robot twisting two babies during her vacation, and then accidentally encountering a computer chip, and inadvertently broke into it. A video game designed in outer space, followed by a series of intersecting virtual and real, time-space conversion games from illusion to reality, from ancient culture to contemporary technology, so that Su Linna had a good time in the game of fantasy. Addiction, but also let her learn to understand, see kindness, and experience true love.(translated from douban)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-12-16T17:34:05+00:00",
+        "updated_at": "2020-12-16T17:34:05+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 0,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 45053,
+        "title": "Philip",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1112/110979.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1112/110979l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "Philip"
+        },
+        "start_date": "2020-10-02",
+        "end_date": "2020-10-02",
+        "synopsis": "Music video for millennium parade's song Philip.",
+        "mean": 6.29,
+        "rank": 7675,
+        "popularity": 15346,
+        "num_list_users": 320,
+        "num_scoring_users": 179,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-12-20T03:55:46+00:00",
+        "updated_at": "2021-04-21T20:45:13+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2020,
+            "season": "fall"
+        },
+        "source": "original",
+        "average_episode_duration": 228,
+        "rating": "r",
+        "studios": [
+            {
+                "id": 2122,
+                "name": "PERIMETRON"
+            },
+            {
+                "id": 2177,
+                "name": "Mimoid"
+            }
+        ]
+    },
+    {
+        "id": 45309,
+        "title": "Xing Mao Wenhua Da Jiangtang Zhi Minjian Gushi",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u661f\u732b\u6587\u5316\u5927\u8bb2\u5802\u4e4b\u6c11\u95f4\u6545\u4e8b"
+        },
+        "synopsis": "\"Star Cat Culture Lecture Hall-Folk Tales\" is based on many outstanding Chinese legends, from Mr. Cai Zhizhong\u2019s comic works \"Feng Shen Bang\", \"White Snake\", \"Nie Yinniang\", \"Dragon Girl\", \"Ghost Fox Fairy\" and \" \"The Strange Story of the Six Dynasties\" is adapted from six comics. We present these six well-known stories to a large number of TV audiences in the form of animation, so that more audiences are familiar with these treasures.(translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 13,
+                "name": "Historical"
+            }
+        ],
+        "created_at": "2020-12-22T13:36:54+00:00",
+        "updated_at": "2020-12-22T13:36:54+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 27,
+        "source": "original",
+        "average_episode_duration": 620,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 45821,
+        "title": "Luo Baobei",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1500/122995.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1500/122995l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u6d1b\u5b9d\u8d1d"
+        },
+        "start_date": "2017",
+        "synopsis": "",
+        "rank": 18818,
+        "popularity": 20367,
+        "num_list_users": 25,
+        "num_scoring_users": 3,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-01-10T15:29:57+00:00",
+        "updated_at": "2022-04-18T11:53:45+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 52,
+        "source": "original",
+        "average_episode_duration": 320,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46077,
+        "title": "A Fu Man Youji Zhi Wuxi Renjie",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u963f\u798f\u6f2b\u6e38\u8bb0\u4e4b\u65e0\u9521\u4eba\u6770"
+        },
+        "synopsis": "",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-01-13T15:39:46+00:00",
+        "updated_at": "2021-01-13T15:39:46+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 80,
+        "source": "other",
+        "average_episode_duration": 320,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46333,
+        "title": "Shi Er Shengxiao Zhi Mashang Jiu Hao",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5341\u4e8c\u751f\u8096\u4e4b\u9a6c\u4e0a\u5c31\u597d"
+        },
+        "synopsis": "Every year the Queen Mother's birthday will hold a flat peach event, which is a year-long event in the fairy world. The harvest of the flat peach orchard directly affects the flat peach feast. Although the administrator of the flat peach orchard has a low position, it is very important. Considering that the zodiac horse is better than the roaring dog in all aspects, the Jade Emperor changed the zodiac horse to Pan Taoyuan. Since then, a series of wit and brave, funny stories have occurred in Pantaoyuan.\n(translated from youku)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-01-19T01:31:14+00:00",
+        "updated_at": "2021-01-19T01:31:14+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 40,
+        "source": "original",
+        "average_episode_duration": 920,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46845,
+        "title": "Zui Qiang Zhanshi Mini Tegong Dui",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u6700\u5f3a\u6218\u58eb\u8ff7\u4f60\u7279\u5de5\u961f"
+        },
+        "synopsis": "In order to protect themselves, the weak animals secretly selected four small animals as the special agent team after a long time. They are the strongest fighters-Forte, Semi, Lucy, Max! From then on they will shoulder the mission of defending Lanling Village and the small animals. They are different from ordinary little animals, each with different superpowers, to start thrilling fights with the evil party, and save those little animals in crisis. The strongest warriors wore cool armors and powerful weapons, dispatched agent cars and agent mechas for exciting battles, presenting a gorgeous visual beauty! Let us wait and see what wonderful performance the strongest fighter mini-agent team will do to defend Lanling Village! \n(translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-01-26T07:40:42+00:00",
+        "updated_at": "2021-01-26T07:40:42+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 53,
+        "source": "original",
+        "average_episode_duration": 680,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 47101,
+        "title": "Mala Xiao Yuanjia",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u9ebb\u8fa3\u5c0f\u51a4\u5bb6"
+        },
+        "synopsis": "The kind-hearted and simple rural old man Zhou Fugui went to the city with his son Tue Mao and his wife Shufen to live in a residential community in downtown Chongqing. The ordinary life of this family of three is the epitome and true portrayal of small families among Chongqing citizens. The sour, sweet, bitter, and spicy can be said to be full of flavors and vivid colors. The story shows the unique charm of New Chongqing and the new style of Chongqing people to the audience through laughter and curse, and vividly outlines a wonderful picture of urban and rural life. \n(translated from baidu baike)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-01-31T02:46:18+00:00",
+        "updated_at": "2021-01-31T02:46:18+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 366,
+        "source": "original",
+        "average_episode_duration": 620,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 47613,
+        "title": "Zhuang Zai Koudai Li De Baba",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u88c5\u5728\u53e3\u888b\u91cc\u7684\u7238\u7238"
+        },
+        "synopsis": "Dad was not young at the beginning. He was just like the fathers of many other children, he was a sturdy man with a height of about 1.8 meters, five big and three thick. The reason why he gets smaller is because he is neither good at making money nor being an official, so he is often scolded by Yang Ge's mother. Every time his mother scolded him, his father's body shrank a little, and in the end he shrank to the size of his thumb. After getting smaller, his father's mind became very agile. He invented a series of things: cash cow, smart rice, dream maker, brainwashing gun, etc. These inventions brought earth-shaking changes to Yang Ge's family and the entire society. At the same time, terrorists also focused on his father's invention, and wanted to use his father's invention for evil. Can Yang Ge and his father defeat the terrorists and protect the earth? Peace and tranquility? (translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-02-11T17:07:07+00:00",
+        "updated_at": "2021-02-11T17:07:07+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 6,
+        "source": "original",
+        "average_episode_duration": 540,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 47869,
+        "title": "Tianmi Tegong Dui",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u751c\u871c\u7279\u653b\u961f"
+        },
+        "synopsis": "There is a parallel world underground in the Great Cloud Kingdom-Youlan Ancient Country, where the people here guard the nebula that maintains the balance of underground and above-ground resources for generations. One day, the nebula was broken into pieces and scattered to the earth. The king sent his two children, You Ming and Rainbow, to the earth world to find scattered nebula fragments, and the naughty sister, You You, also secretly followed his brothers to the ground. The three Yunbao brothers and sisters who were teleported to the Big Cloud World ran into Master Xuanwu who lived in the hot spring. Under the guidance of Master Xuanwu, the three brothers and sisters embarked on the path to find the debris, and the spirit of greed that had been following the three brothers and sisters waited for the opportunity to snatch Fragments. (translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-02-17T14:29:30+00:00",
+        "updated_at": "2021-02-17T14:29:30+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 26,
+        "source": "original",
+        "average_episode_duration": 740,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 48125,
+        "title": "Xuyuan Shenlong",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1852/115246.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1852/115246l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Wish Dragon",
+            "ja": "\u8bb8\u613f\u795e\u9f99"
+        },
+        "start_date": "2021-01-15",
+        "end_date": "2021-01-15",
+        "synopsis": "Determined teen Din is longing to reconnect with his childhood best friend when he meets a wish-granting dragon that shows him the magic of possibilities.\n\n(Source: Netflix)",
+        "mean": 7.17,
+        "rank": 3208,
+        "popularity": 11825,
+        "num_list_users": 978,
+        "num_scoring_users": 563,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-02-20T09:56:13+00:00",
+        "updated_at": "2022-03-04T01:47:24+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2021,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 5906,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 51453,
+        "title": "Nonnon",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1704/121980.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1704/121980l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u30ce\u30f3\u30ce\u30f3"
+        },
+        "start_date": "2021-06-30",
+        "end_date": "2021-06-30",
+        "synopsis": "Music video for the song Nonnon by LiSA.",
+        "rank": 13494,
+        "popularity": 19020,
+        "num_list_users": 81,
+        "num_scoring_users": 47,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2022-03-28T02:14:27+00:00",
+        "updated_at": "2022-03-31T07:30:12+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2021,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 217,
+        "rating": "pg_13",
+        "studios": []
+    },
+    {
+        "id": 51965,
+        "title": "Xue Yu Huo: Xin Zhongguo Shi Zheyang Lian Cheng De",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1405/124146.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1405/124146l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u8840\u4e0e\u706b\uff1a\u65b0\u4e2d\u56fd\u662f\u8fd9\u6837\u70bc\u6210\u7684"
+        },
+        "start_date": "2021-06-01",
+        "end_date": "2021-07-05",
+        "synopsis": "",
+        "rank": 15752,
+        "popularity": 20714,
+        "num_list_users": 15,
+        "num_scoring_users": 1,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 13,
+                "name": "Historical"
+            },
+            {
+                "id": 38,
+                "name": "Military"
+            }
+        ],
+        "created_at": "2022-05-28T23:29:39+00:00",
+        "updated_at": "2022-07-06T16:33:52+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 30,
+        "start_season": {
+            "year": 2021,
+            "season": "spring"
+        },
+        "average_episode_duration": 180,
+        "rating": "pg_13",
+        "studios": []
+    },
+    {
+        "id": 52221,
+        "title": "Xian Wu Cangqiong",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1862/125186.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1862/125186l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u4ed9\u6b66\u82cd\u7a79"
+        },
+        "start_date": "2022-07-03",
+        "synopsis": "There are many dynasties in Yongxian Continent. In order to strengthen the body and prolong life, the people here have always maintained the tradition of Xianwu fellow practitioners. Once the practitioners reach the peak of martial arts, they will ask about Xiandao. The young Su Yu, who suffered a severe accident at a young age, changed his name and changed his surname, but he was still in a hurry, but he was unexpectedly reborn back to his youth. Foreseeing that the family is about to fall, in order to protect his family and relatives, Su Yu decided to work hard and practice the secret methods of Xianmen he learned in his previous life.\n\n(Source: iqiyi.com)",
+        "rank": 15552,
+        "popularity": 18869,
+        "num_list_users": 92,
+        "num_scoring_users": 10,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 17,
+                "name": "Martial Arts"
+            }
+        ],
+        "created_at": "2022-06-27T11:58:57+00:00",
+        "updated_at": "2022-07-05T06:11:06+00:00",
+        "media_type": "ona",
+        "status": "currently_airing",
+        "num_episodes": 48,
+        "start_season": {
+            "year": 2022,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 480,
+        "rating": "pg_13",
+        "studios": [
+            {
+                "id": 2042,
+                "name": "Ruo Hong Culture"
+            }
+        ]
+    },
+    {
+        "id": 2046,
+        "title": "Mahou no Tenshi Creamy Mami: Long Goodbye",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/9/24833.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/9/24833l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u9b54\u6cd5\u306e\u5929\u4f7f\u30af\u30ea\u30a3\u30df\u30fc\u30de\u30df\u3000\u30ed\u30f3\u30b0\u30fb\u30b0\u30c3\u30c9\u30d0\u30a4"
+        },
+        "start_date": "1985-06-15",
+        "end_date": "1985-06-15",
+        "synopsis": "Shingo is planning the film \"A Story of Two Worlds\" starring Megumi. Yuu's transformation into Creamy Mami is happening without her wanting it. She is asked to star in the film too. But the magic doesn't last...",
+        "mean": 6.41,
+        "rank": 7010,
+        "popularity": 11149,
+        "num_list_users": 1267,
+        "num_scoring_users": 336,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 60,
+                "name": "Idols (Female)"
+            },
+            {
+                "id": 66,
+                "name": "Mahou Shoujo"
+            },
+            {
+                "id": 22,
+                "name": "Romance"
+            },
+            {
+                "id": 25,
+                "name": "Shoujo"
+            }
+        ],
+        "created_at": "2007-03-09T10:44:39+00:00",
+        "updated_at": "2019-04-07T02:50:21+00:00",
+        "media_type": "ova",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1985,
+            "season": "spring"
+        },
+        "average_episode_duration": 3450,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 1,
+                "name": "Pierrot"
+            }
+        ]
+    },
+    {
+        "id": 5374,
+        "title": "Miracle! Mimika",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/4/10993.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/4/10993l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Miracle Mimika"
+            ],
+            "en": "Miracle! Mimika",
+            "ja": "\u5473\u697d\u308b!\u30df\u30df\u30ab"
+        },
+        "start_date": "2006-04-03",
+        "end_date": "2009-03-13",
+        "synopsis": "Himeno Mimika is a daughter of historical cook family. She goes to a cooking school, Miracle Academy which train cooks all over the world. Vying with rivals, she brings out her gift, and she grows up as a cook.  \n\n(Source: AnimeNfo)",
+        "rank": 13096,
+        "popularity": 14340,
+        "num_list_users": 414,
+        "num_scoring_users": 69,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 47,
+                "name": "Gourmet"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2008-10-13T02:18:27+00:00",
+        "updated_at": "2021-09-18T04:00:25+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 225,
+        "start_season": {
+            "year": 2006,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 600,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 466,
+                "name": "Digital Media Lab"
+            }
+        ]
+    },
+    {
+        "id": 8958,
+        "title": "Potecco Babies",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/13/24824.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/13/24824l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Potekko Babies"
+            ],
+            "en": "",
+            "ja": "\u30dd\u30c6\u30c3\u30b3\u30d9\u30a4\u30d3\u30fc\u30ba"
+        },
+        "start_date": "2010-05-17",
+        "end_date": "2010-09-04",
+        "synopsis": "Anime about potato characters.",
+        "mean": 5.15,
+        "rank": 11940,
+        "popularity": 14247,
+        "num_list_users": 423,
+        "num_scoring_users": 178,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            }
+        ],
+        "created_at": "2010-06-08T18:20:39+00:00",
+        "updated_at": "2016-03-30T15:47:33+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 2,
+        "start_season": {
+            "year": 2010,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 198,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 247,
+                "name": "Shin-Ei Animation"
+            }
+        ]
+    },
+    {
+        "id": 10238,
+        "title": "Hybrid Deka",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/10/82881.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/10/82881l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Hybrid Keiji",
+                "Himitsukessha Taka no Tsume",
+                "Eagle Talon",
+                "The Frogman Show"
+            ],
+            "en": "",
+            "ja": "\u30cf\u30a4\u30d6\u30ea\u30c3\u30c9\u5211\u4e8b(\u30c7\u30ab)"
+        },
+        "start_date": "2011-01-22",
+        "end_date": "2011-01-22",
+        "synopsis": "A Himitsukessha Taka no Tsume spin-off movie sponsored entirely by Toyota which had a limited theatrical run; in order to promote their hybrid car line. In the film, the Chancellor takes a break from Eagle Talon to become a struggling section chief of the Metropolitan Police Department Hybrid Division (which was born from the consolidation of several ministries for financial reasons). ",
+        "rank": 17876,
+        "popularity": 15054,
+        "num_list_users": 344,
+        "num_scoring_users": 71,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            }
+        ],
+        "created_at": "2011-01-23T16:49:05+00:00",
+        "updated_at": "2019-02-06T13:55:00+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2011,
+            "season": "winter"
+        },
+        "average_episode_duration": 2700,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 30974,
+        "title": "Wasurerumonka!",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/13/74519.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/13/74519l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u308f\u3059\u308c\u308b\u3082\u3093\u304b\uff01"
+        },
+        "start_date": "1993",
+        "end_date": "1993",
+        "synopsis": "An educational film meant to inspire people and to not pity those with disabilities. ",
+        "rank": 15431,
+        "popularity": 18117,
+        "num_list_users": 145,
+        "num_scoring_users": 17,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2015-06-13T08:50:03+00:00",
+        "updated_at": "2015-06-13T08:50:03+00:00",
+        "media_type": "ova",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 2400,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 32254,
+        "title": "Ijigen Gattai Mojibakeru Z",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/10/77431.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/10/77431l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u7570\u5b57\u5143\u5408\u4f53\u3082\u3058\u30d0\u30b1\u308bZ"
+        },
+        "start_date": "2014-06-29",
+        "end_date": "2014-06-29",
+        "synopsis": "A promotional anime for the Ijigen Gattai Mojibakeru Z toy line from Bandai.",
+        "rank": 17909,
+        "popularity": 16782,
+        "num_list_users": 220,
+        "num_scoring_users": 67,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 11,
+                "name": "Strategy Game"
+            }
+        ],
+        "created_at": "2015-12-08T04:48:23+00:00",
+        "updated_at": "2015-12-08T04:48:23+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2014,
+            "season": "spring"
+        },
+        "source": "other",
+        "average_episode_duration": 1042,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 33278,
+        "title": "Qin Shi Mingyue Tebie Pian: Di Zi Jiang Xi",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/10/79965.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/10/79965l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Qin's Moon: Lady Xiang Descends",
+            "ja": "\u79e6\u65f6\u660e\u6708\u7279\u522b\u7bc7\u300a\u5e1d\u5b50\u964d\u516e\u300b"
+        },
+        "start_date": "2015-02-13",
+        "end_date": "2015-02-13",
+        "synopsis": "This special is about a wounded man who finds himself caught up in the lives of twin sisters, and the man that they both fell in love with.\n\n(Source: Wikipedia)",
+        "mean": 6.22,
+        "rank": 7999,
+        "popularity": 13353,
+        "num_list_users": 569,
+        "num_scoring_users": 132,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 13,
+                "name": "Historical"
+            },
+            {
+                "id": 17,
+                "name": "Martial Arts"
+            }
+        ],
+        "created_at": "2016-05-07T10:31:16+00:00",
+        "updated_at": "2022-03-11T07:43:51+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2015,
+            "season": "winter"
+        },
+        "source": "novel",
+        "average_episode_duration": 926,
+        "rating": "pg_13",
+        "studios": [
+            {
+                "id": 1768,
+                "name": "Sparkly Key Animation Studio"
+            }
+        ]
+    },
+    {
+        "id": 33534,
+        "title": "Curly",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/3/80666.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/3/80666l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Curly",
+            "ja": "Curly\uff08\u30ab\u30fc\u30ea\u30fc\uff09"
+        },
+        "start_date": "2014-10-10",
+        "end_date": "2014-10-10",
+        "synopsis": "The place is Kyoto, Japan.\nThe bride has a mishap just before the wedding ceremony.\nHer father and mother get into a panic, her younger sister runs around, and her pet just sits still.\nThis is a story of a family.\n\n(Source: Official Youtube channel)",
+        "mean": 5.65,
+        "rank": 10534,
+        "popularity": 15445,
+        "num_list_users": 312,
+        "num_scoring_users": 142,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            }
+        ],
+        "created_at": "2016-07-02T05:31:09+00:00",
+        "updated_at": "2016-08-16T02:17:46+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2014,
+            "season": "fall"
+        },
+        "source": "original",
+        "average_episode_duration": 222,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 36350,
+        "title": "Kuma no Nuigurumi",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/3/87771.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/3/87771l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u30af\u30de\u306e\u306c\u3044\u3050\u308b\u307f"
+        },
+        "start_date": "1987-10-01",
+        "end_date": "1987-10-01",
+        "synopsis": "A little girl loves a stuffed bear and takes it everywhere. At home she never puts it away causing her mom to trip over it. Over time it gets really beat up and raggedy and mom decides it's time to toss it out. Luckily the girl find it and tries her hand at stitching the raggedy bear into better condition.",
+        "rank": 18629,
+        "popularity": 17921,
+        "num_list_users": 156,
+        "num_scoring_users": 75,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2017-09-20T04:59:23+00:00",
+        "updated_at": "2020-03-02T20:56:36+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1987,
+            "season": "fall"
+        },
+        "source": "original",
+        "average_episode_duration": 141,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 37630,
+        "title": "Washimo 6th Season",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1328/119068.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1328/119068l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Wasimo 6"
+            ],
+            "en": "",
+            "ja": "\u308f\u3057\u3082-wasimo-(\u7b2c6\u30b7\u30ea\u30fc\u30ba)"
+        },
+        "start_date": "2018-04-02",
+        "end_date": "2019-01-07",
+        "synopsis": "Sixth season of the Washimo series.",
+        "rank": 15424,
+        "popularity": 17416,
+        "num_list_users": 185,
+        "num_scoring_users": 27,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 23,
+                "name": "School"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2018-03-28T00:14:03+00:00",
+        "updated_at": "2019-07-10T23:10:28+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 42,
+        "start_season": {
+            "year": 2018,
+            "season": "spring"
+        },
+        "source": "picture_book",
+        "average_episode_duration": 600,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 38142,
+        "title": "Out Of My Head",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1543/93368.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1543/93368l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "CHVRCHES - Out Of My Head ft. WEDNESDAY CAMPANELLA"
+            ],
+            "en": "",
+            "ja": "CHVRCHES\u300cOut Of My Head feat. \u6c34\u66dc\u65e5\u306e\u30ab\u30f3\u30d1\u30cd\u30e9\u300d"
+        },
+        "start_date": "2018-08-03",
+        "end_date": "2018-08-03",
+        "synopsis": "Scottish synth-pop group CHVRCHES has shared a vibrant new song and visual featuring the Japanese EDM group Wednesday Campanella.\n\n\"Out My Head\" is accompanied by an animated music video by famed anime creatives Junichi Yamamoto and Yoshiki Imazu. Lauren Mayberry, the lead vocalist of CHVRCHES, has said that Japan is a special country for the band.\n\n(Source: billboard.com)",
+        "mean": 5.74,
+        "rank": 10155,
+        "popularity": 14193,
+        "num_list_users": 431,
+        "num_scoring_users": 256,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            }
+        ],
+        "created_at": "2018-08-07T10:37:26+00:00",
+        "updated_at": "2018-08-08T12:58:32+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2018,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 199,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 38398,
+        "title": "Din Dong Specials",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1619/94886.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1619/94886l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u7672\u5679"
+        },
+        "start_date": "2010-02-24",
+        "end_date": "2011-11-21",
+        "synopsis": "Various animated shorts posted to Din Dong's official YouTube Channel.\n",
+        "rank": 16955,
+        "popularity": 17987,
+        "num_list_users": 152,
+        "num_scoring_users": 46,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 20,
+                "name": "Parody"
+            }
+        ],
+        "created_at": "2018-09-26T08:37:28+00:00",
+        "updated_at": "2018-11-19T15:45:38+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 5,
+        "start_season": {
+            "year": 2010,
+            "season": "winter"
+        },
+        "source": "manga",
+        "average_episode_duration": 38,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 40702,
+        "title": "Life Size",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1025/104334.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1025/104334l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "Life size"
+        },
+        "start_date": "2011-01-03",
+        "end_date": "2011-01-03",
+        "synopsis": "MMD music video for the song Life size by 40mP, featuring the mascot character CUL using the VY1 voicebank. This version of the song was used as the opening for the VOCALO Revolution television program that aired in Japan on January, 2011. The original version of the song was included on 40mP's first album \"Life Size Note\" and featured vocals by Hatsune Miku.",
+        "mean": 5.72,
+        "rank": 10298,
+        "popularity": 17507,
+        "num_list_users": 180,
+        "num_scoring_users": 102,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2019-11-13T02:29:13+00:00",
+        "updated_at": "2019-11-13T02:29:13+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2011,
+            "season": "winter"
+        },
+        "source": "music",
+        "average_episode_duration": 187,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 41982,
+        "title": "Mysterious feat. Luo Tianyi",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1565/107529.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1565/107529l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Mysterious feat. Luo Tianyi",
+            "ja": ""
+        },
+        "start_date": "2012-08-27",
+        "synopsis": "Music video for Mysterious feat. Luo Tianyi by Hachioji-P.",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-05-14T00:08:19+00:00",
+        "updated_at": "2020-05-14T00:08:19+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 241,
+        "studios": []
+    },
+    {
+        "id": 43262,
+        "title": "Longxia",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1862/118084.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1862/118084l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Lobster"
+            ],
+            "en": "",
+            "ja": "\u9f99\u867e"
+        },
+        "start_date": "1959",
+        "end_date": "1959",
+        "synopsis": "",
+        "rank": 18797,
+        "popularity": 19535,
+        "num_list_users": 46,
+        "num_scoring_users": 9,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-10-07T11:29:46+00:00",
+        "updated_at": "2021-09-26T14:03:42+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 949,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 471,
+                "name": "Shanghai Animation Film Studio"
+            }
+        ]
+    },
+    {
+        "id": 43518,
+        "title": "Qu Qu",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1158/118389.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1158/118389l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Ququ",
+                "Cricket"
+            ],
+            "en": "",
+            "ja": "\u86d0\u86d0"
+        },
+        "start_date": "1982",
+        "end_date": "1982",
+        "synopsis": "",
+        "rank": 14039,
+        "popularity": 19750,
+        "num_list_users": 40,
+        "num_scoring_users": 6,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-10-20T02:58:12+00:00",
+        "updated_at": "2021-10-01T08:53:34+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "book",
+        "average_episode_duration": 1500,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 471,
+                "name": "Shanghai Animation Film Studio"
+            }
+        ]
+    },
+    {
+        "id": 43774,
+        "title": "Sherlock Holmes to Watson Hakase",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1744/110124.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1744/110124l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta",
+                "Sherlock Holmes and Dr. Watson"
+            ],
+            "en": "",
+            "ja": "\u30b7\u30e3\u30fc\u30ed\u30c3\u30af\u30db\u30fc\u30e0\u30ba\u3068\u30ef\u30c8\u30bd\u30f3\u535a\u58eb"
+        },
+        "start_date": "1975-12-02",
+        "end_date": "1975-12-02",
+        "synopsis": "Music video for the song Sherlock Holmes to Watson Hakase by Kei Tani that was featured on NHK's Minna no Uta program. It is an original Japanese song that pays homage to Arthur Conan Doyle's Sherlock Holmes series. The video was animated by Hal Fukushima.",
+        "rank": 14415,
+        "popularity": 18353,
+        "num_list_users": 131,
+        "num_scoring_users": 55,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            },
+            {
+                "id": 7,
+                "name": "Mystery"
+            }
+        ],
+        "created_at": "2020-11-07T22:58:15+00:00",
+        "updated_at": "2020-11-07T22:58:15+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1975,
+            "season": "fall"
+        },
+        "source": "novel",
+        "average_episode_duration": 135,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 44286,
+        "title": "Guo Bao Tegong: Shuiguo Da Taowang",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1562/123018.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1562/123018l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Fruity Robo: The Great Escape",
+            "ja": "\u679c\u5b9d\u7279\u653b\u4e4b\u6c34\u679c\u5927\u9003\u4ea1"
+        },
+        "start_date": "2016-01-23",
+        "end_date": "2016-01-23",
+        "synopsis": "",
+        "rank": 17443,
+        "popularity": 20235,
+        "num_list_users": 27,
+        "num_scoring_users": 2,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-12-05T06:55:53+00:00",
+        "updated_at": "2022-04-18T16:18:12+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2016,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 5820,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 44542,
+        "title": "Xiao Pang Niu",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5c0f\u80d6\u599e"
+        },
+        "start_date": "2010-06-01",
+        "synopsis": "Once upon a time there was a beautiful castle, and there lived a...the handsome prince. He had an exploded head and was dry and thin. He really didn't look like a prince in children's words. But his appearance won the heart of the beautiful girl Cinderella (voiced by Zheng Shasha). But the good times didn't last long, and the prince was taken away by the obscene-looking demon king. Seeing that the beloved was in trouble, Cinderella dared to catch up without being timid. They hit the room from the blackboard. The devil was not only vicious, but also very cunning. He turned the daily necessities around him into weapons to throw at Cinderella, and even stopped Cinderella's footsteps by magically turning this beautiful girl into a fat girl with a big belly and inconvenience. However, in order to save the lover, no amount of hardship and danger can make the little fat girl retreat...(translated from douban)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 22,
+                "name": "Romance"
+            }
+        ],
+        "created_at": "2020-12-11T13:22:50+00:00",
+        "updated_at": "2020-12-11T13:22:50+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 11,
+        "source": "original",
+        "average_episode_duration": 420,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 44798,
+        "title": "Ke Yao Shanlin Zhi Duocai De Jiayuan",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u53ef\u4e50\u5c71\u6797\u4e4b\u591a\u5f69\u7684\u5bb6\u56ed"
+        },
+        "synopsis": "This film tells the story of friends in the forest who were severely punished for not caring for their homes. Duo Mi took the friends and started planting trees and building their homes.\n(translated from douban)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            }
+        ],
+        "created_at": "2020-12-16T17:56:33+00:00",
+        "updated_at": "2020-12-16T17:56:33+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 5100,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 45310,
+        "title": "Xing Mao Wenhua Da Jiangtang Zhi Wenhua Gushi",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u661f\u732b\u6587\u5316\u5927\u8bb2\u5802\u4e4b\u6587\u5316\u6545\u4e8b"
+        },
+        "synopsis": "The Star Cat Cultural Lecture Hall makes cultural stories entertaining and makes cartoon animations, and the classics are transformed into vernacular and comics with a flowing brush. He retains the rich cultural heritage of Chinese traditional culture, philosophical and humorous.(translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 13,
+                "name": "Historical"
+            }
+        ],
+        "created_at": "2020-12-22T13:39:08+00:00",
+        "updated_at": "2020-12-22T13:39:08+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 26,
+        "source": "original",
+        "average_episode_duration": 620,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 45822,
+        "title": "Luo Baobei 2nd Season",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1734/122996.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1734/122996l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u6d1b\u5b9d\u8d1d \u7b2c\u4e8c\u5b63"
+        },
+        "start_date": "2018",
+        "end_date": "2018",
+        "synopsis": "",
+        "rank": 18819,
+        "popularity": 20324,
+        "num_list_users": 26,
+        "num_scoring_users": 3,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-01-10T15:33:00+00:00",
+        "updated_at": "2022-04-18T11:46:20+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 13,
+        "source": "original",
+        "average_episode_duration": 560,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46078,
+        "title": "Shi Wan Ge Weisheme Juchang Zhi Haiyang Ban",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5341\u4e07\u4e2a\u4e3a\u4ec0\u4e48\u5267\u573a\u4e4b\u6d77\u6d0b\u7248"
+        },
+        "synopsis": "In a magical theater under the starry sky, the baby bear and the elf mouse perform marine science knowledge in a relaxed and humorous manner. Through their vivid explanations and performances, the audience can understand various marine things.\n(translated from tenceng)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-01-13T15:44:34+00:00",
+        "updated_at": "2021-01-13T15:44:34+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 365,
+        "source": "original",
+        "average_episode_duration": 320,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46334,
+        "title": "Shi Er Shengxiao Zhi Tianxia Shu Tu",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5341\u4e8c\u751f\u8096\u4e4b\u5929\u4e0b\u5c5e\u5154"
+        },
+        "synopsis": "There is a sky-reaching tree in Happy Town. This tree is a \"ladder\" linking the world. The zodiac rabbit is in accordance with the Jade Emperor\u2019s will to assist the father-in-law to guard the sky-tree. He also made a head-catcher in the happy town to protect the happy town to spend safely and happily. Year of the Rabbit. The Zodiac Rabbit became a member of Happy Town, and got acquainted with many small town residents with full of personality, such as the victorious martial arts master Da Hei, and the cat who wants to be a fairy. The Zodiac Rabbit started a wonderful and interesting experience in Happy Town.\n(translated from youku)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-01-19T01:33:50+00:00",
+        "updated_at": "2021-01-19T01:33:50+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 40,
+        "source": "original",
+        "average_episode_duration": 920,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46590,
+        "title": "Tian Tian Quan Baobei Zhi Gongfu Xueyuan",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u751c\u751c\u5708\u5b9d\u8d1d\u4e4b\u529f\u592b\u5b66\u9662"
+        },
+        "synopsis": "Donut babies are a group of cute elves, their image is characterized by ears like donuts. They are pure and kind, witty and brave, united and friendly, and helping each other. They can be transformed into various images and appear in various wonderful worlds. This film is a series. In the Bee Garden series, the donut babies are transformed into cute little bees, honest caterpillars and hardworking fireflies. Their daily life is to collect nectar hard, play to their heart's content, and struggle for their dreams, so in the small garden, they are constantly performing childlike and positive insect stories. Small audiences can appreciate the importance of strong, courageous, united and responsible qualities, and cultivate a correct outlook on life and values.\n(translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-01-22T16:19:57+00:00",
+        "updated_at": "2021-01-22T16:19:57+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 25,
+        "source": "original",
+        "average_episode_duration": 620,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46846,
+        "title": "Mini Tegong Dui Zhi Chaoji Konglong Liliang",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u8ff7\u4f60\u7279\u5de5\u961f\u4e4b\u8d85\u7ea7\u6050\u9f99\u529b\u91cf"
+        },
+        "synopsis": "After the mini-agents drove away Jesu, they obtained a new super dinosaur power through the technology of Dinosaur Planet. But a new enemy has come to the earth again. He is Doctor Strange. He believes that he is the only superhero on this planet, destroying the city by giving all things evil power. So the mini-agent team has a new mission to stop Captain Force and protect the city! New dinosaur partners, new partners, new weapons and equipment, new mechas! Mini agents, start again! \n(translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-01-26T07:42:40+00:00",
+        "updated_at": "2021-01-26T07:42:40+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 52,
+        "source": "original",
+        "average_episode_duration": 800,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 47102,
+        "title": "Baixue Gongzhu Chuanqi",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u767d\u96ea\u516c\u4e3b\u4f20\u5947"
+        },
+        "synopsis": "A little girl who lost her way came in from the wooden house of the seven dwarfs. Because she firmly believed that the missing father was still alive, she wandered around looking for her father only with a clue left by the feather of a divine bird. Snow White and the dwarf were moved by her true feelings and perseverance, and decided to help her. The dwarves made a huge hot air balloon and took Snow White and the little girl to Bird Island. They only learned the true whereabouts of the missing father after seeing the divine bird after all the hardships. Snow White and the dwarf strayed into the trap and were caught on the way to save people. At this time, the queen appeared, wearing the most beautiful dress in the world, and the disappearance of father and the fate of the little girl are very important to this dress. Relationship. Where did the dress come from, how did everyone escape from danger, and can father and daughter finally be reunited? \n(translated from tenceng)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            }
+        ],
+        "created_at": "2021-01-31T02:48:47+00:00",
+        "updated_at": "2021-01-31T02:48:47+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 23,
+        "source": "other",
+        "average_episode_duration": 620,
+        "studios": []
+    },
+    {
+        "id": 47358,
+        "title": "Wai Xing Da Caoyuan",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5916\u661f\u5927\u8349\u539f"
+        },
+        "synopsis": "The story tells the story of the Booming Stars of the Silver Air System, a race keen to invade other planets. The protagonist Kidd\u2019s father is the commander of the space fleet and is not at home all year round. In order to get the attention of his father, the young Kidd proved that he had grown up and ran away from home to invade the earth. Who knew that I accidentally fell on the African savannah and became good friends with the animals on the grassland (?). Especially its \"hardcore\" little lion Alin. Everyone was playing happily on the prairie. Kidd\u2019s aggressive plan is also underway today. Will it succeed? Let's wait and see! (translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-02-03T14:07:46+00:00",
+        "updated_at": "2021-02-03T14:07:46+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 12,
+        "source": "original",
+        "average_episode_duration": 320,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 48126,
+        "title": "Xiong Chumo: Kuang Ye Dalu",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1851/115245.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1851/115245l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Boonie Bears: The Wild Life",
+            "ja": "\u718a\u51fa\u6ca1\u00b7\u72c2\u91ce\u5927\u9646"
+        },
+        "start_date": "2021-02-12",
+        "end_date": "2021-02-12",
+        "synopsis": "",
+        "rank": 15720,
+        "popularity": 18830,
+        "num_list_users": 94,
+        "num_scoring_users": 15,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            }
+        ],
+        "created_at": "2021-02-20T09:57:27+00:00",
+        "updated_at": "2021-05-29T15:05:16+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2021,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 5973,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 48638,
+        "title": "Hibike! Euphonium 5th Anniversary Disc Kirameki Passage",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1126/113968.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1126/113968l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Hibike! Euphonium 5th Anniversary Disc"
+            ],
+            "en": "",
+            "ja": "\u97ff\u3051\uff01\u30e6\u30fc\u30d5\u30a9\u30cb\u30a2\u30e0 5th Anniversary Disc \u304d\u3089\u3081\u304d\u30d1\u30c3\u30bb\u30fc\u30b8"
+        },
+        "start_date": "2021-03-24",
+        "end_date": "2021-03-24",
+        "synopsis": "",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            },
+            {
+                "id": 23,
+                "name": "School"
+            }
+        ],
+        "created_at": "2021-04-02T01:45:25+00:00",
+        "updated_at": "2021-04-02T01:45:25+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 10,
+        "source": "light_novel",
+        "average_episode_duration": 0,
+        "studios": []
+    },
+    {
+        "id": 48894,
+        "title": "Kotae wo Dasu no Da",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1791/114765.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1791/114765l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Give the Answer",
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u7b54\u3048\u3092\u51fa\u3059\u306e\u3060"
+        },
+        "start_date": "2020-02-02",
+        "end_date": "2020-02-02",
+        "synopsis": "An animated music video for I LUV ME's Kotae wo Dasu no Da song, aired on NHK's Minna no Uta.\n\nThe song was written, composed and sang by Mihono Sato to encourage both herself, the students and the ones with an uncertain future to take a step forward.",
+        "rank": 18578,
+        "popularity": 18964,
+        "num_list_users": 86,
+        "num_scoring_users": 39,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2021-05-06T12:06:12+00:00",
+        "updated_at": "2021-05-06T14:59:28+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2020,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 140,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 2250,
+                "name": "Spooky graphic"
+            }
+        ]
+    },
+    {
+        "id": 49150,
+        "title": "Rett\u014d J\u014dt\u014d wo Utattemita",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1988/115629.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1988/115629l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "BanG Dream! x Hatsune Miku"
+            ],
+            "en": "",
+            "ja": "\u52a3\u7b49\u4e0a\u7b49\u3092\u6b4c\u3063\u3066\u307f\u305f"
+        },
+        "start_date": "2019-07-30",
+        "end_date": "2019-07-30",
+        "synopsis": "Music Video of the original Vocaloid song of Giga-P that is performed by the project band RAISE A SUILEN as a collaboration between Bang Dream! and Hatsune Miku.",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2021-06-09T02:47:50+00:00",
+        "updated_at": "2022-04-01T18:06:38+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 235,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 50686,
+        "title": "Xiao Motou Baolu La!",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1093/120265.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1093/120265l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Busted! Darklord.",
+            "ja": "\u5c0f\u9b54\u5934\u66b4\u9732\u5566\uff01"
+        },
+        "start_date": "2022-01-15",
+        "synopsis": "In an attempt for survival, Yu Renjie, the son of the demon lord, was ordered to enter Hero's Academy which only recruits distinguished and upright disciples. The goal is to obtain a Hero's Certificate which can bring legitimacy to the demon clan. This is extremely dangerous. Once the identity of a demon cultist is exposed, countless righteous knights will kill them on the spot. But on the first day of school, Yu Renjie was shocked to find out that his personal information had been leaked. In order to hide his identity, he had no choice but to put on women's clothing. His dangerous and hilarious campus life is about to unfold!\n\n(Source: Bilibili)",
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 6,
+                "name": "Mythology"
+            }
+        ],
+        "created_at": "2021-12-28T17:44:21+00:00",
+        "updated_at": "2021-12-28T17:44:21+00:00",
+        "media_type": "ona",
+        "status": "not_yet_aired",
+        "num_episodes": 13,
+        "source": "manga",
+        "average_episode_duration": 360,
+        "studios": []
+    },
+    {
+        "id": 51454,
+        "title": "Wanna",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1348/121981.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1348/121981l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "WANNA"
+        },
+        "start_date": "2021-04-28",
+        "end_date": "2021-04-28",
+        "synopsis": "Music video for the song Wanna by INSHOW-HA.",
+        "rank": 15401,
+        "popularity": 19187,
+        "num_list_users": 67,
+        "num_scoring_users": 38,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2022-03-28T03:32:37+00:00",
+        "updated_at": "2022-04-01T00:20:45+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2021,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 231,
+        "rating": "pg_13",
+        "studios": []
+    },
+    {
+        "id": 51966,
+        "title": "Da Luan",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1823/124147.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1823/124147l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5927\u9e3e\u2014\u2014\u5468\u6069\u6765\u7ae5\u5e74\u8bfb\u4e66\u7684\u6545\u4e8b"
+        },
+        "start_date": "2020-06-01",
+        "end_date": "2020-06-01",
+        "synopsis": "",
+        "rank": 16850,
+        "popularity": 20704,
+        "num_list_users": 18,
+        "num_scoring_users": 5,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 13,
+                "name": "Historical"
+            }
+        ],
+        "created_at": "2022-05-28T23:33:51+00:00",
+        "updated_at": "2022-07-06T16:32:11+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2020,
+            "season": "spring"
+        },
+        "average_episode_duration": 1014,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 52222,
+        "title": "Holy Shitto",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1926/124818.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1926/124818l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Holy Jealousy"
+            ],
+            "en": "",
+            "ja": "Holy\u5ac9\u59ac"
+        },
+        "start_date": "2022-06-27",
+        "end_date": "2022-06-27",
+        "synopsis": "",
+        "rank": 17714,
+        "popularity": 18620,
+        "num_list_users": 111,
+        "num_scoring_users": 72,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 60,
+                "name": "Idols (Female)"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2022-06-27T12:31:17+00:00",
+        "updated_at": "2022-07-07T07:23:39+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2022,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 175,
+        "rating": "pg_13",
+        "studios": []
+    },
+    {
+        "id": 3839,
+        "title": "Himitsu no Akko-chan 3",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/8/6843.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/8/6843l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Akko-chan's Secret 3",
+                "Secrets of Akko-chan (1998)"
+            ],
+            "en": "",
+            "ja": "\u3072\u307f\u3064\u306e\u30a2\u30c3\u30b3\u3061\u3083\u3093 \u7b2c\uff13\u671f"
+        },
+        "start_date": "1998-04-05",
+        "end_date": "1999-02-28",
+        "synopsis": "In the Kagami household, the old Western palm-sized mirror has been passed from from generations to generations. Akko-chan has been taught about the importance of the mirror and when she finally receives it from her mother, she cherishes it with all her might. One day, in the midst of a disturbance made by Taishou and his gang, Akko-chan accidentally broke the mirror. She made a grave and buried the broken pieces in the backyard. That night, Akko-chan was awakened by a flash of light and a kind voice which belongs to the Queen of the Mirror Kingdom. The Queen expresses her gratitude to Akko-chan for valuing the mirror so much and offers her a gift\u2014a magical compact mirror. Whenever Akko-chan sings the magical words, she will transform into anything she wants.\n\n(Source: ANN)",
+        "mean": 6.48,
+        "rank": 6607,
+        "popularity": 11991,
+        "num_list_users": 914,
+        "num_scoring_users": 209,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 23,
+                "name": "School"
+            },
+            {
+                "id": 25,
+                "name": "Shoujo"
+            }
+        ],
+        "created_at": "2008-01-31T03:15:23+00:00",
+        "updated_at": "2022-02-11T11:25:16+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 44,
+        "start_season": {
+            "year": 1998,
+            "season": "spring"
+        },
+        "broadcast": {
+            "day_of_the_week": "sunday",
+            "start_time": "09:00"
+        },
+        "average_episode_duration": 1460,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 18,
+                "name": "Toei Animation"
+            }
+        ]
+    },
+    {
+        "id": 7423,
+        "title": "The Tales of Rien Village #1: \"Toilet ni Ittokiya\"",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/13/17755.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/13/17755l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "The Tales of Rien Village #1: Nature is calling!"
+            ],
+            "en": "",
+            "ja": "rien\u6751\u7269\u8a9e #1 \u300c\u30c8\u30a4\u30ec\u306b\u3044\u3063\u3068\u304d\u3084\u30fc\u300d"
+        },
+        "start_date": "2005",
+        "end_date": "2005",
+        "synopsis": "A gentle children\u2019s story concerning the ceramic inhabitants of Rein Village. Fortune Malon has many visitors who come for advice which may or not be helpful. One night an elephant calf comes and visits Fortune Malon with a rather embarrassing predicament.\n",
+        "mean": 5.34,
+        "rank": 11511,
+        "popularity": 13583,
+        "num_list_users": 526,
+        "num_scoring_users": 257,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2009-10-31T05:55:22+00:00",
+        "updated_at": "2016-08-16T04:45:28+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 204,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 8191,
+        "title": "Hoshi Shinichi Short Short",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/11/20995.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/11/20995l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Hoshi Shinichi's Short Shorts"
+            ],
+            "en": "",
+            "ja": "\u661f\u65b0\u4e00 \u30b7\u30e7\u30fc\u30c8\u30b7\u30e7\u30fc\u30c8"
+        },
+        "start_date": "2007-11-11",
+        "end_date": "2008-11-17",
+        "synopsis": "This series features stories from the acclaimed sci-fi writer Hoshi Shinichi. The episodes uses animation, live-action footage, computer graphics, and other visual means to re-enact the short stories. Each episode is a collection of several short-short stories by Hoshi Shinichi.\n\nNote: This entry includes the pilot and the 25 TV episodes.\n",
+        "rank": 17768,
+        "popularity": 14811,
+        "num_list_users": 366,
+        "num_scoring_users": 44,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            }
+        ],
+        "created_at": "2010-02-17T07:15:05+00:00",
+        "updated_at": "2014-12-05T19:03:22+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 26,
+        "start_season": {
+            "year": 2007,
+            "season": "fall"
+        },
+        "source": "book",
+        "average_episode_duration": 600,
+        "rating": "pg_13",
+        "studios": [
+            {
+                "id": 1522,
+                "name": "Echoes"
+            }
+        ]
+    },
+    {
+        "id": 8959,
+        "title": "Nanchatte!",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/7/24825.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/7/24825l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u306a\u3093\u3061\u3083\u3063\u3066!"
+        },
+        "start_date": "2010-05-14",
+        "end_date": "2010-05-14",
+        "synopsis": "A satire gag story about politics for adults.",
+        "rank": 13328,
+        "popularity": 15793,
+        "num_list_users": 287,
+        "num_scoring_users": 71,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 20,
+                "name": "Parody"
+            }
+        ],
+        "created_at": "2010-06-08T18:22:50+00:00",
+        "updated_at": "2014-10-11T17:48:58+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 2,
+        "start_season": {
+            "year": 2010,
+            "season": "spring"
+        },
+        "average_episode_duration": 60,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 247,
+                "name": "Shin-Ei Animation"
+            }
+        ]
+    },
+    {
+        "id": 10239,
+        "title": "Mayutoro The Toons",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/5/28224.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/5/28224l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u307e\u3086\u3068\u308d THE TOONS"
+        },
+        "start_date": "2003-10-01",
+        "end_date": "2004-03-01",
+        "synopsis": "No synopsis has been added for this series yet.\n\nClick here to update this information.",
+        "rank": 12924,
+        "popularity": 16598,
+        "num_list_users": 231,
+        "num_scoring_users": 50,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2011-01-23T16:57:58+00:00",
+        "updated_at": "2011-01-23T22:19:03+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 33,
+        "start_season": {
+            "year": 2003,
+            "season": "fall"
+        },
+        "average_episode_duration": 120,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 12799,
+        "title": "Xevious",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/9/35941.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/9/35941l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u30bc\u30d3\u30a6\u30b9"
+        },
+        "start_date": "2002-08-03",
+        "end_date": "2002-08-03",
+        "synopsis": "In the year 2150 A.D. space pilot Takeru and human computer Martha come across a giant ship which contains two mechanical beings called Sara and Ru Mi. They warn Takeru and Martha of the Gump, an alien race that is heading to Earth so that it can take over the planet. With only 40 mintues remaining until Earth's invasion, Takeru enters the Solvalou, a combat aircraft, and heads to the Gump's base on the planet Andoa.\n\n(Source: ANN)",
+        "rank": 15509,
+        "popularity": 13539,
+        "num_list_users": 535,
+        "num_scoring_users": 64,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            },
+            {
+                "id": 29,
+                "name": "Space"
+            }
+        ],
+        "created_at": "2012-01-24T23:33:03+00:00",
+        "updated_at": "2019-08-10T15:19:35+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2002,
+            "season": "summer"
+        },
+        "source": "game",
+        "average_episode_duration": 4500,
+        "rating": "r",
+        "studios": []
+    },
+    {
+        "id": 13311,
+        "title": "Henshin Gattai! 5 tsu no Atsuki Tamashii",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/4/37353.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/4/37353l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "MUSIC is SF"
+            ],
+            "en": "",
+            "ja": "\u5909\u8eab\u5408\u4f53!!5\u3064\u306e\u71b1\u304d\u9b42"
+        },
+        "start_date": "2011-01-28",
+        "end_date": "2011-01-28",
+        "synopsis": "Animator Sakamoto Shouta (\u5742\u672c\u6e09\u592a) conceived, designed, animated, and also composed music for the above animated short, which the anime studio Gainax began featuring on its official website. The video mimics the popular sentai genre, with five young people transforming into a costumed superhero team.\n\nThe video is the first one of a planned \"MUSIC is SF\" series.\n\n(Source: AniDB)",
+        "mean": 4.24,
+        "rank": 12693,
+        "popularity": 12823,
+        "num_list_users": 694,
+        "num_scoring_users": 396,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            },
+            {
+                "id": 31,
+                "name": "Super Power"
+            }
+        ],
+        "created_at": "2012-03-17T16:01:48+00:00",
+        "updated_at": "2020-03-04T01:51:51+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2011,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 93,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 6,
+                "name": "Gainax"
+            }
+        ]
+    },
+    {
+        "id": 13823,
+        "title": "Kamiusagi Rope Movie Episode 0",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/12/38367.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/12/38367l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Kamiusagi Rope Pierce-hen"
+            ],
+            "en": "Paper Rabbit Rope Movie Episode 0",
+            "ja": "\u6620\u753b\u300c\u7d19\u514e\u30ed\u30da\u300d Episode 0"
+        },
+        "start_date": "2012-03-13",
+        "end_date": "2012-03-13",
+        "synopsis": "A special episode made for the Kamiusagi Rope Movie premiere. It features paper squirrel Akira's older sister, who has trouble with choosing which earrings to wear for her date.",
+        "rank": 18261,
+        "popularity": 14927,
+        "num_list_users": 354,
+        "num_scoring_users": 95,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2012-04-15T15:45:10+00:00",
+        "updated_at": "2017-11-09T02:06:40+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2012,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 150,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 17151,
+        "title": "Mogu Mogu",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/3/71910.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/3/71910l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u30e2\u30b0\u30e2\u30b0"
+        },
+        "start_date": "2009-08-06",
+        "end_date": "2009-08-06",
+        "synopsis": "Music video sung by \u93ae\u5ea7DOPENESS for his \"100% Rap\" album. Song composition is done by EVISBEATS.",
+        "mean": 4.74,
+        "rank": 12456,
+        "popularity": 14051,
+        "num_list_users": 450,
+        "num_scoring_users": 260,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2013-01-12T08:10:10+00:00",
+        "updated_at": "2019-02-24T21:18:21+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2009,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 260,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 1953,
+                "name": "W+K Tokyo"
+            }
+        ]
+    },
+    {
+        "id": 20223,
+        "title": "Shounen Tokugawa Ieyasu",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/10/53833.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/10/53833l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Young Tokugawa Ieyasu"
+            ],
+            "en": "",
+            "ja": "\u5c11\u5e74\u5fb3\u5ddd\u5bb6\u5eb7"
+        },
+        "start_date": "1975-04-09",
+        "end_date": "1975-09-17",
+        "synopsis": "A historical tale of the early life of Tokugawa Ieyasu, who would eventually become shogun and establish the Edo Period in Japan.\n\n(Source: AniDB)",
+        "rank": 14568,
+        "popularity": 13898,
+        "num_list_users": 474,
+        "num_scoring_users": 58,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 13,
+                "name": "Historical"
+            },
+            {
+                "id": 27,
+                "name": "Shounen"
+            }
+        ],
+        "created_at": "2013-08-20T08:36:12+00:00",
+        "updated_at": "2013-08-20T08:36:12+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 20,
+        "start_season": {
+            "year": 1975,
+            "season": "spring"
+        },
+        "average_episode_duration": 1500,
+        "studios": [
+            {
+                "id": 18,
+                "name": "Toei Animation"
+            }
+        ]
+    },
+    {
+        "id": 25087,
+        "title": "Ie Naki Ko Remy Specials (2001)",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/11/64147.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/11/64147l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Ie Naki Ko R\u00e9mi Specials (2001)",
+                "Sekai Meisaku Gekijou Kanketsu Ban: Ie Naki Ko Remi",
+                "World Masterpiece Theater Complete Edition: Homeless Child Remy",
+                "Nobody's Girl Remi",
+                "Remi the Homeless Girl"
+            ],
+            "en": "",
+            "ja": "\u4e16\u754c\u540d\u4f5c\u5287\u5834\u30fb\u5b8c\u7d50\u7248 \u5bb6\u306a\u304d\u5b50\u30ec\u30df"
+        },
+        "start_date": "2001-07-14",
+        "end_date": "2001-07-15",
+        "synopsis": "A summary of the Ie Naki Ko Remy full series aired as a TV specials. ",
+        "mean": 6.52,
+        "rank": 6390,
+        "popularity": 11982,
+        "num_list_users": 917,
+        "num_scoring_users": 243,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2014-07-03T13:24:37+00:00",
+        "updated_at": "2021-10-06T20:14:37+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 2,
+        "start_season": {
+            "year": 2001,
+            "season": "summer"
+        },
+        "average_episode_duration": 2700,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 22,
+                "name": "Nippon Animation"
+            }
+        ]
+    },
+    {
+        "id": 25599,
+        "title": "Vampiyan Kids Promotion",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/10/65119.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/10/65119l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Vampiyan Kids Extra"
+            ],
+            "en": "",
+            "ja": "\u30d7\u30ed\u30e2\u30fc\u30b7\u30e7\u30f3"
+        },
+        "start_date": "1999",
+        "end_date": "1999",
+        "synopsis": "This shows the pre-character designs and the pre-pilot scenes in animated in 3D CG. It is part animation, part live-action. The live-action part shows Suzuka Yoshida as she is the original character designer for the franchise with her drawing coming to life.",
+        "rank": 15353,
+        "popularity": 16452,
+        "num_list_users": 241,
+        "num_scoring_users": 62,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2014-07-29T05:36:44+00:00",
+        "updated_at": "2014-07-29T05:36:44+00:00",
+        "media_type": "special",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 158,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 10,
+                "name": "Production I.G"
+            }
+        ]
+    },
+    {
+        "id": 30207,
+        "title": "Watashi wa \"Tofu\" Desu",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/3/72277.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/3/72277l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta",
+                "Watashi wa Tofu Desu"
+            ],
+            "en": "",
+            "ja": "\u308f\u305f\u3057\u306f\u300c\u3068\u3046\u3075\u300d\u3067\u3059"
+        },
+        "start_date": "1977-08-04",
+        "end_date": "1977-08-04",
+        "synopsis": "A music video for the song by Kazuo Kumakura and NHK Tokyo Children's Choir that was featured on NHK's Minna no Uta Program.",
+        "rank": 15440,
+        "popularity": 17018,
+        "num_list_users": 207,
+        "num_scoring_users": 75,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2015-02-27T11:59:34+00:00",
+        "updated_at": "2019-02-08T12:10:18+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1977,
+            "season": "summer"
+        },
+        "source": "original",
+        "average_episode_duration": 145,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 32255,
+        "title": "Ashita Kirarin",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/9/77432.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/9/77432l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u3042\u3057\u305f\u30fb\u304d\u3089\u308a\u3093"
+        },
+        "start_date": "2004-03-26",
+        "end_date": "2004-03-26",
+        "synopsis": "Ayako suffers from autism, and all kids in the class mock her except for Yuri - the only girl who shows some kindness towards her. Greatly appreciating that, Ayako gives Yuri a present - a beaded bracelet.\n\nLater, the school is preparing for the summer cultural festival, and Ayako's present inspires Yuri with an idea to make a decoration for one of the school's exterior walls - a giant picture made of ropes beaded with empty cans of different colours. All kids including Ayako then gather empty cans from all around the city and start creating the picture. However, the day before the festival is scheduled to open a typhoon hits the city, threatening to ruin the kids' hard work.\n\n(Source: AniDB)",
+        "rank": 16295,
+        "popularity": 15298,
+        "num_list_users": 323,
+        "num_scoring_users": 69,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2015-12-08T04:57:05+00:00",
+        "updated_at": "2021-03-17T08:26:04+00:00",
+        "media_type": "ova",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2004,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 1596,
+        "rating": "g",
+        "studios": [
+            {
+                "id": 1952,
+                "name": "Animation Staff Room"
+            }
+        ]
+    },
+    {
+        "id": 33279,
+        "title": "Nanocore: NG Scenes - Nano's Daily Life",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/2/79966.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/2/79966l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u7eb3\u7c73\u6838\u5fc3 - NG\u955c\u5934 - \u7eb3\u7c73\u7684\u65e5"
+        },
+        "start_date": "2015-02-08",
+        "end_date": "2015-03-01",
+        "synopsis": "Comedy episodes focusing on the strange daily life of characters from Nanocore.",
+        "rank": 13347,
+        "popularity": 15559,
+        "num_list_users": 303,
+        "num_scoring_users": 92,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            }
+        ],
+        "created_at": "2016-05-07T14:35:01+00:00",
+        "updated_at": "2017-07-26T11:35:06+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 2,
+        "start_season": {
+            "year": 2015,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 215,
+        "rating": "pg_13",
+        "studios": []
+    },
+    {
+        "id": 35071,
+        "title": "Noah's Animal Clinic Medical Book Record",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1116/98786.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1116/98786l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Wei xiang-nuo ya dongwu zhensuo donghua xiao juchang"
+            ],
+            "en": "",
+            "ja": "\u8afe\u4e9e\u52d5\u7269\u8a3a\u6240\u52d5\u756b\u5c0f\u5287\u5834"
+        },
+        "start_date": "2012-03-21",
+        "end_date": "2013-03-06",
+        "synopsis": "",
+        "rank": 13480,
+        "popularity": 17222,
+        "num_list_users": 195,
+        "num_scoring_users": 26,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 4,
+                "name": "Comedy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2017-03-10T19:35:49+00:00",
+        "updated_at": "2020-01-13T14:27:29+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 10,
+        "start_season": {
+            "year": 2012,
+            "season": "winter"
+        },
+        "average_episode_duration": 180,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 36351,
+        "title": "Kotatsu Musume de Teketekete",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/3/87772.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/3/87772l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta"
+            ],
+            "en": "",
+            "ja": "\u3053\u305f\u3064\u3080\u3059\u3081\u3067\u30c6\u30b1\u30c6\u30b1\u30c6"
+        },
+        "start_date": "1988-12-02",
+        "end_date": "1988-12-02",
+        "synopsis": "A little girl gets a kotatsu stuck to her.",
+        "rank": 18579,
+        "popularity": 18077,
+        "num_list_users": 147,
+        "num_scoring_users": 65,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2017-09-20T04:59:31+00:00",
+        "updated_at": "2019-01-29T15:24:55+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1988,
+            "season": "fall"
+        },
+        "source": "original",
+        "average_episode_duration": 143,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 38911,
+        "title": "Zhi Duoduo Qihuan Xingkong Zhi Lu",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1694/97900.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1694/97900l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Chi Dor Dor Starry Sky Tour"
+            ],
+            "en": "Gee Dor Dor's Space Adventure",
+            "ja": "\u667a\u591a\u591a\u5947\u5e7b\u661f\u7a7a\u4e4b\u65c5"
+        },
+        "start_date": "2014-04-22",
+        "end_date": "2014-04-22",
+        "synopsis": "On a quest to save the earth, 3 animals travel to other planets to acquire the infinity stones where they can then bless the planet with love, honesty, and fairness.",
+        "rank": 16008,
+        "popularity": 17564,
+        "num_list_users": 176,
+        "num_scoring_users": 72,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 29,
+                "name": "Space"
+            }
+        ],
+        "created_at": "2018-12-26T13:36:57+00:00",
+        "updated_at": "2021-06-18T05:41:34+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2014,
+            "season": "spring"
+        },
+        "source": "original",
+        "average_episode_duration": 1435,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 40703,
+        "title": "Melody Line",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1831/104335.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1831/104335l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "Melody Line"
+        },
+        "start_date": "2011-01-16",
+        "end_date": "2011-01-16",
+        "synopsis": "MMD music video for the song Melody Line by SmileR. The song was featured on his first album \"Melody Line(s)\".",
+        "mean": 5.74,
+        "rank": 10176,
+        "popularity": 16194,
+        "num_list_users": 259,
+        "num_scoring_users": 154,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2019-11-13T02:51:09+00:00",
+        "updated_at": "2021-05-28T14:53:01+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2011,
+            "season": "winter"
+        },
+        "source": "original",
+        "average_episode_duration": 198,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 41727,
+        "title": "Iroha Matsuri",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1340/107093.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1340/107093l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "Minna no Uta",
+                "Iroha Festival"
+            ],
+            "en": "",
+            "ja": "\u3044\u308d\u306f\u307e\u3064\u308a"
+        },
+        "start_date": "1987-12-01",
+        "end_date": "1987-12-01",
+        "synopsis": "Music video for the song Iroha Matsuri by Japanese singer Miyuki Mori and the Hibari Children Chorus that was featured on NHK's Minna no Uta program. The video was animated by Fumio Ooi.",
+        "rank": 17959,
+        "popularity": 18708,
+        "num_list_users": 104,
+        "num_scoring_users": 45,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-04-18T15:52:15+00:00",
+        "updated_at": "2020-04-18T15:52:15+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 1987,
+            "season": "fall"
+        },
+        "source": "original",
+        "average_episode_duration": 145,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 41983,
+        "title": "Electric Magic feat. Kagamine Len & Kagamine Rin",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1856/107530.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1856/107530l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Electric Magic feat. Kagamine Len & Kagamine Rin",
+            "ja": "\u516b\u738b\u5b50P\u300c\u30a8\u30ec\u30af\u30c8\u30ea\u30c3\u30af\u30fb\u30de\u30b8\u30c3\u30af feat. \u93e1\u97f3\u30ea\u30f3\uff06\u93e1\u97f3\u30ec\u30f3\u300d"
+        },
+        "start_date": "2012-12-27",
+        "synopsis": "Music video for Electric Magic feat. Kagamine Len & Kagamine Rin by Hachioji-P.",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-05-14T00:12:27+00:00",
+        "updated_at": "2020-05-14T00:12:27+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 250,
+        "studios": []
+    },
+    {
+        "id": 42495,
+        "title": "Yume no Mayu \uff5e Genki Ippai Ot\u014dto to Asa Kara Ban Made Yumemiru Sei Katsu",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Cocoon ~ A Spunky Little Brother and His Spunk-Filled Dreams",
+            "ja": "\u3086\u3081\u306e\u307e\u3086\uff5e\u5143\u6c17\u3044\u3063\u3071\u3044\u5f1f\u3068\u671d\u304b\u3089\u6669\u307e\u3067\u3086\u3081\u307f\u308b\u6027\u6d3b"
+        },
+        "start_date": "2019-08-24",
+        "synopsis": "",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 28,
+                "name": "Boys Love"
+            },
+            {
+                "id": 49,
+                "name": "Erotica"
+            },
+            {
+                "id": 12,
+                "name": "Hentai"
+            }
+        ],
+        "created_at": "2020-07-20T04:52:51+00:00",
+        "updated_at": "2020-07-20T04:52:51+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 26,
+        "rating": "rx",
+        "studios": []
+    },
+    {
+        "id": 43263,
+        "title": "Yi Zhi Xie",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1539/118054.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1539/118054l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u4e00\u53ea\u978b"
+        },
+        "start_date": "1959",
+        "end_date": "1959",
+        "synopsis": "",
+        "rank": 15821,
+        "popularity": 19948,
+        "num_list_users": 37,
+        "num_scoring_users": 4,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-10-07T11:31:12+00:00",
+        "updated_at": "2021-09-29T13:14:01+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "average_episode_duration": 2145,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 43519,
+        "title": "Jia Ru Wo Shi Wu Song",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1012/118393.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1012/118393l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "If I were Wu Song"
+            ],
+            "en": "",
+            "ja": "\u5047\u5982\u6211\u662f\u6b66\u677e"
+        },
+        "start_date": "1982",
+        "end_date": "1982",
+        "synopsis": "",
+        "rank": 18016,
+        "popularity": 19549,
+        "num_list_users": 45,
+        "num_scoring_users": 9,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-10-20T03:08:21+00:00",
+        "updated_at": "2021-10-01T09:30:43+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "book",
+        "average_episode_duration": 1500,
+        "rating": "pg",
+        "studios": [
+            {
+                "id": 471,
+                "name": "Shanghai Animation Film Studio"
+            }
+        ]
+    },
+    {
+        "id": 43775,
+        "title": "Penguin Minna Kyoudai 2020",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1169/110125.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1169/110125l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u30da\u30f3\u30ae\u30f3\u7686\u304d\u3087\u3046\u3060\u30442020"
+        },
+        "start_date": "2020-04-30",
+        "end_date": "2020-04-30",
+        "synopsis": "Music video directed by Yoshiki Imazu for the short version of Masashi Sada's song Penguin Minna Kyou Dai 2020 that was included on his album \"Raison d'\u00eatre\". The song is a remake of his 1997 single about stopping CO2 emissions. The 2020 song expands on this message to include the broader Sustainable Development Goals proposed by the United Nations.",
+        "rank": 13820,
+        "popularity": 18053,
+        "num_list_users": 148,
+        "num_scoring_users": 76,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 19,
+                "name": "Music"
+            }
+        ],
+        "created_at": "2020-11-08T01:09:05+00:00",
+        "updated_at": "2021-11-29T21:25:50+00:00",
+        "media_type": "music",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2020,
+            "season": "spring"
+        },
+        "source": "music",
+        "average_episode_duration": 215,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 44031,
+        "title": "Jushen Zhan Ji Dui: Guidao Xianfeng",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1329/122868.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1329/122868l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5de8\u795e\u6218\u51fb\u961f\u4e4b\u8f68\u9053\u5148\u950b"
+        },
+        "start_date": "2020",
+        "synopsis": "",
+        "rank": 18127,
+        "popularity": 20485,
+        "num_list_users": 24,
+        "num_scoring_users": 2,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            }
+        ],
+        "created_at": "2020-11-16T06:52:58+00:00",
+        "updated_at": "2022-04-16T20:21:25+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 52,
+        "source": "original",
+        "average_episode_duration": 1200,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 44287,
+        "title": "Bai Bian Ji Shou: Luo Luo Lixian Ji",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1434/123019.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1434/123019l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "RoboWarriors",
+            "ja": "\u767e\u53d8\u673a\u517d\u4e4b\u6d1b\u6d1b\u5386\u9669\u8bb0"
+        },
+        "start_date": "2008-01-01",
+        "synopsis": "",
+        "rank": 16366,
+        "popularity": 20194,
+        "num_list_users": 28,
+        "num_scoring_users": 3,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            },
+            {
+                "id": 18,
+                "name": "Mecha"
+            },
+            {
+                "id": 24,
+                "name": "Sci-Fi"
+            }
+        ],
+        "created_at": "2020-12-05T07:05:52+00:00",
+        "updated_at": "2022-04-18T16:25:28+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 52,
+        "source": "original",
+        "average_episode_duration": 1520,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 44799,
+        "title": "Ke Yao Shanlin Zhi Fengshou De Jijie",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u53ef\u4e50\u5c71\u6797\u4e4b\u4e30\u6536\u7684\u5b63\u8282"
+        },
+        "synopsis": "This film revolves around the story between the kangaroo boss Domi and the savage and playful little fox Tada in the forest, making everyone understand the importance of unity.\n(translated from douban)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            },
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2020-12-16T17:59:12+00:00",
+        "updated_at": "2020-12-16T17:59:12+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 5520,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 45311,
+        "title": "Xing Mao Wenhua Da Jiangtang Zhi Mingzhu Gushi",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u661f\u732b\u6587\u5316\u5927\u8bb2\u5802\u4e4b\u540d\u8457\u6545\u4e8b"
+        },
+        "synopsis": "The Star Cat Cultural Lecture Hall makes the stories of the masterpieces entertaining and makes cartoon animations, and the classics are transformed into vernacular and comics with a flowing brush. He retains the rich cultural heritage of Chinese traditional culture, philosophical and humorous.\n(translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2020-12-22T13:40:58+00:00",
+        "updated_at": "2020-12-22T13:40:58+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 35,
+        "source": "original",
+        "average_episode_duration": 620,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 45823,
+        "title": "Luo Baobei 3rd Season",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1298/122997.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1298/122997l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u6d1b\u5b9d\u8d1d \u7b2c\u4e09\u5b63"
+        },
+        "start_date": "2018",
+        "synopsis": "",
+        "rank": 18820,
+        "popularity": 20368,
+        "num_list_users": 25,
+        "num_scoring_users": 2,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-01-10T15:34:15+00:00",
+        "updated_at": "2022-04-18T11:45:59+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 26,
+        "source": "original",
+        "average_episode_duration": 560,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46591,
+        "title": "Tian Tian Quan Baobei Zhi Feixing Leyuan",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u751c\u751c\u5708\u5b9d\u8d1d\u4e4b\u98de\u884c\u4e50\u56ed"
+        },
+        "synopsis": "The donut babies are a group of cute elves. They are innocent, kind, witty and brave, and can be transformed into various images and appear in a wonderful world. There are smart and active flying around, sweet and lovely Qiaomeimei, honest and honest peas, and sometimes mischievous, sometimes melancholy. In this series, they are a majestic little plane, working dutifully at the airport every day. The industrious small planes not only transport goods and protect the airport, but also deal with unexpected incidents that are caught off guard. They are busy every day. No matter what kind of problem, as long as the small planes unite and work together, they will eventually be solved.\n(translated from youku)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 2,
+                "name": "Adventure"
+            }
+        ],
+        "created_at": "2021-01-22T16:21:46+00:00",
+        "updated_at": "2021-01-22T16:21:46+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 25,
+        "source": "original",
+        "average_episode_duration": 620,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 46847,
+        "title": "Mini Tegong Dui X",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u8ff7\u4f60\u7279\u5de5\u961fX"
+        },
+        "synopsis": "In the vast universe, after a long period of time, four small animals were secretly selected to protect the peace of the earth as a \"mini agent team\". They are the strongest fighters: Fort, Semi, Lucy, Max ! Hundreds of years later, the threesome of the cosmic pirate Dandan group-Kara, Dante, and Danjo, discovered the sealed alien Jiesu on an asteroid, and released the seal to let him see again. Jesu\u2019s power stems from the negative emotions (fear, sadness) emitted by the living body, which is called the energy of misfortune. This group of evil forces is planning to continuously create crises on the earth and obtain unfortunate energy from the life forms on the earth. In order to protect the earth, the mini-agent team has launched a fierce battle with evil forces! \" \n(translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-01-26T07:43:47+00:00",
+        "updated_at": "2021-01-26T07:43:47+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 52,
+        "source": "original",
+        "average_episode_duration": 800,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 47103,
+        "title": "Xiao Feiji Ka Ka",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u5c0f\u98de\u673a\u5361\u5361"
+        },
+        "synopsis": "Kaka and his partners are a group of cute little planes, and they live happily in the scenic Rainbow Bay. They are warm, kind, hard-working, and full of love. Kaka is smart and lively, very responsible, and loves to behave; the smiling Uncle Lolo is a bit annoying recently, because he has reached the age of retirement; the young Mango Wen is naughty like a child who has not grown up; Is willing to serve everyone. Airplane babies love to show off exciting and startling flying stunts in the air, but they are usually very gentle and considerate, full of gentlemanly demeanor. They also get along well with the animals in Rainbow Bay. The film is relaxed and happy, showing the children the values of responsibility, cooperation, fraternity, tolerance and acceptance with the positive work and life attitude of the baby airplane. (translated from iqiyi)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-01-31T02:53:19+00:00",
+        "updated_at": "2021-01-31T02:53:19+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 104,
+        "source": "original",
+        "average_episode_duration": 440,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 47359,
+        "title": "Sai Ya Lixian Ji",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u8d5b\u4e9a\u5386\u9669\u8bb0"
+        },
+        "synopsis": "It (animation) will let people all over the country and the world understand Qinghai Lake naked carp, a second-class national protected animal and a mysterious species unique to Qinghai. The person in charge of the Haibei State Party Committee emphasized that the simple and fresh beauty and warm and timeless love conveyed by the entire cartoon, and that humans should love nature and protect limited plant and animal resources. \n(translated from baidu baike)",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 15,
+                "name": "Kids"
+            }
+        ],
+        "created_at": "2021-02-03T14:27:58+00:00",
+        "updated_at": "2021-02-05T07:05:54+00:00",
+        "media_type": "tv",
+        "status": "finished_airing",
+        "num_episodes": 20,
+        "source": "original",
+        "average_episode_duration": 740,
+        "rating": "pg",
+        "studios": []
+    },
+    {
+        "id": 50431,
+        "title": "Xiling Diguo",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1077/119593.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1077/119593l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "Xyrin Empire",
+            "ja": "\u5e0c\u7075\u5e1d\u56fd"
+        },
+        "synopsis": "",
+        "popularity": 15165,
+        "num_list_users": 335,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 10,
+                "name": "Fantasy"
+            }
+        ],
+        "created_at": "2021-11-22T16:06:45+00:00",
+        "updated_at": "2022-02-21T21:32:12+00:00",
+        "media_type": "ona",
+        "status": "not_yet_aired",
+        "num_episodes": 0,
+        "source": "novel",
+        "average_episode_duration": 0,
+        "rating": "pg_13",
+        "studios": [
+            {
+                "id": 1772,
+                "name": "Wawayu Animation"
+            }
+        ]
+    },
+    {
+        "id": 50687,
+        "title": "Pochi Hana",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1915/120266.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1915/120266l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [
+                "PochiHana"
+            ],
+            "en": "",
+            "ja": "\u307d\u3061\u306f\u306a"
+        },
+        "start_date": "2016-12-02",
+        "end_date": "2016-12-02",
+        "synopsis": "A story about a young girl named Hana and her dog Pochi. Ayaka Miyamoto made it as her graduation project while a student in the Department of Image Arts at Kobe Design University.\n\n(Source: AniList)",
+        "rank": 13878,
+        "popularity": 19447,
+        "num_list_users": 48,
+        "num_scoring_users": 23,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2021-12-28T19:43:56+00:00",
+        "updated_at": "2022-04-24T17:00:05+00:00",
+        "media_type": "movie",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2016,
+            "season": "fall"
+        },
+        "source": "original",
+        "average_episode_duration": 233,
+        "rating": "g",
+        "studios": []
+    },
+    {
+        "id": 51967,
+        "title": "Zhui Meng Zhe",
+        "main_picture": {
+            "medium": "https://api-cdn.myanimelist.net/images/anime/1262/124148.jpg",
+            "large": "https://api-cdn.myanimelist.net/images/anime/1262/124148l.jpg"
+        },
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u8ffd\u68a6\u8005"
+        },
+        "start_date": "2019-09-30",
+        "end_date": "2019-09-30",
+        "synopsis": "",
+        "rank": 16070,
+        "popularity": 20713,
+        "num_list_users": 16,
+        "num_scoring_users": 3,
+        "num_favorites": 0,
+        "nsfw": "white",
+        "genres": [
+            {
+                "id": 8,
+                "name": "Drama"
+            },
+            {
+                "id": 13,
+                "name": "Historical"
+            }
+        ],
+        "created_at": "2022-05-28T23:41:43+00:00",
+        "updated_at": "2022-07-06T16:30:53+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "start_season": {
+            "year": 2019,
+            "season": "summer"
+        },
+        "average_episode_duration": 268,
+        "rating": "pg_13",
+        "studios": []
+    },
+    {
+        "id": 52223,
+        "title": "Gakitabi!: Seishun Oshiro-hen",
+        "alternative_titles": {
+            "synonyms": [],
+            "en": "",
+            "ja": "\u304c\u304d\u305f\u3073\u3063\uff01\uff5e\u9752\u6625\u304a\u57ce\u7de8\uff5e"
+        },
+        "start_date": "2020-03-30",
+        "end_date": "2020-03-30",
+        "synopsis": "",
+        "rank": 0,
+        "popularity": 0,
+        "num_list_users": 0,
+        "num_scoring_users": 0,
+        "num_favorites": 0,
+        "nsfw": "gray",
+        "genres": [
+            {
+                "id": 36,
+                "name": "Slice of Life"
+            }
+        ],
+        "created_at": "2022-06-27T15:45:17+00:00",
+        "updated_at": "2022-06-27T15:45:17+00:00",
+        "media_type": "ona",
+        "status": "finished_airing",
+        "num_episodes": 1,
+        "source": "original",
+        "average_episode_duration": 480,
+        "rating": "g",
+        "studios": []
+    }
+]
