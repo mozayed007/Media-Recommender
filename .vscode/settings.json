@@ -1,0 +1,5 @@
+{
+    "discord.enabled": true,
+    "discord.lowerDetailsNoWorkspaceFound": "Hi, How u doin stalker :3",
+    "discord.lowerDetailsEditing": "Workspace: {how u doin stalker :3}"
+}
