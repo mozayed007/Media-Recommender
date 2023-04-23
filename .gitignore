@@ -129,4 +129,3 @@ dmypy.json
 .pyre/
 #notebook stuff
 .ipynb_checkpoints
-./data-history/ratings-2020/rating_complete.csv
