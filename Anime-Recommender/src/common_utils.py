@@ -1,24 +1,29 @@
-import requests
 import json
 import os
 
-api_url = 'https://api.myanimelist.net/v2'
+# The base directory.
+base_directory = '/data/raw'
 
-# A Client ID is needed (https://myanimelist.net/apiconfig)
-with open('client_id.txt', 'r') as f:
-    CLIENT_ID = f.read()
+# The dictionary containing the keys needed.
+common_keys = [
+    'id', 'title', 'main_picture', 'alternative_titles', 'start_date', 'end_date', 'synopsis', 'mean',
+    'rank', 'popularity', 'num_list_users', 'num_scoring_users', 'num_favorites', 'nsfw', 'genres', 
+    'created_at', 'updated_at', 'media_type', 'status'
+]
 
-headers = {'X-MAL-CLIENT-ID': CLIENT_ID}
+anime_keys = [*common_keys, 'num_episodes', 'start_season', 'broadcast', 'source', 
+                'average_episode_duration', 'rating', 'studios']
 
-def get_data(endpoint, params=None):
-    url = api_url + endpoint
-    response = requests.get(url, headers=headers, params=params)
-    response.raise_for_status()
-    return response.json()
+manga_keys = [*common_keys, 'num_volumes', 'num_chapters', 'authors{id,first_name,last_name}']
 
-def merge_files(tmp_directory, save_file_path):
+keys = {'anime': anime_keys, 'manga': manga_keys}
 
+# The known failures.
+known_fails = [116770, 144472, 115838, 143751, 146583, 148716]
+
+def merge_anime(tmp_directory, save_file_path):
     data = []
+
     for file_name in os.listdir(tmp_directory):
         file_path = os.path.join(tmp_directory, file_name)
         with open(file_path, 'r') as f:
@@ -27,4 +32,3 @@ def merge_files(tmp_directory, save_file_path):
 
     with open(save_file_path, 'w') as f:
         json.dump(data, f, indent=4)
-    #shutil.rmtree(tmp_directory) removed shutil but added it again
