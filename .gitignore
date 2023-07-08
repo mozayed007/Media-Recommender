@@ -91,3 +91,5 @@ target/
 
 # Hydra logs
 outputs
+Anime-Recommender/src/client_id.txt
+Anime-Recommender/notebooks/anime.ipynb
