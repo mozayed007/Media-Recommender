@@ -23,7 +23,7 @@ known_fails = [116770, 144472, 115838, 143751, 146583, 148716]
 
 def merge_anime(tmp_directory, save_file_path):
     data = []
-
+    
     for file_name in os.listdir(tmp_directory):
         file_path = os.path.join(tmp_directory, file_name)
         with open(file_path, 'r') as f:

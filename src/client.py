@@ -1,13 +1,13 @@
 import requests
 
-# The base directory.
-base_directory = '/src'
+# # The base directory.
+# base_directory = 'src'
 
 # The API URL.
 api_url = 'https://api.myanimelist.net/v2'
 
 # Load client ID.
-with open(f'{base_directory}/client_id.txt', 'r') as f:
+with open(f'client_id.txt', 'r') as f:
     CLIENT_ID = f.read()
 
 headers = {'X-MAL-CLIENT-ID': CLIENT_ID}

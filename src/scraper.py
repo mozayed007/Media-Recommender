@@ -1,13 +1,13 @@
+import os
 import datetime
 import tqdm
 import time
 import math
-import os
-
-from common_utils import keys, known_fails, merge_anime, base_directory
+import json
 from client import get_data
+from common_utils import keys, anime_keys, manga_keys, known_fails, base_directory, merge_anime
 
-def scrape_ranking_page(database, ranking_type, page, fields, save_directory, length):
+def scrape_ranking_page(database, ranking_type, page, fields, tmp_directory, length):
     params = {'ranking_type': ranking_type, 'limit': 500, 'offset': page*500, 'fields': fields}
     try:
         data = get_data(f'/{database}/ranking', params)
@@ -15,14 +15,31 @@ def scrape_ranking_page(database, ranking_type, page, fields, save_directory, le
         data = manga_crash(f'/{database}/ranking', params)
 
     useful = [anime['node'] for anime in data['data']]
-    with open(save_directory + f'page{str(page).zfill(length)}.json', 'w') as f:
+    # Saves the file in your /tmp_{database}_mal folder
+    with open(f'{tmp_directory}page{str(page).zfill(length)}.json', 'w') as f:
         json.dump(useful, f)
 
 def scrape_ranking(database='anime', ranking_type='favorite'):
 
-    save_file_path = f'{base_directory}/{database}_mal.json'
-    tmp_directory = f'{base_directory}/tmp_{database}_mal'
-    os.makedirs(tmp_directory, exist_ok=True)
+    # Check if keys exists in the keys dictionary
+    if database not in keys:
+        print(f"No keys found for the database: {database}")
+        return
+
+    # This is the directory where the merged file will be saved
+    save_directory = r'../data/raw/'
+    save_file_path = f'{save_directory}{database}_mal.json'
+
+    # Check if save directory exists
+    if not os.path.exists(save_directory):
+        os.makedirs(save_directory)
+
+    # This is your temporary directory
+    tmp_directory = f'../data/raw/tmp_{database}_mal/'
+
+    # Check if temp directory exists
+    if not os.path.exists(tmp_directory):
+        os.makedirs(tmp_directory)
 
     fields = ','.join(keys[database])
     last_page = get_last_page(database, ranking_type)
@@ -32,14 +49,13 @@ def scrape_ranking(database='anime', ranking_type='favorite'):
     for page in tqdm.trange(last_page+1):
         scrape_ranking_page(database, ranking_type, page, fields, tmp_directory, length)
         time.sleep(1)
-
     merge_anime(tmp_directory, save_file_path)
     
     
 def get_last_page(database, ranking_type):
 
     if database=='anime' and ranking_type=='favorite':
-        number_entries =  24_162
+        number_entries =  27_162
 
     if database=='manga' and ranking_type=='bypopularity':
         number_entries = 59_950
@@ -50,16 +66,21 @@ def get_last_page(database, ranking_type):
     last_page = math.ceil(number_entries / 500) - 1
 
     params = {'ranking_type': ranking_type, 'limit': 500, 'offset': last_page*500}
-    data = get_data(f'/{database}/ranking', params)
+    try:
+        data = get_data(f'/{database}/ranking', params)
+        # ensure data['data'] is not empty and 'next' not in data['paging']
+        assert len(data['data']) > 0
+        assert 'next' not in data['paging']
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        # Handle the exception, either by returning a default value or handling the error differently.
+        data = []  # default value
     
-    assert len(data['data']) > 0
-    assert 'next' not in data['paging']
-
     return last_page
 
 def manga_crash(endpoint, params):
     page = params["offset"]//params["limit"]
-    print(f'Crashed at page {page}')
+    print(f'\n Crashed at page {page}')
     
     params['fields'] = params['fields'].replace('alternative_titles,', '')
     data = get_data(endpoint, params)

@@ -1,5 +1,34 @@
 {
     "discord.enabled": true,
     "discord.lowerDetailsNoWorkspaceFound": "Hi, How u doin stalker :3",
-    "discord.lowerDetailsEditing": "Workspace: {how u doin stalker :3}"
+    "discord.lowerDetailsEditing": "Workspace: {how u doin stalker :3}",
+    "cSpell.words": [
+        "animes",
+        "astype",
+        "Avant",
+        "bypopularity",
+        "CGDCT",
+        "Crossdressing",
+        "Ecchi",
+        "fillna",
+        "Hentai",
+        "iloc",
+        "Isekai",
+        "isin",
+        "isna",
+        "iterrows",
+        "Iyashikei",
+        "Josei",
+        "Mahou",
+        "mangas",
+        "Mecha",
+        "notna",
+        "Otaku",
+        "rember",
+        "Seinen",
+        "Shoujo",
+        "Shounen",
+        "tqdm",
+        "trange"
+    ]
 }
