@@ -1,3 +1,6 @@
 /data
 /notebooks/api_key.txt
 /data/raw/My Anime List Scrapping
+/.dvc
+/.github
+/.vscode
