@@ -13,7 +13,9 @@ with open(f'client_id.txt', 'r') as f:
 headers = {'X-MAL-CLIENT-ID': CLIENT_ID}
 
 def get_data(endpoint, params=None):
-    full_url = api_url + endpoint
-    response = requests.get(full_url, headers=headers, params=params)
+    url = api_url + endpoint
+    if params:
+        url += '?' + '&'.join(f'{key}={value}' for key, value in params.items())
+    response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()
