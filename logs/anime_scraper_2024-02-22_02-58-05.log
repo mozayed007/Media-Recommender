@@ -1,9 +1,0 @@
-2024-02-22 02:58:05,953 - INFO - Starting the scraping process
-2024-02-22 02:58:05,954 - INFO - Directory ../data/raw/My Anime List Scrapping/data/data_tmp/anime_pages already exists
-2024-02-22 02:58:05,954 - INFO - Updated File ../data/raw/My Anime List Scrapping/data/data_tmp/anime_raw_Feb24.json already exists. Skipping scraping and merging.
-2024-02-22 02:58:05,954 - INFO - Started to process JSON file ../data/raw/My Anime List Scrapping/data/data_tmp/anime_raw_Feb24.json...
-2024-02-22 02:58:07,564 - INFO - Data processing completed. Reordering columns and saving data...
-2024-02-22 02:58:08,611 - INFO - Saved data to ../data/raw/anime_Feb24.csv.
-2024-02-22 02:58:08,918 - INFO - Saved data to ../data/raw/anime_Feb24.parquet.
-2024-02-22 02:58:08,995 - INFO - JSON processing completed CSV and parquet files created for Feb24.
-2024-02-22 02:58:08,995 - INFO - Exiting the scraping script....
