@@ -8,7 +8,7 @@ The techniques used in this project are referenced from various sources includin
 
 ## Project Progress
 
-- [x] Data collection and processing pipeline using `anime_scraper.py`
+- [x] Data collection and processing pipeline using `anime_scraper.py` ( ETL (Extract, Transform, Load) pipeline ).
 - [ ] Feature engineering
 - [ ] Model development
 - [ ] Model evaluation
