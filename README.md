@@ -16,7 +16,7 @@ The recommendation system is based on two main components:
 ## Project Progress
 
 - [x] Data collection and processing pipeline using `anime_scraper.py` (ETL (Extract, Transform, Load) pipeline).
-- [] Designing the recommendation system based on content filtering and semantic similarity.
+- [ ] Designing the recommendation system based on content filtering and semantic similarity.
 - [ ] Feature engineering for the recommendation models.
 - [ ] Development of the recommendation models.
 - [ ] Evaluation of the recommendation models.
