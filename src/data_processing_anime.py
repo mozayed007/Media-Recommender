@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-import datetime
-from common_utils import base_directory
+from datetime import datetime
+
 anime = pd.read_json('../data/raw/anime_mal.json')
 
 # Usually no Duplicates, but can happen (it even happens in the website)
@@ -138,7 +138,9 @@ anime['tmp'] = anime['score'].rank(ascending=False) + anime['scored_by'].rank(as
 anime = anime.sort_values(['tmp', 'members', 'favorites', 'anime_id'], \
     ascending=[True, False, False, True]).reset_index(drop=True)
 anime.drop(columns=['tmp'], inplace=True)
-# Get the current month name
-current_month = datetime.datetime.now().strftime('%B')
-# Save to csv
-anime.to_csv(f'..{base_directory}/anime_mal_{current_month}.csv', index=False)
+
+# Save to parquet and csv
+base_directory = '/data/processed'
+current_month_year = datetime.now().strftime('%b%y')
+anime.to_csv(f'..{base_directory}/anime_mal_{current_month_year}.csv', index=False)
+anime.to_parquet(f'..{base_directory}/anime_mal_{current_month_year}.parquet', index=False)
