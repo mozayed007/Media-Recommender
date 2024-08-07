@@ -1,6 +1,9 @@
 '/data/raw/My Anime List Scrapping'
 '/data/raw/tmp_anime_mal'
 '/data/raw/tmp_manga_mal'
+'data\raw\My Anime List Scrapping'
+'data\raw\tmp_anime_mal'
+'data\raw\tmp_manga_mal'
 /data/data-history
 /notebooks/api_key.txt
 /.dvc
