@@ -47,7 +47,7 @@ def merge_files(scraping_save_pages, output_file):
     print(f"Finished merging files. Saved data to {output_file}.")
     logging.info(f"Finished merging files. Saved data to {output_file}.")
     
-def json_process(json_file,current_month_year):
+def json_process(json_file, current_month_year):
     print(f"Started to process JSON file {json_file}...")
     logging.info(f"Started to process JSON file {json_file}...")
     with open(json_file, 'r') as f:
@@ -56,33 +56,38 @@ def json_process(json_file,current_month_year):
     anime = pd.json_normalize(data, sep='_')
     
     # Use Timestamps
-    anime['start_date'] = pd.to_datetime(anime['start_date'])
-    anime['end_date'] = pd.to_datetime(anime['end_date'])
-    # Avoid floats and zeroes marking nsfw
+    def parse_date(date_str):
+        if pd.isna(date_str):
+            return pd.NaT
+        try:
+            return pd.to_datetime(date_str, format='%Y-%m-%d')
+        except ValueError:
+            try:
+                return pd.to_datetime(date_str, format='%Y-%m')
+            except ValueError:
+                return pd.NaT
+
+    anime['start_date'] = anime['start_date'].apply(parse_date)
+    anime['end_date'] = anime['end_date'].apply(parse_date)
+
+    # Rest of the function remains the same
     anime['num_episodes'] = anime['num_episodes'].replace(0, np.nan).astype('Int64')
     anime['popularity'] = anime['popularity'].replace(0, np.nan).astype('Int64')
     anime['rank'] = anime['rank'].replace(0, np.nan).astype('Int64')
     anime['mean'] = anime['mean'].replace(0, np.nan).astype('float64')
     anime['num_favorites'] = anime['num_favorites'].replace(0, np.nan).astype('Int64')
-    # Use Timedelta
     anime['average_episode_duration'] = pd.to_timedelta(anime['average_episode_duration'].replace(0, np.nan), unit='s')
-    # Avoid floats, as time
     anime['start_season_year'] = anime['start_season_year'].astype('Int64')
     anime['broadcast_start_time'] = pd.to_datetime(anime['broadcast_start_time']).dt.time
-    # Only keep names
     anime['genres'] = anime['genres'].apply(lambda x: [dic['name'] for dic in x] if not x is np.nan else [])
-    #anime['recommendations'] = anime['recommendations'].apply(lambda x: [dic['title'] for dic in x] if not x is np.nan else [])
     anime['studios'] = anime['studios'].apply(lambda x: [dic['name'] for dic in x] if not x is np.nan else [])
-    #anime['recommendations'] = anime['recommendations'].apply(lambda x: [dic['name'] for dic in x] if not x is np.nan else [])
-    # MyAnimeList edits
     anime['created_at'] = pd.to_datetime(anime['created_at']).dt.tz_convert(None)
     anime['updated_at'] = pd.to_datetime(anime['updated_at']).dt.tz_convert(None)
-    # Avoid empty string
     anime['synopsis'] = anime['synopsis'].replace('', np.nan)
-    #anime['recommendations'] = anime['recommendations'].replace('', np.nan)
     anime['alternative_titles_en'] = anime['alternative_titles_en'].replace('', np.nan)
     anime['alternative_titles_ja'] = anime['alternative_titles_ja'].replace('', np.nan)
-    columns_dtype_datetime = ['start_date', 'end_date', 'created_at', 'updated_at']
+    
+    columns_dtype_datetime = ['created_at', 'updated_at']
     for col in columns_dtype_datetime:
         anime[col] = pd.to_datetime(anime[col])
     columns_dtype_Int64 = ['num_episodes', 'popularity', 'rank', 'start_season_year']
@@ -91,34 +96,30 @@ def json_process(json_file,current_month_year):
     columns_dtype_list = ['genres', 'studios', 'alternative_titles_synonyms']
     for col in columns_dtype_list:
         anime[col] = anime[col].apply(lambda x: x.strip('[]').split(', ') if isinstance(x, str) else x)
-    anime['broadcast_start_time'] = anime['broadcast_start_time'].apply(lambda x: datetime.strptime(x, '%H:%M:%S').time() if isinstance(x, str) else x)  # Time of day
+    anime['broadcast_start_time'] = anime['broadcast_start_time'].apply(lambda x: datetime.strptime(x, '%H:%M:%S').time() if isinstance(x, str) else x)
     anime['average_episode_duration'] = anime['average_episode_duration'].apply(
         lambda x: x if isinstance(x, Timedelta) else pd.to_timedelta(float(x), unit='s') if pd.notnull(x) and is_float(x) else np.nan
     )
-    order = ['id', 'title', 'media_type', 'mean', 'num_scoring_users',                          # 10 Most important attributes, 
-            'status', 'num_episodes', 'start_date', 'end_date', 'source',                      # appearing first on kaggle
-
-            'num_list_users', 'popularity', 'num_favorites', 'rank',                           # Other important
-            'average_episode_duration', 'rating', 'start_season_year',                         # attributes
-            'start_season_season', 'broadcast_day_of_the_week', 'broadcast_start_time',   
-
-            'genres', 'studios',                                                               # Multivalued attributes
-            'synopsis', 'nsfw', 'created_at', 'updated_at',                                  # Description, MyAnimeList edits
-            
-            'main_picture_medium', 'main_picture_large',                                       # Media data
-            'alternative_titles_en', 'alternative_titles_ja', 'alternative_titles_synonyms']   # Other titles
+    
+    # Rest of the function (ordering columns and saving data) remains the same
+    order = ['id', 'title', 'media_type', 'mean', 'num_scoring_users',
+            'status', 'num_episodes', 'start_date', 'end_date', 'source',
+            'num_list_users', 'popularity', 'num_favorites', 'rank',
+            'average_episode_duration', 'rating', 'start_season_year',
+            'start_season_season', 'broadcast_day_of_the_week', 'broadcast_start_time',
+            'genres', 'studios',
+            'synopsis', 'nsfw', 'created_at', 'updated_at',
+            'main_picture_medium', 'main_picture_large',
+            'alternative_titles_en', 'alternative_titles_ja', 'alternative_titles_synonyms']
     
     print("Data processing completed. Reordering columns and saving data...")
     logging.info("Data processing completed. Reordering columns and saving data...")
-    # Reorder the columns of the DataFrame according to the 'order' list
     anime = anime.reindex(columns=order)
     csv_file = f'../data/raw/anime_{current_month_year}.csv'
     parquet_file = f'../data/raw/anime_{current_month_year}.parquet'
-    # Save the dataframe to a CSV file with the current month and year in the filename
     anime.to_csv(csv_file, index=False)
     print(f"Saved data to {csv_file}.")
     logging.info(f"Saved data to {csv_file}.")
-    # Save the dataframe to a parquet file with the current month and year in the filename
     anime.to_parquet(parquet_file, index=False)
     print(f"Saved data to {parquet_file}.")
     logging.info(f"Saved data to {parquet_file}.")
