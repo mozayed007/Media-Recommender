@@ -1,71 +1,77 @@
 import os
 import sys
+import logging
+import datetime
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import asyncio
+from src.embedding_model import OptimizedEmbeddingModel
+from src.vector_database import OptimizedMilvusVectorDatabase
+from src.recommendation_engine import OptimizedMediaRecommendationEngine
 
+# Set up logging directory
+logs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
+os.makedirs(logs_dir, exist_ok=True)
 
-from src.embedding_model import HuggingFaceEmbeddingModel
-from src.vector_database import MilvusVectorDatabase
-from src.recommendation_engine import AnimeRecommendationEngine, OptimizedAnimeRecommendationEngine
-
-def main():
-    # Initialize components
-    model_name = "dunzhang/stella_en_400M_v5"  # or "dunzhang/stella_en_1.5B_v5"
-    embedding_model = HuggingFaceEmbeddingModel(model_name)
-    vector_db = MilvusVectorDatabase(embedding_model)
-    data_path = "../data/processed/anime_mal_August.csv"  # Update this path to your processed data
-    
-    # Create and load the recommendation engine
-    rec_engine = AnimeRecommendationEngine(embedding_model, vector_db, data_path)
-    rec_engine.load_data()
-
-    # Example usage
-    query_synopsis = "A thrilling space adventure with giant robots"
-    recommendations_by_synopsis = rec_engine.get_recommendations_by_synopsis(query_synopsis, k=5)
-    print("Recommendations based on synopsis:")
-    for anime_id, title, distance in recommendations_by_synopsis:
-        print(f"{anime_id} - {title}: {distance}")
-
-    query_title = "Neon Genesis Evangelion"
-    recommendations_by_title = rec_engine.get_recommendations_by_title(query_title, k=5)
-    print("\nRecommendations based on title:")
-    for anime_id, title, distance in recommendations_by_title:
-        print(f"{anime_id} - {title}: {distance}")
-
-if __name__ == "__main__":
-    main()
+# Set up logging
+logging.basicConfig(
+    filename=os.path.join(logs_dir, f'recommendation_engine_{datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.log'),
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
 
 async def main():
-    from src.embedding_model import QuantizedHuggingFaceEmbeddingModel
-    from src.vector_database import ShardedMilvusVectorDatabase
+    logging.info('Starting recommendation engine test')
 
+    # Load the embedding model
     model_name = "dunzhang/stella_en_400M_v5"
-    embedding_model = QuantizedHuggingFaceEmbeddingModel(model_name)
-    vector_db = ShardedMilvusVectorDatabase(embedding_model, num_shards=2)
-    data_path = "../data/processed/anime_mal_August.csv"
-    processed_data_path = "../data/processed/anime_data_processed.pkl"
+    embedding_model = OptimizedEmbeddingModel(model_name, trust_remote_code=True)
     
-    rec_engine = OptimizedAnimeRecommendationEngine(embedding_model, vector_db, data_path, processed_data_path)
+    # Initialize the vector database
+    vector_db = OptimizedMilvusVectorDatabase(embedding_model, collection_name="anime_items")
+    await vector_db.initialize()
+    
+    # Load anime dataset (using AnimeDataset for now)
+    data_path = "../data/processed/anime_mal_Aug24.parquet"
+    rec_engine = OptimizedMediaRecommendationEngine(embedding_model, vector_db, data_path, processed_data_path="./processed_data/anime_data.pkl")
+    
     await rec_engine.load_data()
+    logging.info('Data loaded')
 
+    # Get recommendations by synopsis
     query_synopsis = "A thrilling space adventure with giant robots"
-    recommendations_by_synopsis = await rec_engine.get_recommendations_by_synopsis(query_synopsis, k=5)
+    recommendations_by_synopsis = await rec_engine.get_recommendations_by_description(query_synopsis, k=5)
+    logging.info(f'Recommendations based on synopsis: {recommendations_by_synopsis}')
     print("Recommendations based on synopsis:")
     for anime_id, title, distance in recommendations_by_synopsis:
         print(f"{anime_id} - {title}: {distance}")
 
+    # Get recommendations by title
     query_title = "Neon Genesis Evangelion"
     recommendations_by_title = await rec_engine.get_recommendations_by_title(query_title, k=5)
+    logging.info(f'Recommendations based on title: {recommendations_by_title}')
     print("\nRecommendations based on title:")
     for anime_id, title, distance in recommendations_by_title:
         print(f"{anime_id} - {title}: {distance}")
 
+    # Batch recommendations
     batch_queries = ["A romantic comedy set in high school", "An epic fantasy adventure"]
     batch_results = await rec_engine.batch_recommendations(batch_queries)
+    logging.info(f'Batch recommendations: {batch_results}')
     print("\nBatch recommendations:")
     for i, results in enumerate(batch_results):
         print(f"Query {i + 1}:")
         for anime_id, title, distance in results:
             print(f"{anime_id} - {title}: {distance}")
+
+    # Save and load the vector database
+    vector_db.collection.flush()
+    logging.info('Vector database flushed')
+
+    # Close the vector database connection
+    vector_db.close()
+    logging.info('Vector database connection closed')
+    logging.info('Recommendation engine test completed')
 
 if __name__ == "__main__":
     asyncio.run(main())

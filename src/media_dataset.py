@@ -1,8 +1,7 @@
-
 import pandas as pd
 from src.abstract_interface_classes import AbstractDataset
 
-class AnimeDataset(AbstractDataset):
+class MediaDataset(AbstractDataset):
     def __init__(self, data_path: str):
         self.data = pd.read_csv(data_path)
     
@@ -11,4 +10,4 @@ class AnimeDataset(AbstractDataset):
     
     def __getitem__(self, idx):
         item = self.data.iloc[idx]
-        return item['anime_id'], item['title'], item['synopsis']
+        return item['media_id'], item['title'], item['synopsis']
