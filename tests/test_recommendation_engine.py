@@ -24,7 +24,8 @@ async def main():
     logging.info('Starting recommendation engine test')
 
     # Load the embedding model
-    model_name = "dunzhang/stella_en_400M_v5"
+    # model_name = "dunzhang/stella_en_400M_v5"
+    model_name = "Alibaba-NLP/gte-large-en-v1.5"
     embedding_model = OptimizedEmbeddingModel(model_name, trust_remote_code=True)
     
     # Initialize the vector database

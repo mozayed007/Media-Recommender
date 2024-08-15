@@ -4,7 +4,8 @@ from pymilvus import (
     connections,
     FieldSchema, CollectionSchema, DataType,
     Collection,
-    utility
+    utility,
+    MilvusClient
 )
 from src.abstract_interface_classes import AbstractVectorDatabase, AbstractEmbeddingModel
 
@@ -16,14 +17,15 @@ class BaseMilvusVectorDatabase(AbstractVectorDatabase):
         self.port = port
         self.dim = None
         self.collection = None
+        self.client = MilvusClient("/data/processed/vector_db/milvus_demo.db")
 
     async def initialize(self):
         self.dim = len(await self.embedding_model.embed("test sentence"))
-        connections.connect("default", host=self.host, port=self.port)
-        
-        if not utility.has_collection(self.collection_name):
-            await self._create_collection()
-        
+        try:
+            connections.connect("default", host=self.host, port=self.port)
+        except:
+            if not utility.has_collection(self.collection_name):
+                await self._create_collection()
         self.collection = Collection(self.collection_name)
         self.collection.load()
 
