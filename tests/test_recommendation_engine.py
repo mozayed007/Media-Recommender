@@ -32,8 +32,7 @@ async def main():
     vector_db = await create_vector_database(
         embedding_model,
         collection_name="anime_items",
-        db_path="./milvus.db",
-        save_path="./milvus_data"
+        db_path="../data/processed/vector_db/milvus.db"
     )
     logging.info('Vector database initialized')
     

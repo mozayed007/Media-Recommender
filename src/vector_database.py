@@ -1,3 +1,4 @@
+import os
 from typing import List, Tuple, Dict, Any, Optional
 import asyncio
 from pymilvus import (
@@ -9,23 +10,27 @@ from pymilvus import (
 from src.abstract_interface_classes import AbstractVectorDatabase, AbstractEmbeddingModel
 
 class BaseMilvusVectorDatabase(AbstractVectorDatabase):
-    def __init__(self, embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus.db"):
+    def __init__(self, embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus_vector_store.db"):
         self.embedding_model = embedding_model
         self.collection_name = collection_name
         self.db_path = db_path
         self.dim = None
         self.collection = None
 
+
     async def initialize(self):
+        # Ensure the directory exists
+        os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
+
         self.dim = len(await self.embedding_model.embed("test sentence"))
-        
-        # Always use the local db file
-        connections.connect("default", db_name=self.db_path)
+
+        # Connect to the local Milvus Lite instance
+        connections.connect("default", uri=f"sqlite3:///{self.db_path}")
         print(f"Connected to local database file: {self.db_path}")
 
         if not utility.has_collection(self.collection_name):
             await self._create_collection()
-        
+
         self.collection = Collection(self.collection_name)
         self.collection.load()
 
@@ -114,15 +119,10 @@ class OptimizedMilvusVectorDatabase(BaseMilvusVectorDatabase):
         return [(hit.entity.get('media_id'), hit.entity.get('title'), hit.distance) for hit in results[0]]
 
 class PersistentMilvusVectorDatabase(OptimizedMilvusVectorDatabase):
-    def __init__(self, embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus.db", save_path: str = "./milvus_data"):
+    def __init__(self, embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus_vector_store.db"):
         super().__init__(embedding_model, collection_name, db_path)
-        self.save_path = save_path
 
-    def save(self):
-        utility.save_collection(self.collection, self.save_path)
-
-    def load(self):
-        utility.load_collection(self.save_path)
+    # Save and load methods are managed by Milvus's internal persistence.
 
     def update(self, media_id: int, title: str, description: str):
         title_embedding = self.embedding_model.embed(title).tolist()
@@ -151,20 +151,7 @@ class PersistentMilvusVectorDatabase(OptimizedMilvusVectorDatabase):
         self.collection = Collection(self.collection_name)
         self.collection.load()
 
-async def create_vector_database(embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus.db", save_path: str = "./milvus_data") -> PersistentMilvusVectorDatabase:
-    db = PersistentMilvusVectorDatabase(embedding_model, collection_name, db_path, save_path)
+async def create_vector_database(embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus_vector_store.db") -> PersistentMilvusVectorDatabase:
+    db = PersistentMilvusVectorDatabase(embedding_model, collection_name, db_path)
     await db.initialize()
     return db
-# Example usage:
-# async def main():
-#     db = await create_vector_database(embedding_model)
-#     await db.add_items(ids, titles, descriptions)
-#     results = await db.find_similar_by_description("A young boy becomes a powerful hero")
-#     db.update(1, "Updated Media Title", "Updated description")
-#     item = db.get(1)
-#     count = db.count()
-#     db.save()
-#     db.clear()
-#     db.close()
-#
-# asyncio.run(main())
