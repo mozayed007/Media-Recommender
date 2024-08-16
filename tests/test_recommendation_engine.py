@@ -5,7 +5,7 @@ import datetime
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import asyncio
 from src.embedding_model import OptimizedEmbeddingModel
-from src.vector_database import OptimizedMilvusVectorDatabase
+from src.vector_database import create_vector_database
 from src.recommendation_engine import OptimizedMediaRecommendationEngine
 
 # Set up logging directory
@@ -24,15 +24,20 @@ async def main():
     logging.info('Starting recommendation engine test')
 
     # Load the embedding model
-    # model_name = "dunzhang/stella_en_400M_v5"
+    #model_name="dunzhang/stella_en_400M_v5"
     model_name = "Alibaba-NLP/gte-large-en-v1.5"
     embedding_model = OptimizedEmbeddingModel(model_name, trust_remote_code=True)
     
     # Initialize the vector database
-    vector_db = OptimizedMilvusVectorDatabase(embedding_model, collection_name="anime_items")
-    await vector_db.initialize()
+    vector_db = await create_vector_database(
+        embedding_model,
+        collection_name="anime_items",
+        db_path="./milvus.db",
+        save_path="./milvus_data"
+    )
+    logging.info('Vector database initialized')
     
-    # Load anime dataset (using AnimeDataset for now)
+    # Load anime dataset
     data_path = "../data/processed/anime_mal_Aug24.parquet"
     rec_engine = OptimizedMediaRecommendationEngine(embedding_model, vector_db, data_path, processed_data_path="./processed_data/anime_data.pkl")
     
@@ -65,9 +70,9 @@ async def main():
         for anime_id, title, distance in results:
             print(f"{anime_id} - {title}: {distance}")
 
-    # Save and load the vector database
-    vector_db.collection.flush()
-    logging.info('Vector database flushed')
+    # Save the vector database
+    vector_db.save()
+    logging.info('Vector database saved')
 
     # Close the vector database connection
     vector_db.close()
