@@ -11,7 +11,18 @@ from src.recommendation_engine import OptimizedMediaRecommendationEngine
 # Set up logging directory
 logs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
 os.makedirs(logs_dir, exist_ok=True)
+# Set up paths
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)
+logs_dir = os.path.join(current_dir, 'logs')
+vector_db_dir = os.path.join(project_root, 'data', 'vector_db')
+data_path = os.path.join(project_root, 'data', 'processed', 'anime_mal_Aug24.parquet')
+processed_data_dir = os.path.join('data', 'processed_data')
 
+# Create necessary directories
+os.makedirs(logs_dir, exist_ok=True)
+os.makedirs(vector_db_dir, exist_ok=True)
+os.makedirs(processed_data_dir, exist_ok=True)
 # Set up logging
 logging.basicConfig(
     filename=os.path.join(logs_dir, f'recommendation_engine_{datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.log'),
@@ -28,17 +39,22 @@ async def main():
     model_name = "Alibaba-NLP/gte-large-en-v1.5"
     embedding_model = OptimizedEmbeddingModel(model_name, trust_remote_code=True)
     
+    
     # Initialize the vector database
     vector_db = await create_vector_database(
         embedding_model,
         collection_name="anime_items",
-        db_path="../data/processed/vector_db/milvus.db"
+        db_path=os.path.join(vector_db_dir, "milvus.db")
     )
     logging.info('Vector database initialized')
     
     # Load anime dataset
-    data_path = "../data/processed/anime_mal_Aug24.parquet"
-    rec_engine = OptimizedMediaRecommendationEngine(embedding_model, vector_db, data_path, processed_data_path="./processed_data/anime_data.pkl")
+    rec_engine = OptimizedMediaRecommendationEngine(
+        embedding_model, 
+        vector_db, 
+        data_path, 
+        processed_data_path=os.path.join(processed_data_dir, "anime_data.pkl")
+    )
     
     await rec_engine.load_data()
     logging.info('Data loaded')
