@@ -1,4 +1,4 @@
-# Anime Recommender
+# Media Recommender
 
 ## Project Overview
 
