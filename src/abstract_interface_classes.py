@@ -4,7 +4,11 @@ import numpy as np
 
 class AbstractEmbeddingModel(ABC):
     @abstractmethod
-    def embed(self, text: str) -> np.ndarray:
+    async def get_text_embedding(self, text: str) -> List[float]:
+        pass
+
+    @abstractmethod
+    async def get_text_embeddings(self, texts: List[str]) -> List[List[float]]:
         pass
 
 class AbstractDataset(ABC):
@@ -47,3 +51,13 @@ class AbstractRecommendationEngine(ABC):
     @abstractmethod
     def get_recommendations_by_title(self, title: str, k: int = 10) -> List[Tuple[int, str, float]]:
         pass
+
+class EmbeddingModelAdapter(AbstractEmbeddingModel):
+    def __init__(self, model: AbstractEmbeddingModel):
+        self.model = model
+
+    async def get_text_embedding(self, text: str) -> List[float]:
+        return await self.model.embed(text)
+
+    async def get_text_embeddings(self, texts: List[str]) -> List[List[float]]:
+        return await self.model.embed_batch(texts)

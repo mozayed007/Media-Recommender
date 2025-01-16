@@ -12,3 +12,9 @@
 /.idea
 tests/logs/
 Anime-Recommender.code-workspace
+/data/raw/kaggle_anime_dataset.json
+/data/raw/MAL_Anime_Dataset_Nov_24.csv
+/data/raw/TMDB_all_movies.csv
+/data/raw/TMDB_movie_dataset_v11.csv
+/data/raw/TMDB_Movies_data.json
+/data/raw/TMDB_TV_data.json

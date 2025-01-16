@@ -1,145 +1,131 @@
 import os
+import asyncio
 from typing import List, Tuple, Dict, Any, Optional
-from pymilvus import (
-    connections,
-    FieldSchema, CollectionSchema, DataType,
-    Collection,
-    utility
-)
+from llama_index.core import Document, StorageContext
+from llama_index.core.indices import VectorStoreIndex
+from llama_index.vector_stores.faiss import FaissVectorStore
+from llama_index.core.storage.docstore import SimpleDocumentStore
+from llama_index.core.storage.index_store import SimpleIndexStore
+from llama_index.core.embeddings import BaseEmbedding
 from src.abstract_interface_classes import AbstractVectorDatabase, AbstractEmbeddingModel
 
-class OptimizedMilvusLiteVectorDatabase(AbstractVectorDatabase):
-    def __init__(self, embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus_lite_data"):
+class EmbeddingModelWrapper(BaseEmbedding):
+    def __init__(self, embedding_model: AbstractEmbeddingModel):
+        super().__init__()
         self.embedding_model = embedding_model
+
+    def _get_query_embedding(self, query: str) -> List[float]:
+        return asyncio.run(self.embedding_model.get_text_embedding(query))
+
+    def _get_text_embedding(self, text: str) -> List[float]:
+        return asyncio.run(self.embedding_model.get_text_embedding(text))
+
+    def _get_text_embeddings(self, texts: List[str]) -> List[List[float]]:
+        return asyncio.run(self.embedding_model.get_text_embeddings(texts))
+
+class LlamaIndexVectorDatabase(AbstractVectorDatabase):
+    def __init__(self, embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "llama_index_db"):
+        self.embedding_model = EmbeddingModelWrapper(embedding_model)
         self.collection_name = collection_name
         self.db_path = db_path
-        self.dim = None
-        self.collection = None
+        self.index = None
+        self.storage_context = None
 
     async def initialize(self):
-        os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
-        self.dim = len(await self.embedding_model.embed("test sentence"))
+        os.makedirs(self.db_path, exist_ok=True)
         
-        connections.connect("default", uri=self.db_path)
-        print(f"Connected to Milvus Lite database at: {self.db_path}")
-
-        if not utility.has_collection(self.collection_name):
-            self._create_collection()
+        # Create a new storage context if the directory is empty
+        if not os.listdir(self.db_path):
+            self.storage_context = StorageContext.from_defaults()
         else:
-            self.collection = Collection(self.collection_name)
+            self.storage_context = StorageContext.from_defaults(persist_dir=self.db_path)
         
-        if self.collection is not None:
-            self.collection.load()
-        else:
-            raise ValueError(f"Failed to create or load collection: {self.collection_name}")
-
-    def _create_collection(self):
-        fields = [
-            FieldSchema(name="media_id", dtype=DataType.INT64, is_primary=True),
-            FieldSchema(name="title", dtype=DataType.VARCHAR, max_length=200),
-            FieldSchema(name="title_embedding", dtype=DataType.FLOAT_VECTOR, dim=self.dim),
-            FieldSchema(name="description_embedding", dtype=DataType.FLOAT_VECTOR, dim=self.dim)
-        ]
-        schema = CollectionSchema(fields, "Media items collection")
-        self.collection = Collection(self.collection_name, schema)
-
-        index_params = {
-            "metric_type": "L2",
-            "index_type": "HNSW",
-            "params": {"M": 16, "efConstruction": 500}
-        }
-        self.collection.create_index("title_embedding", index_params)
-        self.collection.create_index("description_embedding", index_params)
+        # Create the index with custom embedding model
+        self.index = VectorStoreIndex(
+            [],
+            storage_context=self.storage_context,
+            embed_model=self.embedding_model,
+        )
+        self.storage_context.persist(persist_dir=self.db_path)
 
     async def add_items(self, ids: List[int], titles: List[str], descriptions: List[str]):
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        title_embeddings = await self.embedding_model.embed_batch(titles)
-        description_embeddings = await self.embedding_model.embed_batch(descriptions)
-        entities = [ids, titles, title_embeddings, description_embeddings]
-        await self.collection.insert(entities)
-        await self.collection.flush()
-
-    async def add_items_batch(self, ids: List[int], titles: List[str], descriptions: List[str], batch_size: int = 1000):
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        for i in range(0, len(ids), batch_size):
-            batch_ids = ids[i:i+batch_size]
-            batch_titles = titles[i:i+batch_size]
-            batch_descriptions = descriptions[i:i+batch_size]
-            await self.add_items(batch_ids, batch_titles, batch_descriptions)
+        documents = []
+        for id, title, description in zip(ids, titles, descriptions):
+            doc = Document(
+                text=f"Title: {title}\nDescription: {description}",
+                id_=str(id),
+                metadata={"title": title, "description": description}
+            )
+            documents.append(doc)
+        
+        for doc in documents:
+            self.index.insert(doc)
+        self.index.storage_context.persist(persist_dir=self.db_path)
 
     async def find_similar_by_description(self, query: str, k: int = 10) -> List[Tuple[int, str, float]]:
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        query_embedding = await self.embedding_model.embed(query)
-        search_params = {"metric_type": "L2", "params": {"ef": 100}}
-        results = await self.collection.search(
-            data=[query_embedding],
-            anns_field="description_embedding",
-            param=search_params,
-            limit=k,
-            output_fields=["media_id", "title"]
-        )
+        query_engine = self.index.as_query_engine(similarity_top_k=k)
+        results = query_engine.query(f"Description: {query}")
         
-        return [(hit.entity.get('media_id'), hit.entity.get('title'), hit.distance) for hit in results[0]]
+        similar_items = []
+        for node in results.source_nodes:
+            media_id = int(node.node_id)
+            title = node.metadata["title"]
+            score = node.score if node.score is not None else 0.0
+            similar_items.append((media_id, title, score))
+        
+        return similar_items
 
     async def find_similar_by_title(self, title: str, k: int = 10) -> List[Tuple[int, str, float]]:
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        query_embedding = await self.embedding_model.embed(title)
-        search_params = {"metric_type": "L2", "params": {"ef": 100}}
-        results = await self.collection.search(
-            data=[query_embedding],
-            anns_field="title_embedding",
-            param=search_params,
-            limit=k + 1,
-            output_fields=["media_id", "title"]
-        )
+        query_engine = self.index.as_query_engine(similarity_top_k=k+1)
+        results = query_engine.query(f"Title: {title}")
         
-        return [(hit.entity.get('media_id'), hit.entity.get('title'), hit.distance) for hit in results[0] if hit.entity.get('title') != title][:k]
+        similar_items = []
+        for node in results.source_nodes:
+            if node.metadata["title"] != title:
+                media_id = int(node.node_id)
+                node_title = node.metadata["title"]
+                score = node.score if node.score is not None else 0.0
+                similar_items.append((media_id, node_title, score))
+            
+            if len(similar_items) == k:
+                break
+        
+        return similar_items
 
     async def update(self, media_id: int, title: str, description: str):
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        title_embedding = await self.embedding_model.embed(title)
-        description_embedding = await self.embedding_model.embed(description)
-        
-        await self.collection.delete(expr=f"media_id == {media_id}")
-        await self.collection.insert([[media_id], [title], [title_embedding], [description_embedding]])
-        await self.collection.flush()
+        doc = Document(
+            text=f"Title: {title}\nDescription: {description}",
+            id_=str(media_id),
+            metadata={"title": title, "description": description}
+        )
+        self.index.update(doc)
+        self.index.storage_context.persist(persist_dir=self.db_path)
 
     async def get(self, media_id: int) -> Optional[Dict[str, Any]]:
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        results = await self.collection.query(expr=f"media_id == {media_id}", output_fields=["media_id", "title"])
-        if results:
-            return {"media_id": results[0]["media_id"], "title": results[0]["title"]}
+        doc = self.storage_context.docstore.get_document(str(media_id))
+        if doc:
+            return {"media_id": media_id, "title": doc.metadata["title"], "description": doc.metadata["description"]}
         return None
 
     async def count(self) -> int:
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        return await self.collection.num_entities
+        return len(self.storage_context.docstore.docs)
 
     async def clear(self):
-        if self.collection is None:
-            raise ValueError("Collection is not initialized")
-        await self.collection.drop()
-        await self._create_collection()
-        self.collection = Collection(self.collection_name)
-        await self.collection.load()
+        self.storage_context = StorageContext.from_defaults()
+        self.index = VectorStoreIndex([], storage_context=self.storage_context, embed_model=self.embedding_model)
+        self.index.storage_context.persist(persist_dir=self.db_path)
 
     def save(self):
-        # Milvus Lite automatically persists data, so we don't need to do anything here
-        pass
+        self.index.storage_context.persist(persist_dir=self.db_path)
 
     async def close(self):
-        if self.collection:
-            await self.collection.release()
-        await connections.disconnect("default")
+        self.save()
 
-async def create_vector_database(embedding_model: AbstractEmbeddingModel, collection_name: str = "media_items", db_path: str = "./milvus_lite_data.db") -> OptimizedMilvusLiteVectorDatabase:
-    db = OptimizedMilvusLiteVectorDatabase(embedding_model, collection_name, db_path)
+async def create_vector_database(
+    embedding_model: AbstractEmbeddingModel,
+    collection_name: str = "media_collection",
+    db_path: str = "llama_index_db"
+) -> LlamaIndexVectorDatabase:
+    db = LlamaIndexVectorDatabase(embedding_model, collection_name, db_path)
     await db.initialize()
     return db
