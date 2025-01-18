@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Anime Recommender is an open-source project that uses the MyAnimeList API v2 database to build a recommendation system. The system leverages categorical and numerical features for a machine learning model recommender, content-based filtering, and NLP semantic similarity techniques for synopsis and anime descriptions. This project aims to help users discover new anime that aligns with their tastes.
+Media Recommender is an open-source project that uses the MyAnimeList API v2 database to build a recommendation system. The system leverages categorical and numerical features for a machine learning model recommender, content-based filtering, and NLP semantic similarity techniques for synopsis and Media descriptions. This project aims to help users discover new Media that aligns with their tastes.
 
 The techniques used in this project are referenced from various sources including articles, Kaggle, and PapersWithCode.
 
@@ -10,12 +10,12 @@ The techniques used in this project are referenced from various sources includin
 
 The recommendation system is based on two main components:
 
-1. **Content Filtering**: This model uses categorical and numerical data to recommend similar anime based on user preferences.
-2. **Semantic Similarity**: A graphRAG system to analyze the description/synopsis feature column (paragraphs) to recommend similar entities. The results from both models are combined to provide a final recommendation list that is both semantically similar and aligned with the content-based filtering model.
+1. **Content Filtering**: This model uses categorical and numerical data to recommend similar media based on user preferences.
+2. **Semantic Similarity**: A graphRAG system will analyze the description/synopsis feature column (paragraphs) to recommend similar entities. The results from both models are combined to provide a final recommendation list that is semantically similar and aligned with the content-based filtering model.
 
 ## Project Progress
 
-- [x] Data collection and processing pipeline using `anime_scraper.py` (ETL (Extract, Transform, Load) pipeline).
+- [x] Data collection and processing pipeline using [sample] `anime_scraper.py` (ETL (example) pipeline).
 - [ ] Designing the recommendation system based on content filtering and semantic similarity.
 - [ ] Feature engineering for the recommendation models.
 - [ ] Development of the recommendation models.
@@ -25,7 +25,7 @@ The recommendation system is based on two main components:
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+Contributions are welcome! To contribute, please fork the repository and use a feature branch. Pull requests are also warmly welcome.
 
 ## Status
 
