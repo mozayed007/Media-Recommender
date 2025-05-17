@@ -8,7 +8,6 @@
 /.vscode
 /src/client_id.txt
 /logs
-/src/__pycache__
 /.idea
 tests/logs/
 Anime-Recommender.code-workspace
@@ -19,3 +18,7 @@ Anime-Recommender.code-workspace
 /data/raw/TMDB_Movies_data.json
 /data/raw/TMDB_TV_data.json
 /volumes/
+
+**/__pycache__/
+/data/processed
+/data/
