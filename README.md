@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Anime Recommender is an open-source project that uses the MyAnimeList API v2 database to build a recommendation system. The system leverages categorical and numerical features for a machine learning model recommender, content-based filtering, and NLP semantic similarity techniques for synopsis and anime descriptions. This project aims to help users discover new anime that aligns with their tastes.
+Media Recommender is an open-source project that uses the MyAnimeList API v2 database to build a recommendation system. The system leverages categorical and numerical features for a machine learning model recommender, content-based filtering, and NLP semantic similarity techniques for synopsis and anime descriptions. This project aims to help users discover new anime that aligns with their tastes.
 
 The techniques used in this project are referenced from various sources including articles, Kaggle, and PapersWithCode.
 

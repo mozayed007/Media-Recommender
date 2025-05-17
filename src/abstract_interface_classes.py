@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from typing import List, Tuple
-import numpy as np
 
 class AbstractEmbeddingModel(ABC):
     @abstractmethod
@@ -32,6 +31,20 @@ class AbstractVectorDatabase(ABC):
     @abstractmethod
     def find_similar_by_title(self, title: str, k: int) -> List[Tuple[int, str, float]]:
         pass
+        
+    @abstractmethod
+    def save(self):
+        """Save any pending changes to the vector database."""
+        pass
+        
+    @abstractmethod
+    def count(self) -> int:
+        """Return the count of items in the vector database.
+        
+        Returns:
+            int: Number of items in the database.
+        """
+        pass
 
 class AbstractRecommendationEngine(ABC):
     def __init__(self, embedding_model: AbstractEmbeddingModel, vector_db: AbstractVectorDatabase, data_path: str, batch_size: int = 64):
@@ -45,19 +58,53 @@ class AbstractRecommendationEngine(ABC):
         pass
 
     @abstractmethod
-    def get_recommendations_by_synopsis(self, query: str, k: int = 10) -> List[Tuple[int, str, float]]:
+    async def get_recommendations_by_description(self, query: str, k: int = 10) -> List[Tuple[int, str, float]]:
         pass
 
     @abstractmethod
-    def get_recommendations_by_title(self, title: str, k: int = 10) -> List[Tuple[int, str, float]]:
+    async def get_recommendations_by_title(self, title: str, k: int = 10) -> List[Tuple[int, str, float]]:
         pass
 
 class EmbeddingModelAdapter(AbstractEmbeddingModel):
-    def __init__(self, model: AbstractEmbeddingModel):
+    def __init__(self, model):
+        """Adapter for models that don't directly implement AbstractEmbeddingModel.
+        
+        Args:
+            model: A model object that has embed/embed_batch or similar methods.
+        """
         self.model = model
 
     async def get_text_embedding(self, text: str) -> List[float]:
-        return await self.model.embed(text)
+        """Get embedding for a single text using the underlying model.
+        
+        Args:
+            text: The text to embed.
+            
+        Returns:
+            List[float]: The embedding vector.
+        """
+        # Try different method names that could exist on the adapted model
+        if hasattr(self.model, 'get_text_embedding'):
+            return await self.model.get_text_embedding(text)
+        elif hasattr(self.model, 'embed'):
+            return await self.model.embed(text)
+        else:
+            raise AttributeError("Underlying model has no compatible embedding method")
 
     async def get_text_embeddings(self, texts: List[str]) -> List[List[float]]:
-        return await self.model.embed_batch(texts)
+        """Get embeddings for multiple texts using the underlying model.
+        
+        Args:
+            texts: List of texts to embed.
+            
+        Returns:
+            List[List[float]]: List of embedding vectors.
+        """
+        # Try different method names that could exist on the adapted model
+        if hasattr(self.model, 'get_text_embeddings'):
+            return await self.model.get_text_embeddings(texts)
+        elif hasattr(self.model, 'embed_batch'):
+            return await self.model.embed_batch(texts)
+        else:
+            # Fall back to single embeddings if batch method not available
+            return [await self.get_text_embedding(text) for text in texts]
