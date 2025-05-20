@@ -1,1 +1,28 @@
+# Embedding Model Configuration for Media Recommender
 name: model1
+type: sentence-transformer
+
+# Model settings
+model:
+  name: "all-MiniLM-L6-v2"  # A good balance of performance and speed
+  dimension: 384
+  max_seq_length: 256
+
+# Training parameters (if fine-tuning)
+training:
+  batch_size: 32
+  learning_rate: 2.0e-5
+  epochs: 3
+  warmup_steps: 100
+  evaluation_steps: 500
+
+# Inference settings
+inference:
+  batch_size: 64
+  normalize_embeddings: true
+  device: "cuda"  # Change to "cpu" if no GPU is available
+
+# Caching settings
+cache:
+  enabled: true
+  max_size: 10000

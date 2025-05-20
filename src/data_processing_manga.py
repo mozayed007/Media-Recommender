@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime
-from common_utils import base_directory
+
 manga = pd.read_json('../data/raw/manga_mal.json')
 
 # Usually no Duplicates, but can happen (it even happens in the website)

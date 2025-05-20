@@ -9,6 +9,23 @@ defaults:
   - _self_
 
 data:
-  raw: data/raw/sample.csv
-  processed: data/processed/processed.csv
-  final: data/final/final.csv
+  path: data/raw/anime_Aug24.parquet # Path to your parquet file
+  processed_path: data/processed/milvus_anime_Aug24.pkl # Path for processed data cache (optional)
+  id_col: id       # Column name for the ID in the parquet file (matches 'id' column)
+  title_col: title       # Column name for the title
+  desc_col: synopsis     # Column name for the description/synopsis
+
+embedding_model:
+  type: sentence_transformer # Or your chosen model type
+  model_name: all-MiniLM-L6-v2 # Or your chosen model name (e.g., paraphrase-multilingual-mpnet-base-v2)
+  # Add other model params if needed (e.g., device: 'cuda')
+
+vector_database:
+  type: milvus             # Specify Milvus
+  collection_name: anime_items # Optional: name for the Milvus collection
+  dimension: 384           # IMPORTANT: Set this to the output dimension of your embedding model (384 for all-MiniLM-L6-v2)
+  uri: http://localhost:19530 # Default Milvus standalone URI
+
+recommendation_engine:
+  batch_size: 64           # Batch size for loading data
+  cache_size: 1024         # Size of the LRU cache for recommendations

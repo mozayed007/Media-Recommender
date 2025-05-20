@@ -1,1 +1,32 @@
+# Content-Based Filtering Model Configuration
 name: model2
+type: content-filtering
+
+# Feature importance weights
+features:
+  text:
+    genres: 0.45
+    studios: 0.15
+    themes: 0.25
+  numeric:
+    score: 0.10
+    popularity: 0.05
+
+# Text processing settings
+text_processing:
+  tokenizer: "tfidf"
+  max_features: 5000
+  ngram_range: [1, 2]  # Use unigrams and bigrams
+  min_df: 0.01  # Minimum document frequency
+  max_df: 0.9   # Maximum document frequency
+
+# Numeric processing settings
+numeric_processing:
+  scaler: "minmax"  # Alternatives: standard, robust
+
+# Similarity calculation
+similarity:
+  method: "cosine"  # Alternatives: euclidean, manhattan, jaccard
+  weights:
+    text_features: 0.7
+    numeric_features: 0.3

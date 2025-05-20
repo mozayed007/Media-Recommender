@@ -1,0 +1,17 @@
+pandas
+torch
+pymilvus>=2.4.2 # For connecting to Milvus standalone
+sentence-transformers # Common library for text embeddings, adjust if you use a different one
+numpy
+pyyaml # For reading .yaml config files
+lru-dict # For the LRU cache used in recommendation_engine
+requests # Likely needed for scraping or APIs
+tqdm # Useful for progress bars during data processing
+pytest>=7.0.0 # For running tests
+pytest-asyncio>=0.21.0 # For async tests
+transformers # For the transformer models used in embedding_model.py
+nltk # For text processing in tests
+llama-index
+# Optional dependencies (uncomment if needed)
+# llama-index-core # Core functionality for llama-index vector database option
+# llama-index-vector-stores-faiss # FAISS vector store for llama-index
