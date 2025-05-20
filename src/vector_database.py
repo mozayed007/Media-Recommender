@@ -1,7 +1,11 @@
 import os
 import asyncio
+import torch
 from typing import List, Tuple, Dict, Any, Optional
 from pymilvus import MilvusClient, DataType
+
+# Import configuration
+from src.config import VECTOR_DB, EMBEDDING_MODEL
 
 # Make llama_index import optional so the core functionality works without it
 LLAMA_INDEX_AVAILABLE = False
@@ -217,7 +221,7 @@ class MilvusVectorDatabase(AbstractVectorDatabase):
         results = self.client.search(
             collection_name=self.collection_name,
             data=[query_vector],
-            limit=k,
+            limit=k*2,  # Get more results than needed to ensure we have enough after filtering
             search_params=search_params,
             output_fields=output_fields
         )
@@ -226,10 +230,18 @@ class MilvusVectorDatabase(AbstractVectorDatabase):
         for hit in results[0]:
             media_id = hit['entity']['id']
             title = hit['entity'].get('title', 'N/A')
-            score = hit['distance']
-            similar_items.append((media_id, title, score))
+            # For L2 distance, LOWER values are more similar
+            # Convert to a similarity score where HIGHER is better (1 - normalized distance)
+            # This makes the sorting behavior consistent with content-based filtering
+            distance = hit['distance']
+            similarity = 1.0 - min(distance / 10.0, 0.99)  # Normalize and invert, capped at 0.99
+            similar_items.append((media_id, title, similarity))
         
-        return similar_items
+        # Sort by similarity score in descending order (higher = more similar)
+        similar_items.sort(key=lambda x: x[2], reverse=True)
+        
+        # Return only the top k items
+        return similar_items[:k]
 
     async def find_similar_by_description(self, query: str, k: int = 10) -> List[Tuple[int, str, float]]:
         query_vector = await self.embedding_model.get_text_embedding(query)

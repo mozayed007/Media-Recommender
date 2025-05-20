@@ -22,7 +22,7 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
             [d if d is not None else "" for d in descriptions]
         )
 
-    def __init__(self, embedding_model: AbstractEmbeddingModel, vector_db: AbstractVectorDatabase, data_path: str, processed_data_path: str, batch_size: int = 64, cache_size: int = 1024, id_col: str = 'MAL_ID', title_col: str = 'Title', desc_col: str = 'Synopsis', content_feature_cols: Optional[Dict[str, list]] = None):  # Use MAL_ID, Title, Synopsis defaults, add content_feature_cols
+    def __init__(self, embedding_model: AbstractEmbeddingModel, vector_db: AbstractVectorDatabase, data_path: str, processed_data_path: str, batch_size: int = 64, cache_size: int = 1024, id_col: str = 'anime_id', title_col: str = 'title', desc_col: str = 'synopsis', content_feature_cols: Optional[Dict[str, list]] = None):  
         super().__init__(embedding_model, vector_db, data_path, batch_size)
         self.processed_data_path = processed_data_path
         self.media_data = None  # This will store list of tuples (id, title, desc)
@@ -169,7 +169,7 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
 
         Returns:
             List[Tuple[int, str, float]]: List of (recommended_id, recommended_title, similarity_score).
-                                          Returns empty list if content filter not available or item not found.
+                                            Returns empty list if content filter not available or item not found.
         """
         if self.content_filter is None:
             print("Error: Content filter is not initialized.")
@@ -233,7 +233,7 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
             title (Optional[str]): Title for semantic search.
             k (int): Number of recommendations desired.
             alpha (float): Weighting factor for combining scores (0 to 1).
-                           alpha=1 -> only semantic, alpha=0 -> only content-based.
+                            alpha=1 -> only semantic, alpha=0 -> only content-based.
 
         Returns:
             List[Tuple[int, str, float]]: Combined list of (id, title, combined_score).

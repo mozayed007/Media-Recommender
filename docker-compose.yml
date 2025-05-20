@@ -10,13 +10,22 @@ services:
     volumes:
       - ${DOCKER_VOLUME_DIRECTORY:-.}/volumes/etcd:/etcd-data
     command: etcd -advertise-client-urls=http://127.0.0.1:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd-data
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
 
   minio:
     container_name: milvus-minio
     image: quay.io/minio/minio:RELEASE.2023-03-20T20-16-18Z
     environment:
-      MINIO_ACCESS_KEY: minioadmin
-      MINIO_SECRET_KEY: minioadmin
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+      MINIO_BROWSER_REDIRECT_URL: "http://localhost:9001"  # Fix for browser redirects
+      MINIO_COMPRESSION: "on"  # Enable compression for storage efficiency
+      MINIO_COMPRESSION_EXTENSIONS: ".parquet,.json"  # Compress anime data files
     ports:
       - "9001:9001"
       - "9000:9000"
@@ -28,6 +37,12 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
 
   standalone:
     container_name: milvus-standalone
@@ -36,6 +51,11 @@ services:
     environment:
       ETCD_ENDPOINTS: etcd:2379
       MINIO_ADDRESS: minio:9000
+      # Anime recommendation optimizations
+      COMMON_ROOTCOORD_MINIOBUKETNAME: "milvus-anime-data"  # Custom bucket for anime data
+      COMMON_INDEXCOORD_ENABLESIMDJACCARDINDEX: "true"  # Better for text-based anime search
+      COMMON_SEARCH_ENABLETOPDKSEARCH: "true"  # Optimize for approximate search
+      COMMON_SEARCH_DOWNSAMPLINGRATE: "2"  # Speed up searches on large anime datasets
     volumes:
       - ${DOCKER_VOLUME_DIRECTORY:-.}/volumes/milvus:/var/lib/milvus
     ports:
@@ -44,6 +64,20 @@ services:
     depends_on:
       - "etcd"
       - "minio"
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2'
+        reservations:
+          memory: 2G
+          cpus: '1'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/metrics"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped  # Auto-restart on failure
 
   attu:
     container_name: milvus-attu
@@ -56,6 +90,13 @@ services:
       - standalone # Ensure Milvus standalone is running before Attu starts
     networks:
       - default # Connect to the same network as Milvus
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 256M
+    restart: unless-stopped  # Auto-restart on failure
 
 networks:
   default:
