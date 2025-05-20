@@ -15,24 +15,28 @@ from vector_database import MilvusVectorDatabase
 # Assuming configuration loading might be needed later
 # from config_loader import load_config # Example, adjust as needed
 
-# --- Configuration (Replace with actual config loading later) ---
-# These should ideally come from a config file (e.g., main.yaml)
-DATA_PATH = r"e:\Repos\Media-Recommender\data\processed\anime_mal_Aug24.parquet" # Example path
-PROCESSED_DATA_PICKLE = r"e:\Repos\Media-Recommender\data\processed\milvus_anime_Aug24.pkl" # Example path
-EMBEDDING_MODEL_NAME = 'all-MiniLM-L6-v2'
-EMBEDDING_DIMENSION = 384 # Added dimension for the model
-MILVUS_ALIAS = 'default' # Keep for potential future use, but not passed to constructor
-MILVUS_HOST = 'localhost'
-MILVUS_PORT = '19530'
-MILVUS_URI = f"http://{MILVUS_HOST}:{MILVUS_PORT}" # Construct URI
-MILVUS_COLLECTION_NAME = 'anime_embeddings_prod' # Example collection name
-ID_COL = 'anime_id' # Updated from MAL_ID
-TITLE_COL = 'title'    # Updated from Title
-DESC_COL = 'synopsis' # Updated from Synopsis
-CONTENT_FEATURES = {
-    'text': ['genres', 'themes', 'demographics', 'studios'], # Use lowercase column names to match data
-    'numeric': ['score', 'episodes'] # Use lowercase column names to match data
-}
+# Import configuration from centralized config module
+from src.config import (
+    ANIME_DATA_FILE as DATA_PATH,
+    PROCESSED_PICKLE_FILE as PROCESSED_DATA_PICKLE,
+    EMBEDDING_MODEL,
+    VECTOR_DB,
+    COLUMN_NAMES,
+    CONTENT_FEATURES,
+    get_db_uri
+)
+
+# Use values from config
+EMBEDDING_MODEL_NAME = EMBEDDING_MODEL['name']
+EMBEDDING_DIMENSION = EMBEDDING_MODEL['dimension']
+MILVUS_ALIAS = 'default'  # Keep for potential future use
+MILVUS_HOST = VECTOR_DB['host']
+MILVUS_PORT = VECTOR_DB['port']
+MILVUS_URI = get_db_uri()
+MILVUS_COLLECTION_NAME = VECTOR_DB['collection_name']
+ID_COL = COLUMN_NAMES['id']
+TITLE_COL = COLUMN_NAMES['title']  # 'title' in the actual data
+DESC_COL = COLUMN_NAMES['description']  # 'synopsis' in the actual data
 # --- End Configuration ---
 
 
@@ -136,7 +140,7 @@ async def main():
                         help="Type of recommendation to generate.")
     parser.add_argument("--query", type=str, help="Description query for semantic search.")
     parser.add_argument("--title", type=str, help="Title for semantic search.")
-    parser.add_argument("--id", type=int, help="MAL_ID for content-based or combined search.")
+    parser.add_argument("--id", type=int, help="anime_id for content-based or combined search.")
     parser.add_argument("--k", type=int, default=10, help="Number of recommendations to return.")
     parser.add_argument("--alpha", type=float, default=0.5, help="Weighting factor for combined recommendations (0=content, 1=semantic).")
     

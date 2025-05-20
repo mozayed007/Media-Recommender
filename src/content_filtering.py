@@ -3,6 +3,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
+# Import configuration
+from src.config import COLUMN_NAMES, CONTENT_FEATURES
+
 # Placeholder for potential future abstract class integration
 # from .abstract_interface_classes import RecommenderModel
 
@@ -10,7 +13,11 @@ class ContentBasedFilter:
     """
     Generates recommendations based on content features like genre, studio, score, etc.
     """
-    def __init__(self, data: pd.DataFrame, id_col: str = 'anime_id', text_feature_cols: list = ['genres', 'studios'], numeric_feature_cols: list = ['score']):
+    def __init__(self, data: pd.DataFrame, id_col: str = None, text_feature_cols: list = None, numeric_feature_cols: list = None):
+        # Use config defaults if not provided
+        id_col = id_col or COLUMN_NAMES['id']
+        text_feature_cols = text_feature_cols or CONTENT_FEATURES['text']
+        numeric_feature_cols = numeric_feature_cols or CONTENT_FEATURES['numeric']
         """
         Initializes the filter with the dataset.
 
@@ -190,11 +197,11 @@ class ContentBasedFilter:
 if __name__ == '__main__':
     # Create a dummy DataFrame for testing
     dummy_data = {
-        'MAL_ID': [1, 2, 3, 4, 5],
-        'Title': ['Anime A', 'Anime B', 'Anime C', 'Anime D', 'Anime E'],
-        'Genres': ['Action Adventure', 'Comedy SliceOfLife', 'Action SciFi', 'Comedy Romance', 'Action Drama'],
-        'Studios': ['Studio X', 'Studio Y', 'Studio X', 'Studio Z', 'Studio Y'],
-        'Score': [8.5, 7.8, 8.9, 7.2, 8.1]
+        'anime_id': [1, 2, 3, 4, 5],
+        'title': ['Anime A', 'Anime B', 'Anime C', 'Anime D', 'Anime E'],
+        'genres': ['Action Adventure', 'Comedy SliceOfLife', 'Action SciFi', 'Comedy Romance', 'Action Drama'],
+        'studios': ['Studio X', 'Studio Y', 'Studio X', 'Studio Z', 'Studio Y'],
+        'score': [8.5, 7.8, 8.9, 7.2, 8.1]
     }
     df = pd.DataFrame(dummy_data)
 
@@ -205,13 +212,13 @@ if __name__ == '__main__':
         print(content_filter.feature_matrix.head())
 
         item_to_recommend = 1 # Recommend based on 'Anime A'
-        print(f"\nGetting recommendations for MAL_ID: {item_to_recommend}")
+        print(f"\nGetting recommendations for anime_id: {item_to_recommend}")
         recommendations = content_filter.get_recommendations(item_to_recommend, top_n=3)
 
         print("\nRecommendations:")
         if recommendations:
             for rec_id, score in recommendations:
-                rec_title = df.loc[df['MAL_ID'] == rec_id, 'Title'].iloc[0]
+                rec_title = df.loc[df['anime_id'] == rec_id, 'title'].iloc[0]
                 print(f"  - ID: {rec_id}, Title: {rec_title}, Score: {score:.4f}")
         else:
             print("No recommendations found.")

@@ -8,11 +8,11 @@ class MediaDataset(AbstractDataset):
     
     Args:
         data_path (str): Path to the dataset file (.csv or .parquet).
-        id_col (str): Column name for unique media IDs. Default is 'MAL_ID'.
+        id_col (str): Column name for unique media IDs. Default is 'anime_id'.
         title_col (str): Column name for media titles. Default is 'title'.
         desc_col (str): Column name for media descriptions. Default is 'synopsis'.
     """
-    def __init__(self, data_path: str, id_col: str = 'MAL_ID', title_col: str = 'title', desc_col: str = 'synopsis'):
+    def __init__(self, data_path: str, id_col: str = 'anime_id', title_col: str = 'title', desc_col: str = 'synopsis'):
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found: {data_path}")
         
