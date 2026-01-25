@@ -50,6 +50,8 @@ qdrant_storage/
 *.parquet
 !backend/config/**/*.yaml
 !backend/data/.gitkeep
+!data/final/.gitkeep
+!data/processed/.gitkeep
 
 # Notebooks
 .ipynb_checkpoints/
@@ -75,25 +77,6 @@ frontend/build/
 Thumbs.db
 desktop.ini
 .DS_Store
-
-# Logs
-logs/
-*.log
-backend/logs/
-
-# Data & Storage
-data/
-backend/data/
-volumes/
-qdrant_storage/
-*.pkl
-*.csv
-*.json
-*.parquet
-!backend/config/**/*.yaml
-!backend/data/.gitkeep
-!data/final/.gitkeep
-!data/processed/.gitkeep
 
 # Cached results
 test_processed.pkl
