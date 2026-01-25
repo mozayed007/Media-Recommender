@@ -17,6 +17,7 @@ Built with a hybrid approach combining **Modern RAG (Retrieval-Augmented Generat
 ## 🏗️ Architecture
 
 ### Backend (FastAPI & Python)
+
 - **Framework**: FastAPI for high-performance asynchronous API endpoints.
 - **Vector DB**: Qdrant (local/Docker) for high-speed semantic retrieval.
 - **Embeddings**: `google/embeddinggemma-300m` via Sentence-Transformers.
@@ -24,6 +25,7 @@ Built with a hybrid approach combining **Modern RAG (Retrieval-Augmented Generat
 - **Hybrid Logic**: Custom re-ranking based on scores, popularity, and semantic relevance.
 
 ### Frontend (Next.js & Bun)
+
 - **Framework**: Next.js 15 (App Router) with TypeScript.
 - **Runtime**: Bun for ultra-fast development and package management.
 - **Styling**: Tailwind CSS + Shadcn UI for a sleek, dark-mode focused aesthetic.
@@ -32,6 +34,7 @@ Built with a hybrid approach combining **Modern RAG (Retrieval-Augmented Generat
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Python 3.10+
 - [Bun](https://bun.sh/) (for frontend)
 - [Docker](https://www.docker.com/) (optional, for Qdrant server mode)
@@ -39,12 +42,14 @@ Built with a hybrid approach combining **Modern RAG (Retrieval-Augmented Generat
 ### Installation & Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/your-username/Media-Recommender.git
    cd Media-Recommender
    ```
 
 2. **Backend Setup**
+
    ```bash
    cd backend
    pip install -r requirements.txt
@@ -53,6 +58,7 @@ Built with a hybrid approach combining **Modern RAG (Retrieval-Augmented Generat
    ```
 
 3. **Frontend Setup**
+
    ```bash
    cd ../frontend
    bun install
@@ -70,4 +76,7 @@ Built with a hybrid approach combining **Modern RAG (Retrieval-Augmented Generat
 - [ ] **Next**: User accounts & cloud-synced watchlist.
 
 ## 📄 License
-MIT License - feel free to use and contribute!
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Note**: This project is developed for **studying and academic purposes only**. The data used is for educational demonstration of recommendation system techniques and semantic search implementations.
