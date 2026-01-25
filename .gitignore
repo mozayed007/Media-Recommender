@@ -1,24 +1,76 @@
-/data/raw/My*Anime*List*Scrapping
-/data/raw/tmp_anime_mal
-/data/raw/tmp_manga_mal
-/data/data-history
-/notebooks/api_key.txt
-/.dvc
-/.github
-/.vscode
-/src/client_id.txt
-/logs
-/.idea
-tests/logs/
-Anime-Recommender.code-workspace
-/data/raw/kaggle_anime_dataset.json
-/data/raw/MAL_Anime_Dataset_Nov_24.csv
-/data/raw/TMDB_all_movies.csv
-/data/raw/TMDB_movie_dataset_v11.csv
-/data/raw/TMDB_Movies_data.json
-/data/raw/TMDB_TV_data.json
-/volumes/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
 
-**/__pycache__/
-/data/processed
-/data/
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+backend/logs/
+
+# Data & Storage
+data/
+backend/data/
+volumes/
+qdrant_storage/
+*.pkl
+*.csv
+*.json
+*.parquet
+!backend/config/**/*.yaml
+!backend/data/.gitkeep
+
+# Notebooks
+.ipynb_checkpoints/
+backend/notebooks/.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.trae/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+.DS_Store
+.eslintcache
+
+# System
+Thumbs.db
+desktop.ini

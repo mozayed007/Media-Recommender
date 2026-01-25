@@ -1,0 +1,28 @@
+pandas>=2.2.0
+torch>=2.2.0
+pymilvus>=2.4.0
+sentence-transformers>=3.0.0
+numpy>=2.0.0
+pyyaml
+lru-dict
+requests
+tqdm
+pytest>=8.0.0
+pytest-asyncio
+transformers>=4.40.0
+nltk
+fastapi
+uvicorn
+python-dotenv
+python-multipart
+pydantic-settings
+pydantic-ai
+pyarrow
+qdrant-client
+typer[all]
+rich
+tenacity
+google-generativeai
+# Optional dependencies (uncomment if needed)
+# llama-index-core # Core functionality for llama-index vector database option
+# llama-index-vector-stores-faiss # FAISS vector store for llama-index

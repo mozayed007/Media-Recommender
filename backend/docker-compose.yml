@@ -57,6 +57,17 @@ services:
     networks:
       - default # Connect to the same network as Milvus
 
+  qdrant:
+    container_name: qdrant
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ${DOCKER_VOLUME_DIRECTORY:-.}/volumes/qdrant:/qdrant/storage
+    networks:
+      - default
+
 networks:
   default:
     name: milvus
