@@ -81,17 +81,45 @@ async def get_genres(
             detail="Failed to fetch genres"
         )
 
-@media_router.get("/trending", response_model=List[MediaRecommendation])
-async def get_trending_media(
+@media_router.post("/ingest", status_code=status.HTTP_202_ACCEPTED)
+async def ingest_data(
     service: RecommenderDep,
-    media_type: Optional[str] = Query(None, description="Filter trending by media type"),
-    limit: int = Query(20, ge=1, le=50)
+    batch_size: int = Query(100, ge=1, le=1000)
 ):
     """
-    Get top rated media.
+    Trigger data ingestion into the vector database.
+    This is an administrative operation.
     """
     try:
-        return service.get_trending(limit=limit, media_type=media_type)
+        # Run ingestion in the background
+        import asyncio
+        asyncio.create_task(service.ingest_data(batch_size=batch_size))
+        return {"message": "Ingestion started in background"}
+    except Exception as e:
+        logger.error(f"Ingestion error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to start ingestion"
+        )
+
+@media_router.get("/health")
+async def health_check(service: RecommenderDep):
+    """
+    Check the health of the service and its dependencies.
+    """
+    return await service.check_health()
+
+@media_router.get("/trending", response_model=List[MediaRecommendation])
+async def get_trending(
+    service: RecommenderDep,
+    limit: int = Query(12, ge=1, le=100),
+    media_type: Optional[str] = Query(None)
+):
+    """
+    Get trending media.
+    """
+    try:
+        return await service.get_trending(limit=limit, media_type=media_type)
     except Exception as e:
         logger.error(f"Error fetching trending: {e}")
         raise HTTPException(

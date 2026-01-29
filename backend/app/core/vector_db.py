@@ -13,7 +13,7 @@ class VectorDBInterface(ABC):
         pass
 
     @abstractmethod
-    async def search(self, query_vector: List[float], top_n: int = 10, filter_expr: str = "") -> List[Dict[str, Any]]:
+    async def search(self, query_vector: List[float], top_n: int = 10, filters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """Search for similar items in the database."""
         pass
 

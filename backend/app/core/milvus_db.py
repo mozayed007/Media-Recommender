@@ -41,7 +41,17 @@ class MilvusVectorDB(VectorDBInterface):
         
         self.client.insert(collection_name=self.collection_name, data=data)
 
-    async def search(self, query_vector: List[float], top_n: int = 10, filter_expr: str = "") -> List[Dict[str, Any]]:
+    async def search(self, query_vector: List[float], top_n: int = 10, filters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        filter_expr = ""
+        if filters:
+            expressions = []
+            for key, value in filters.items():
+                if isinstance(value, str):
+                    expressions.append(f'{key} == "{value}"')
+                else:
+                    expressions.append(f'{key} == {value}')
+            filter_expr = " and ".join(expressions)
+
         results = self.client.search(
             collection_name=self.collection_name,
             data=[query_vector],

@@ -32,11 +32,34 @@ class QdrantVectorDB(VectorDBInterface):
             )
         )
 
-    async def search(self, query_vector: List[float], top_n: int = 10, filter_expr: str = "") -> List[Dict[str, Any]]:
+    async def search(self, query_vector: List[float], top_n: int = 10, filters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        qdrant_filter = None
+        if filters:
+            filter_conditions = []
+            for key, value in filters.items():
+                if value is not None:
+                    if isinstance(value, list):
+                        filter_conditions.append(
+                            models.FieldCondition(
+                                key=key,
+                                match=models.MatchAny(any=value)
+                            )
+                        )
+                    else:
+                        filter_conditions.append(
+                            models.FieldCondition(
+                                key=key,
+                                match=models.MatchValue(value=value)
+                            )
+                        )
+            if filter_conditions:
+                qdrant_filter = models.Filter(must=filter_conditions)
+
         search_result = self.client.query_points(
             collection_name=self.collection_name,
             query=query_vector,
-            limit=top_n
+            limit=top_n,
+            query_filter=qdrant_filter
         ).points
         return [
             {

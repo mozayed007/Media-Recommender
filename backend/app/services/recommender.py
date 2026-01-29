@@ -40,7 +40,7 @@ class RecommenderService:
                 # 2. Initialize Content-based Filter (DEPENDS ON DATA)
                 if self.df is not None and not self.df.empty:
                     try:
-                        self.content_filter = ContentBasedFilter(self.df)
+                        self.content_filter = ContentBasedFilter(self.df, id_col='media_id')
                         logger.info("Content-based filter initialized.")
                     except Exception as e:
                         logger.error(f"Failed to initialize content filter: {e}")
@@ -222,7 +222,9 @@ class RecommenderService:
                         # Clean NaN values safely
                         cleaned_data = {}
                         for k, v in media_data.items():
-                            if isinstance(v, (list, np.ndarray)):
+                            if isinstance(v, np.ndarray):
+                                cleaned_data[k] = v.tolist()
+                            elif isinstance(v, list):
                                 cleaned_data[k] = v
                             elif pd.isna(v):
                                 cleaned_data[k] = None
@@ -249,6 +251,45 @@ class RecommenderService:
             logger.error(f"Recommendation engine error: {e}", exc_info=True)
             raise
 
+    async def get_trending(self, limit: int = 10, media_type: Optional[str] = None) -> List[MediaRecommendation]:
+        """
+        Get trending media based on score and popularity.
+        """
+        if not self.is_initialized:
+            await self.initialize()
+
+        if self.df is None or self.df.empty:
+            return []
+
+        # Filter by media_type if provided
+        df_filtered = self.df
+        if media_type:
+            df_filtered = df_filtered[df_filtered['media_type'] == media_type]
+
+        # Sort by score and popularity as a proxy for trending
+        # We'll take the top items by score, but weighted by popularity if available
+        sort_cols = []
+        ascending = []
+        
+        if 'score' in df_filtered.columns:
+            sort_cols.append('score')
+            ascending.append(False)
+        
+        if 'popularity' in df_filtered.columns:
+            sort_cols.append('popularity')
+            ascending.append(True) # Lower popularity rank is better
+
+        if not sort_cols:
+            return []
+
+        trending_df = df_filtered.sort_values(by=sort_cols, ascending=ascending).head(limit)
+        
+        results = []
+        for _, row in trending_df.iterrows():
+            results.append(self._row_to_recommendation(row))
+            
+        return results
+
     def _get_media_by_id(self, media_id: int) -> Optional[Dict[str, Any]]:
         """Helper to get full media details from dataframe."""
         if self.df is None:
@@ -274,8 +315,10 @@ class RecommenderService:
             data = row.to_dict()
             cleaned_data = {}
             for k, v in data.items():
-                if isinstance(v, (list, tuple, np.ndarray)):
-                    cleaned_data[k] = v
+                if isinstance(v, np.ndarray):
+                    cleaned_data[k] = v.tolist()
+                elif isinstance(v, (list, tuple)):
+                    cleaned_data[k] = list(v)
                 elif pd.isna(v):
                     cleaned_data[k] = None
                 else:
@@ -312,10 +355,15 @@ class RecommenderService:
         for i in range(0, len(df_to_ingest), batch_size):
             batch = df_to_ingest.iloc[i:i+batch_size]
             
-            texts = [
-                f"{row['title']} ({row['media_type']}): {row['synopsis']}" 
-                for _, row in batch.iterrows()
-            ]
+            texts = []
+            for _, row in batch.iterrows():
+                # Combine title, english title, and synopsis for better semantic matching
+                title_parts = [str(row['title'])]
+                if 'alternative_titles_en' in row and pd.notnull(row['alternative_titles_en']):
+                    title_parts.append(str(row['alternative_titles_en']))
+                
+                title_text = " / ".join(title_parts)
+                texts.append(f"{title_text} ({row['media_type']}): {row['synopsis']}")
             
             embeddings = await self.embedding_model.embed_batch(texts)
             
@@ -361,8 +409,19 @@ class RecommenderService:
         # Fallback: Basic keyword search in dataframe
         if self.df is not None:
             query = query.lower()
+            
+            # Search in title, synopsis, and alternative titles
             mask = self.df['title'].str.lower().str.contains(query, na=False) | \
-                   self.df['synopsis'].str.lower().str.contains(query, na=False)
+                    self.df['synopsis'].str.lower().str.contains(query, na=False)
+            
+            if 'alternative_titles_en' in self.df.columns:
+                mask |= self.df['alternative_titles_en'].str.lower().str.contains(query, na=False)
+            if 'alternative_titles_synonyms' in self.df.columns:
+                # alternative_titles_synonyms might be a list or a string
+                mask |= self.df['alternative_titles_synonyms'].apply(
+                    lambda x: query in [str(s).lower() for s in x] if isinstance(x, (list, np.ndarray)) 
+                    else (query in str(x).lower() if pd.notnull(x) else False)
+                )
             
             if media_type:
                 mask &= (self.df['media_type'] == media_type)
@@ -375,24 +434,6 @@ class RecommenderService:
             return [self._row_to_recommendation(row) for _, row in matches.iterrows()]
             
         return []
-
-    def get_trending(self, limit: int = 20, media_type: Optional[str] = None) -> List[MediaRecommendation]:
-        """Get top media by score."""
-        if self.df is None:
-            return []
-        
-        df = self.df
-        if media_type:
-            df = df[df['media_type'] == media_type]
-            
-        trending = df.dropna(subset=['score', 'main_picture']) \
-            .sort_values(by='score', ascending=False) \
-            .head(limit)
-            
-        return [
-            self._row_to_recommendation(row, score=0.0) 
-            for _, row in trending.iterrows()
-        ]
 
     async def check_health(self) -> Dict[str, Any]:
         """Check the health of the service and its dependencies."""
@@ -450,8 +491,10 @@ class RecommenderService:
     def _row_to_recommendation(self, row, score: float = 0.0) -> MediaRecommendation:
         def get_val(key, default=None):
             val = row.get(key)
-            if isinstance(val, (list, np.ndarray)):
-                return val
+            if isinstance(val, np.ndarray):
+                return val.tolist()
+            if isinstance(val, (list, tuple)):
+                return list(val)
             if pd.isna(val):
                 return default
             return val
@@ -459,9 +502,9 @@ class RecommenderService:
         studios = get_val('studios')
         metadata = {}
         if studios is not None:
-            if isinstance(studios, (list, np.ndarray)):
+            if isinstance(studios, list):
                 if len(studios) > 0:
-                    metadata['studios'] = list(studios)
+                    metadata['studios'] = studios
             elif isinstance(studios, str) and studios:
                 metadata['studios'] = [studios]
 
@@ -471,7 +514,7 @@ class RecommenderService:
             synopsis=get_val('synopsis'),
             main_picture=get_val('main_picture') if isinstance(get_val('main_picture'), str) else None,
             score=float(get_val('score', 0.0)) if get_val('score') is not None else None,
-            genres=list(get_val('genres', [])),
+            genres=get_val('genres', []),
             media_type=str(get_val('media_type', 'unknown')),
             status=get_val('status'),
             similarity_score=float(score),
