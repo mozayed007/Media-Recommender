@@ -27,8 +27,8 @@ async def interpret_query(query: str) -> QueryIntent:
     try:
         client = genai.Client(api_key=settings.GEMINI_API_KEY)
         
-        # Use gemini-2.0-flash-exp or similar preview model if needed
-        model_id = 'gemini-1.5-flash-preview-0514' # This matches the user's intent for "gemini-3-flash-preview" (likely referring to current preview)
+        # Use gemini-1.5-flash which is a robust stable model
+        model_id = 'gemini-3-flash-preview' 
         
         prompt = (
             "You are an expert anime recommendation assistant. "
