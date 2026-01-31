@@ -23,6 +23,10 @@ typer[all]
 rich
 tenacity
 google-generativeai
+aiohttp>=3.9.0
+aiofiles>=23.0.0
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.21.0
 # Optional dependencies (uncomment if needed)
 # llama-index-core # Core functionality for llama-index vector database option
 # llama-index-vector-stores-faiss # FAISS vector store for llama-index

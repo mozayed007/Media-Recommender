@@ -10,12 +10,19 @@ class Settings(BaseSettings):
     # Data Paths
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
     DATA_PATH: str = "backend/data/raw/anime_Jan26.parquet"
+    MULTI_MEDIA_DATA_PATH: str = "backend/data/processed/multi_media_v1.parquet"
     
     @property
     def absolute_data_path(self) -> str:
         if os.path.isabs(self.DATA_PATH):
             return self.DATA_PATH
         return os.path.join(self.BASE_DIR, self.DATA_PATH)
+    
+    @property
+    def absolute_multi_media_path(self) -> str:
+        if os.path.isabs(self.MULTI_MEDIA_DATA_PATH):
+            return self.MULTI_MEDIA_DATA_PATH
+        return os.path.join(self.BASE_DIR, self.MULTI_MEDIA_DATA_PATH)
     
     # Vector DB Settings
     VECTOR_DB_PROVIDER: str = "qdrant"
@@ -41,6 +48,29 @@ class Settings(BaseSettings):
     
     # MAL API
     MAL_CLIENT_ID: Optional[str] = None
+    
+    # Media API Keys
+    TMDB_API_KEY: Optional[str] = None
+    TMDB_READ_ACCESS_TOKEN: Optional[str] = None  # For TMDB v4 API
+    MANGADEX_API_KEY: Optional[str] = None  # For authenticated requests
+    
+    # Retry & Timeout Configs
+    API_MAX_RETRIES: int = 3
+    API_BACKOFF_FACTOR: float = 2.0
+    API_TIMEOUT: int = 30
+    TMDB_TIMEOUT: int = 30
+    MANGADEX_TIMEOUT: int = 30
+    MAL_TIMEOUT: int = 30
+    
+    # Ingestion Configs
+    INGESTION_BATCH_SIZE: int = 100
+    CHECKPOINT_DIR: str = "backend/data/checkpoints"
+    PROCESSED_DATA_DIR: str = "backend/data/processed"
+    
+    # Data Quality Thresholds
+    MIN_SYNOPSIS_LENGTH: int = 50
+    MIN_SCORE_THRESHOLD: float = 0.0
+    REQUIRE_GENRES: bool = False
     
     # LLM Settings
     OPENAI_API_KEY: Optional[str] = None

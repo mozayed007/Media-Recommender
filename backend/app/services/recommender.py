@@ -487,6 +487,129 @@ class RecommenderService:
                     pass
         
         return sorted(list(all_genres))
+    
+    async def get_cross_media_recommendations(
+        self,
+        media_id: str,
+        target_media_types: List[str],
+        top_n: int = 10
+    ) -> List[MediaRecommendation]:
+        """Get recommendations across different media types.
+        
+        Args:
+            media_id: Source media ID (e.g., 'anime-123', 'manga-456')
+            target_media_types: List of target media types to recommend
+            top_n: Number of recommendations to return
+            
+        Returns:
+            List of cross-media recommendations
+        """
+        if not self.is_initialized:
+            await self.initialize()
+        
+        if self.df is None or self.df.empty:
+            return []
+        
+        # Extract numeric ID from prefixed media_id
+        try:
+            if '-' in media_id:
+                numeric_id = int(media_id.split('-')[1])
+            else:
+                numeric_id = int(media_id)
+        except (ValueError, IndexError):
+            logger.error(f"Invalid media_id format: {media_id}")
+            return []
+        
+        # Get source media details
+        source_media = self._get_media_by_id(numeric_id)
+        if not source_media:
+            logger.warning(f"Source media not found: {media_id}")
+            return []
+        
+        # Use synopsis for semantic search if available
+        if source_media.get('synopsis') and self.vector_db and self.embedding_model:
+            try:
+                # Create a search query from the source media
+                query = f"{source_media['title']}: {source_media['synopsis']}"
+                
+                # Filter by target media types
+                filters = {"media_type": target_media_types}
+                
+                req = RecommendationRequest(
+                    query=query,
+                    top_n=top_n * 2,  # Get more to filter
+                    filters=filters
+                )
+                
+                resp = await self.get_recommendations(req)
+                
+                # Filter out the source media itself
+                results = [
+                    rec for rec in resp.recommendations
+                    if rec.media_id != numeric_id
+                ][:top_n]
+                
+                return results
+                
+            except Exception as e:
+                logger.error(f"Cross-media semantic search failed: {e}")
+        
+        # Fallback: Content-based filtering by genres
+        if self.content_filter and source_media.get('genres'):
+            try:
+                # Filter by target media types
+                df_filtered = self.df[self.df['media_type'].isin(target_media_types)]
+                
+                if df_filtered.empty:
+                    return []
+                
+                # Find similar items based on genres
+                source_genres = set(source_media['genres'])
+                
+                def genre_similarity(row):
+                    if not isinstance(row.get('genres'), (list, np.ndarray)):
+                        return 0.0
+                    target_genres = set(row['genres'])
+                    if not target_genres:
+                        return 0.0
+                    # Jaccard similarity
+                    intersection = len(source_genres & target_genres)
+                    union = len(source_genres | target_genres)
+                    return intersection / union if union > 0 else 0.0
+                
+                df_filtered['_similarity'] = df_filtered.apply(genre_similarity, axis=1)
+                df_filtered = df_filtered[df_filtered['_similarity'] > 0]
+                df_filtered = df_filtered.sort_values('_similarity', ascending=False).head(top_n)
+                
+                results = []
+                for _, row in df_filtered.iterrows():
+                    results.append(self._row_to_recommendation(row, score=row['_similarity']))
+                
+                return results
+                
+            except Exception as e:
+                logger.error(f"Cross-media content filtering failed: {e}")
+        
+        return []
+    
+    def filter_by_media_type(
+        self,
+        recommendations: List[MediaRecommendation],
+        media_types: List[str]
+    ) -> List[MediaRecommendation]:
+        """Filter recommendations by media type.
+        
+        Args:
+            recommendations: List of recommendations
+            media_types: List of media types to include
+            
+        Returns:
+            Filtered recommendations
+        """
+        return [
+            rec for rec in recommendations
+            if rec.media_type in media_types
+        ]
 
     def _row_to_recommendation(self, row, score: float = 0.0) -> MediaRecommendation:
         def get_val(key, default=None):

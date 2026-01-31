@@ -127,6 +127,89 @@ async def get_trending(
             detail="Failed to fetch trending media"
         )
 
+@media_router.get("/manga/search", response_model=List[MediaRecommendation])
+async def search_manga(
+    service: RecommenderDep,
+    q: str = Query(..., min_length=1, description="Search query for manga"),
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    genres: Optional[List[str]] = Query(None)
+):
+    """
+    Search specifically for manga, manhwa, and manhua.
+    """
+    try:
+        return await service.search(q, limit=limit, offset=offset, genres=genres, media_type="manga")
+    except Exception as e:
+        logger.error(f"Manga search error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Manga search failed"
+        )
+
+@media_router.get("/movies/search", response_model=List[MediaRecommendation])
+async def search_movies(
+    service: RecommenderDep,
+    q: str = Query(..., min_length=1, description="Search query for movies"),
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    genres: Optional[List[str]] = Query(None)
+):
+    """
+    Search specifically for movies.
+    """
+    try:
+        return await service.search(q, limit=limit, offset=offset, genres=genres, media_type="movie")
+    except Exception as e:
+        logger.error(f"Movie search error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Movie search failed"
+        )
+
+@media_router.get("/tv/search", response_model=List[MediaRecommendation])
+async def search_tv(
+    service: RecommenderDep,
+    q: str = Query(..., min_length=1, description="Search query for TV shows"),
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    genres: Optional[List[str]] = Query(None)
+):
+    """
+    Search specifically for TV shows and dramas.
+    """
+    try:
+        return await service.search(q, limit=limit, offset=offset, genres=genres, media_type="tv")
+    except Exception as e:
+        logger.error(f"TV search error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="TV search failed"
+        )
+
+@media_router.post("/cross-recommend", response_model=List[MediaRecommendation])
+async def cross_recommend(
+    service: RecommenderDep,
+    media_id: str = Query(..., description="Source media ID (e.g., 'anime-123', 'manga-456')"),
+    target_media_types: List[str] = Query(..., description="Target media types to recommend"),
+    limit: int = Query(10, ge=1, le=50)
+):
+    """
+    Get cross-media recommendations (e.g., find movies similar to an anime).
+    """
+    try:
+        return await service.get_cross_media_recommendations(
+            media_id=media_id,
+            target_media_types=target_media_types,
+            top_n=limit
+        )
+    except Exception as e:
+        logger.error(f"Cross-media recommendation error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Cross-media recommendation failed"
+        )
+
 @media_router.get("/{media_id}", response_model=MediaRecommendation)
 async def get_media_details(
     media_id: int,
