@@ -148,12 +148,11 @@ class ContentBasedFilter:
         Gets recommendations for a given item ID based on feature similarity.
 
         Args:
-            item_id (int): The ID of the item to get recommendations for (uses the ID column specified during initialization).
+            item_id (int): The ID of the item to get recommendations for.
             top_n (int): The number of recommendations to return.
 
         Returns:
-            list[tuple[int, float]]: A list of tuples, each containing (recommended_item_id, similarity_score).
-                                    Returns empty list if item_id not found or error occurs.
+            list[tuple[int, float]]: A list of (recommended_item_id, similarity_score).
         """
         if self.feature_matrix is None or self.feature_matrix.empty:
             logger.error("Feature matrix not built.")
@@ -163,31 +162,45 @@ class ContentBasedFilter:
             return []
 
         try:
-            # Get the feature vector for the input item
             item_vector = self.feature_matrix.loc[[item_id]]
-
-            # Calculate cosine similarity between the input item and all other items
             similarities = cosine_similarity(item_vector, self.feature_matrix)[0]
-
-            # Create a Series with similarities, index by item ID
             sim_scores = pd.Series(similarities, index=self.feature_matrix.index)
-
-            # Sort by similarity (descending)
             sim_scores = sim_scores.sort_values(ascending=False)
 
-            # Exclude the item itself and get top N
-            # Ensure item_id is treated correctly even if it's not in the sorted list (shouldn't happen)
             if item_id in sim_scores.index:
                 sim_scores = sim_scores.drop(item_id)
 
             top_recommendations = sim_scores.head(top_n)
-
-            # Format as list of tuples (id, score)
             return list(zip(top_recommendations.index, top_recommendations.values))
 
         except Exception as e:
             logger.error(f"Error calculating recommendations for item {item_id}: {e}")
             return []
+
+    def recommend(self, item_id: int, top_n: int = 10) -> pd.DataFrame:
+        """
+        Gets recommendations as a DataFrame (compatible with FastAPI service layer).
+
+        Args:
+            item_id: The ID of the item to get recommendations for.
+            top_n: The number of recommendations to return.
+
+        Returns:
+            pd.DataFrame with columns from the original data plus 'similarity'.
+        """
+        if item_id not in self.data.index:
+            return pd.DataFrame()
+
+        idx = self.data.index.get_loc(item_id)
+        target_features = self.feature_matrix[idx].reshape(1, -1)
+        similarities = cosine_similarity(target_features, self.feature_matrix).flatten()
+
+        related_indices = similarities.argsort()[-(top_n + 1):-1][::-1]
+        results = self.data.iloc[related_indices].copy()
+        results['similarity'] = similarities[related_indices]
+        results = results.reset_index()
+
+        return results
 
 # Example Usage (Optional - for testing within the script)
 if __name__ == '__main__':

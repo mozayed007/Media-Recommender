@@ -11,7 +11,7 @@ from app.core.qdrant_db import QdrantVectorDB
 from app.core.vector_db import VectorDBInterface
 from app.models.media import MediaRecommendation, RecommendationResponse, RecommendationRequest
 from app.core.embedding import GemmaEmbeddingModel, MockEmbeddingModel
-from app.core.classical_ml import ContentBasedFilter
+from src.content_filtering import ContentBasedFilter
 from app.core.agents import interpret_query
 from app.core.logging_config import setup_logging
 
