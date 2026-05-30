@@ -17,7 +17,7 @@ MANGADEX_GENRE_MAP = {
     "a3c67850-4684-404e-9b7f-c69850ee5da6": "Girls Love",
     "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d": "Historical",
     "cdad7e68-1419-41dd-bdce-27753074a640": "Horror",
-    "87cc87cd-a395-47af-b27a-93258283bbc6": "Isekai",
+    "ace04993-3797-43da-b767-b0a25f89f4b7": "Isekai",
     "acc803a4-c95a-4c22-86fc-eb6b582d82a2": "Martial Arts",
     "50880a9d-5440-4732-9afb-8f457127e836": "Mecha",
     "ee968100-4191-4968-93d3-f82d72be7e46": "Medical",

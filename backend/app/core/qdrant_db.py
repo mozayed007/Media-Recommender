@@ -2,24 +2,28 @@ from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from typing import List, Dict, Any, Optional
 from app.core.vector_db import VectorDBInterface
+import logging
+
+logger = logging.getLogger(__name__)
 
 class QdrantVectorDB(VectorDBInterface):
-    def __init__(self, host: str = "localhost", port: int = 6333, path: Optional[str] = None, collection_name: str = "anime_embeddings"):
+    def __init__(self, host: str = "localhost", port: int = 6333, path: Optional[str] = None, collection_name: str = "anime_embeddings", dimension: int = 768):
         if path:
             self.client = QdrantClient(path=path)
         else:
             self.client = QdrantClient(host=host, port=port)
         self.collection_name = collection_name
+        self.dimension = dimension
 
     async def initialize(self):
         collections = self.client.get_collections().collections
         exists = any(c.name == self.collection_name for c in collections)
         
         if not exists:
-            print(f"Creating Qdrant collection: {self.collection_name}")
+            logger.info(f"Creating Qdrant collection: {self.collection_name}")
             self.client.create_collection(
                 collection_name=self.collection_name,
-                vectors_config=models.VectorParams(size=768, distance=models.Distance.COSINE),
+                vectors_config=models.VectorParams(size=self.dimension, distance=models.Distance.COSINE),
             )
 
     async def add_items(self, ids: List[int], embeddings: List[List[float]], metadata: List[Dict[str, Any]]):

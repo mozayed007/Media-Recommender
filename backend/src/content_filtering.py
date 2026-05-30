@@ -1,7 +1,10 @@
+import logging
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+
+logger = logging.getLogger(__name__)
 
 # Placeholder for potential future abstract class integration
 # from .abstract_interface_classes import RecommenderModel
@@ -69,7 +72,7 @@ class ContentBasedFilter:
 
     def _build_feature_matrix(self):
         """Builds the combined feature matrix using TF-IDF for text and scaling for numeric."""
-        print("Building feature matrix...")
+        logger.info("Building feature matrix...")
         # --- Text Features (TF-IDF) ---
         if self.text_feature_cols:
             processed_text = self._preprocess_text_features()
@@ -77,7 +80,7 @@ class ContentBasedFilter:
             tfidf_matrix = tfidf_vectorizer.fit_transform(processed_text)
             # Convert to DataFrame to easily combine with numeric features
             tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), index=self.data.index)
-            print(f"TF-IDF matrix shape: {tfidf_df.shape}")
+            logger.info(f"TF-IDF matrix shape: {tfidf_df.shape}")
         else:
             tfidf_df = pd.DataFrame(index=self.data.index) # Empty DataFrame if no text features
 
@@ -88,7 +91,7 @@ class ContentBasedFilter:
             
             for col in self.numeric_feature_cols:
                 if col not in self.data.columns:
-                    print(f"Warning: Column '{col}' not found in data. Skipping.")
+                    logger.warning(f"Column '{col}' not found in data. Skipping.")
                     continue
                     
                 # Work with a single column at a time
@@ -106,7 +109,7 @@ class ContentBasedFilter:
                 if col_values.isnull().any():
                     # Calculate mean without NaN values
                     mean_val = col_values.mean()
-                    print(f"Warning: Filling NaNs in '{col}' with mean ({mean_val:.2f})")
+                    logger.warning(f"Filling NaNs in '{col}' with mean ({mean_val:.2f})")
                     col_values = col_values.fillna(mean_val)
                 
                 # Normalize to 0-1 range
@@ -125,17 +128,17 @@ class ContentBasedFilter:
             # Combine all processed columns
             if numeric_dfs:
                 numeric_df = pd.concat(numeric_dfs, axis=1)
-                print(f"Numeric features shape: {numeric_df.shape}")
+                logger.info(f"Numeric features shape: {numeric_df.shape}")
             else:
                 numeric_df = pd.DataFrame(index=self.data.index)
-                print("Warning: No numeric features were processed.")
+                logger.warning("No numeric features were processed.")
         else:
             numeric_df = pd.DataFrame(index=self.data.index) # Empty DataFrame if no numeric features
 
         # --- Combine Features ---
         # Ensure indices align before concatenating
         self.feature_matrix = pd.concat([tfidf_df, numeric_df], axis=1)
-        print(f"Combined feature matrix shape: {self.feature_matrix.shape}")
+        logger.info(f"Combined feature matrix shape: {self.feature_matrix.shape}")
         # Ensure the matrix only contains numeric types
         self.feature_matrix = self.feature_matrix.astype(float)
 
@@ -153,10 +156,10 @@ class ContentBasedFilter:
                                     Returns empty list if item_id not found or error occurs.
         """
         if self.feature_matrix is None or self.feature_matrix.empty:
-            print("Error: Feature matrix not built.")
+            logger.error("Feature matrix not built.")
             return []
         if item_id not in self.feature_matrix.index:
-            print(f"Error: Item ID {item_id} not found in the dataset index (using '{self.id_col}' as ID column).")
+            logger.error(f"Item ID {item_id} not found in the dataset index (using '{self.id_col}' as ID column).")
             return []
 
         try:
@@ -183,7 +186,7 @@ class ContentBasedFilter:
             return list(zip(top_recommendations.index, top_recommendations.values))
 
         except Exception as e:
-            print(f"Error calculating recommendations for item {item_id}: {e}")
+            logger.error(f"Error calculating recommendations for item {item_id}: {e}")
             return []
 
 # Example Usage (Optional - for testing within the script)
@@ -198,23 +201,23 @@ if __name__ == '__main__':
     }
     df = pd.DataFrame(dummy_data)
 
-    print("Initializing ContentBasedFilter...")
+    logger.info("Initializing ContentBasedFilter...")
     try:
         content_filter = ContentBasedFilter(df, text_feature_cols=['Genres', 'Studios'], numeric_feature_cols=['Score'])
-        print("\nFilter Initialized. Feature Matrix Head:")
-        print(content_filter.feature_matrix.head())
+        logger.info("Filter Initialized. Feature Matrix Head:")
+        logger.info(content_filter.feature_matrix.head())
 
         item_to_recommend = 1 # Recommend based on 'Anime A'
-        print(f"\nGetting recommendations for MAL_ID: {item_to_recommend}")
+        logger.info(f"Getting recommendations for MAL_ID: {item_to_recommend}")
         recommendations = content_filter.get_recommendations(item_to_recommend, top_n=3)
 
-        print("\nRecommendations:")
+        logger.info("Recommendations:")
         if recommendations:
             for rec_id, score in recommendations:
                 rec_title = df.loc[df['MAL_ID'] == rec_id, 'Title'].iloc[0]
-                print(f"  - ID: {rec_id}, Title: {rec_title}, Score: {score:.4f}")
+                logger.info(f"  - ID: {rec_id}, Title: {rec_title}, Score: {score:.4f}")
         else:
-            print("No recommendations found.")
+            logger.info("No recommendations found.")
 
     except Exception as e:
-        print(f"\nAn error occurred during example usage: {e}")
+        logger.error(f"An error occurred during example usage: {e}")

@@ -79,6 +79,7 @@ class Settings(BaseSettings):
     
     # Frontend Configuration
     NEXT_PUBLIC_API_URL: str = "http://localhost:8000"
+    CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:3001"]
     
     # Feature Columns
     TEXT_FEATURES: List[str] = ["genres", "themes", "demographics", "studios"]

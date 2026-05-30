@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from typing import List, Optional, Dict, Any
 
 class MediaBase(BaseModel):
@@ -24,6 +24,12 @@ class RecommendationRequest(BaseModel):
     top_n: int = 10
     use_rag: bool = True
     filters: Dict[str, Any] = Field(default_factory=dict)
+
+    @model_validator(mode='after')
+    def check_query_or_media_id(self):
+        if not self.query and not self.media_id:
+            raise ValueError('Either query or media_id must be provided')
+        return self
 
 class RecommendationResponse(BaseModel):
     recommendations: List[MediaRecommendation]

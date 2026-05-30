@@ -12,7 +12,7 @@ import asyncio
 import pandas as pd
 from typing import List, Dict, Any
 
-# Add src to path to allow importing modules
+# Needed so `from src.xxx import ...` resolves when running this test file directly
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import configuration

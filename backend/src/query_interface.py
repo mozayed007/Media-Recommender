@@ -1,13 +1,17 @@
 import argparse
 import asyncio
+import logging
 import os
 import sys
 import pandas as pd
 import json
 from typing import List, Dict, Any, Optional, Union
 
-# Ensure the src directory is in the Python path
+# Needed so bare imports (recommendation_engine, embedding_model, etc.) resolve
+# when running this file directly from the src/ directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+logger = logging.getLogger(__name__)
 
 from recommendation_engine import OptimizedMediaRecommendationEngine
 from embedding_model import SentenceTransformerEmbeddingModel
@@ -101,14 +105,14 @@ def setup_recommendation_args_and_engine(args):
             json_filters = json.loads(args.filter_json)
             # Merge JSON filters, potentially overriding CLI filters
             filters.update(json_filters)
-            print(f"Applied filters from JSON: {json_filters}")
+            logger.info(f"Applied filters from JSON: {json_filters}")
         except json.JSONDecodeError as e:
-            print(f"Error parsing --filter-json: {e}. Ignoring JSON filter.")
+            logger.warning(f"Error parsing --filter-json: {e}. Ignoring JSON filter.")
         except Exception as e:
-            print(f"Error processing --filter-json: {e}. Ignoring JSON filter.")
+            logger.warning(f"Error processing --filter-json: {e}. Ignoring JSON filter.")
 
     # --- Initialize Components (can be mocked in tests) ---
-    print("Initializing components...")
+    logger.info("Initializing components...")
     embedding_model = SentenceTransformerEmbeddingModel(model_name=EMBEDDING_MODEL_NAME)
     # Correct the instantiation of MilvusVectorDatabase
     vector_db = MilvusVectorDatabase(
@@ -127,7 +131,7 @@ def setup_recommendation_args_and_engine(args):
         desc_col=DESC_COL,
         content_feature_cols=CONTENT_FEATURES
     )
-    print("Components initialized.")
+    logger.info("Components initialized.")
     return filters, engine
 
 async def main():
@@ -165,52 +169,52 @@ async def main():
     if args.type in ['content', 'combined'] and args.id is None:
         parser.error("--id is required for content/combined recommendations.")
     if args.type == 'combined' and not (args.id and (args.query or args.title)):
-        print("Warning: Running combined without both content (--id) and semantic (--query/--title) inputs.")
+        logger.warning("Running combined without both content (--id) and semantic (--query/--title) inputs.")
     
     # --- Process filter arguments and Initialize Components using helper ---
     try:
         filters, engine = setup_recommendation_args_and_engine(args)
     except Exception as setup_error:
-        print(f"Error during setup: {setup_error}")
+        logger.error(f"Error during setup: {setup_error}")
         sys.exit(1)
 
     # --- Load Data ---
-    print("Loading data into recommendation engine...")
+    logger.info("Loading data into recommendation engine...")
     try:
         await engine.load_data()
-        print("Data loading complete.")
+        logger.info("Data loading complete.")
         # Verify content filter is loaded if needed
         if args.type in ['content', 'combined'] and engine.content_filter is None:
-            print("Error: Content filter failed to initialize during data loading.")
+            logger.error("Content filter failed to initialize during data loading.")
             return
     except Exception as e:
-        print(f"Error loading data: {e}")
+        logger.error(f"Error loading data: {e}")
         return
 
     # --- Get Recommendations ---
     recommendations = []
-    print(f"\nFetching {args.k} recommendations of type '{args.type}'...")
+    logger.info(f"Fetching {args.k} recommendations of type '{args.type}'...")
     try:
         # Get initial recommendations based on type
         if args.type == 'semantic-desc':
             if not args.query:
-                print("Error: --query is required for semantic-desc.")
+                logger.error("--query is required for semantic-desc.")
                 return
             recommendations = await engine.get_recommendations_by_description(args.query, k=args.k * 3)  # Get more for filtering
         elif args.type == 'semantic-title':
             if not args.title:
-                print("Error: --title is required for semantic-title.")
+                logger.error("--title is required for semantic-title.")
                 return
             recommendations = await engine.get_recommendations_by_title(args.title, k=args.k * 3)  # Get more for filtering
         elif args.type == 'content':
             if args.id is None:
-                print("Error: --id is required for content.")
+                logger.error("--id is required for content.")
                 return
             recommendations = engine.get_content_based_recommendations(args.id, k=args.k * 3)  # Get more for filtering
         elif args.type == 'combined':
             # Ensure at least one input type is present for combined
             if args.id is None and not args.query and not args.title:
-                print("Error: --id or --query or --title required for combined.")
+                logger.error("--id or --query or --title required for combined.")
                 return
             recommendations = await engine.get_combined_recommendations(
                 item_id=args.id,
@@ -222,7 +226,7 @@ async def main():
         
         # Apply filters if any are specified
         if filters and recommendations:
-            print("Applying filters to recommendations...")
+            logger.info("Applying filters to recommendations...")
             filtered_recommendations = []
             item_ids = [item[0] for item in recommendations]
             
@@ -238,10 +242,10 @@ async def main():
             
             # Apply filters to the DataFrame
             if df_details.empty:
-                print("Warning: No item details available for filtering")
+                logger.warning("No item details available for filtering")
             else:
                 # Print the actual columns available in the DataFrame for debugging
-                print(f"Available columns for filtering: {df_details.columns.tolist()}")
+                logger.debug(f"Available columns for filtering: {df_details.columns.tolist()}")
                 
                 # Apply list filters (genres, themes, demographics, studios)
                 # Map field names to exact column names based on data inspection
@@ -325,7 +329,7 @@ async def main():
                                         # For other types, the regular apply should work
                                         mask = df_details[column_name].apply(lambda x: check_list_match(x))
                                 except Exception as filter_err:
-                                    print(f"Error in filter application: {filter_err}")
+                                    logger.error(f"Error in filter application: {filter_err}")
                                     # Fallback to a more explicit loop if apply fails
                                     matches = []
                                     for idx, row_val in df_details[column_name].items():
@@ -335,15 +339,15 @@ async def main():
                                             matches.append(False)  # Assume no match if error
                                     mask = pd.Series(matches, index=df_details.index)
                             except Exception as e:
-                                print(f"Error applying filter '{list_field}': {e}")
+                                logger.error(f"Error applying filter '{list_field}': {e}")
                                 continue
                             df_details = df_details[mask]
                             found = True
-                            print(f"Applied filter '{list_field}' using column '{column_name}', {len(df_details)} items remaining")
+                            logger.info(f"Applied filter '{list_field}' using column '{column_name}', {len(df_details)} items remaining")
                             break
                     
                     if not found and list_field in ['genres', 'themes', 'demographics', 'studios']:
-                        print(f"Warning: Could not find column for '{list_field}' filter")
+                        logger.warning(f"Could not find column for '{list_field}' filter")
                 
                 # Apply range filters
                 # NOTE: All column names are lowercase in the actual data
@@ -364,17 +368,17 @@ async def main():
                             if column_name in df_details.columns:
                                 if min_key in filters:
                                     df_details = df_details[df_details[column_name] >= filters[min_key]]
-                                    print(f"Applied min filter for '{field}' using column '{column_name}', {len(df_details)} items remaining")
+                                    logger.info(f"Applied min filter for '{field}' using column '{column_name}', {len(df_details)} items remaining")
                                     
                                 if max_key in filters:
                                     df_details = df_details[df_details[column_name] <= filters[max_key]]
-                                    print(f"Applied max filter for '{field}' using column '{column_name}', {len(df_details)} items remaining")
+                                    logger.info(f"Applied max filter for '{field}' using column '{column_name}', {len(df_details)} items remaining")
                                     
                                 found = True
                                 break
                                 
                         if not found:
-                            print(f"Warning: Could not find column for '{field}' filter")
+                            logger.warning(f"Could not find column for '{field}' filter")
                 
                 # Apply single value filters (media_type, status, rating, sfw)
                 # NOTE: All column names are lowercase in the actual data
@@ -398,16 +402,16 @@ async def main():
                                     else:
                                         mask = df_details[column_name] == filters[field]
                                 except Exception as e:
-                                    print(f"Error applying filter '{field}': {e}")
+                                    logger.error(f"Error applying filter '{field}': {e}")
                                     continue
                                 
                                 df_details = df_details[mask]
-                                print(f"Applied filter '{field}' using column '{column_name}', {len(df_details)} items remaining")
+                                logger.info(f"Applied filter '{field}' using column '{column_name}', {len(df_details)} items remaining")
                                 found = True
                                 break
                                 
                         if not found:
-                            print(f"Warning: Could not find column for '{field}' filter")
+                            logger.warning(f"Could not find column for '{field}' filter")
                 
                 # Apply boolean filters
                 if 'sfw' in filters:
@@ -424,19 +428,19 @@ async def main():
                                 else:
                                     df_details = df_details[df_details[column_name].fillna(True) == filters['sfw']]
                             except Exception as e:
-                                print(f"Error applying SFW filter: {e}")
+                                logger.error(f"Error applying SFW filter: {e}")
                                 continue
-                            print(f"Applied SFW filter using column '{column_name}', {len(df_details)} items remaining")
+                            logger.info(f"Applied SFW filter using column '{column_name}', {len(df_details)} items remaining")
                             found = True
                             break
                     
                     if not found:
-                        print("Warning: Could not find column for SFW filter")
+                        logger.warning("Could not find column for SFW filter")
                 
                 # Get filtered IDs
                 if df_details.empty:
-                    print("Warning: After applying filters, no items match the criteria")
-                    print("Trying with relaxed filter criteria...")
+                    logger.warning("After applying filters, no items match the criteria")
+                    logger.info("Trying with relaxed filter criteria...")
                     
                     # Get a fresh copy of details
                     item_details = []
@@ -462,9 +466,9 @@ async def main():
                                     else:
                                         df_details = df_details[df_details[column_name].fillna(True) == filters['sfw']]
                                 except Exception as e:
-                                    print(f"Error applying SFW filter: {e}")
+                                    logger.error(f"Error applying SFW filter: {e}")
                                     continue
-                                print(f"Applied SFW filter using column '{column_name}', {len(df_details)} items remaining")
+                                logger.info(f"Applied SFW filter using column '{column_name}', {len(df_details)} items remaining")
                                 found = True
                                 break
                     
@@ -501,7 +505,7 @@ async def main():
                                                     return True
                                     return False
                                 except Exception as e:
-                                    print(f"  - Error in safe_check_match: {e}")
+                                    logger.error(f"Error in safe_check_match: {e}")
                                     return False  # Safety default
                             
                             # Apply the safer function
@@ -510,13 +514,13 @@ async def main():
                                 matches.append(safe_check_match(row_val))
                             mask = pd.Series(matches, index=df_details.index)
                             df_details = df_details[mask]
-                            print(f"Applied relaxed filter 'genres' using column '{column_name}', {len(df_details)} items remaining")
+                            logger.info(f"Applied relaxed filter 'genres' using column '{column_name}', {len(df_details)} items remaining")
                         except Exception as e:
-                            print(f"Error applying relaxed genre filter: {e}")
+                            logger.error(f"Error applying relaxed genre filter: {e}")
                     
                     # Check results after relaxed filtering
                     if df_details.empty:
-                        print("Warning: Even with relaxed criteria, no items match the filters")
+                        logger.warning("Even with relaxed criteria, no items match the filters")
                         filtered_ids = set()
                     else:
                         filtered_ids = set(df_details[engine.id_col].tolist())
@@ -527,20 +531,20 @@ async def main():
                 filtered_recommendations = [rec for rec in recommendations if rec[0] in filtered_ids]
                 
                 if not filtered_recommendations:
-                    print("Warning: No recommendations match the specified filters")
+                    logger.warning("No recommendations match the specified filters")
                     # Still return some recommendations even if they don't match all filters
-                    print("Returning results without filtering...")
+                    logger.info("Returning results without filtering...")
                     recommendations = recommendations[:args.k]
                     return
                 
                 recommendations = filtered_recommendations[:args.k]  # Limit to requested k
-                print(f"After filtering: {len(recommendations)} recommendations match criteria")
+                logger.info(f"After filtering: {len(recommendations)} recommendations match criteria")
     except Exception as e:
-        print(f"Error getting recommendations: {e}")
+        logger.error(f"Error getting recommendations: {e}")
         return
 
     # --- Display Results ---
-    print("\n--- Recommendations ---")
+    logger.info("--- Recommendations ---")
     if recommendations:
         # Sort recommendations by score (assuming the score is a distance metric where lower is better)
         # But display similarity where higher is better (1.0 - normalized_distance)
@@ -563,18 +567,18 @@ async def main():
                     df_recs['Score'] = 1.0
         
         df_recs['Score'] = df_recs['Score'].round(4)
-        print(df_recs.to_string(index=False))
+        logger.info(df_recs.to_string(index=False))
     else:
-        print("No recommendations found.")
+        logger.info("No recommendations found.")
 
     # --- Cleanup (Optional) ---
     # Consider disconnecting Milvus if necessary, though often managed by context/lifetime
     # await vector_db.disconnect()
-    print("\nCLI finished.")
+    logger.info("CLI finished.")
 
 
 if __name__ == "__main__":
     # Check if Milvus/dependencies are running (basic check)
     # Add more robust checks if needed
-    print("Ensure Milvus service is running.")
+    logger.info("Ensure Milvus service is running.")
     asyncio.run(main())

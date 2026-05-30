@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from data_processing_utils import process_date
 
 anime = pd.read_json('../data/raw/anime_mal.json')
 
@@ -24,25 +25,6 @@ anime['episodes'] = anime['episodes'].replace(0, np.nan).astype('Int64')
 # Without adding False day 1 or False month January (i.e 2005 -> 2005-1-1)
 anime['real_start_date'] = anime['start_date']
 anime['real_end_date'] = anime['end_date']
-# Helper function to correctly process dates
-def process_date(x):
-    # Check for string type
-    if isinstance(x, str):
-        parts = x.split('-')
-        # If date string doesn't have a month or day component
-        if len(parts) < 3:
-            # If it doesn't have a month component, add '01'
-            if len(parts) == 1:
-                return f"{x}-01-01"
-            # If it has a month component but no day, add '01'
-            elif len(parts) == 2:
-                return f"{x}-01"
-        else:
-            return x
-    else:
-        # Handle NaN/float values
-        return np.nan
-
 # Apply the function to 'start_date' and 'end_date'
 anime['start_date'] = anime['start_date'].apply(process_date)
 anime['end_date'] = anime['end_date'].apply(process_date)

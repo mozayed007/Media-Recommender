@@ -1,6 +1,9 @@
+import logging
 import pandas as pd
 import os
 from src.abstract_interface_classes import AbstractDataset
+
+logger = logging.getLogger(__name__)
 
 class MediaDataset(AbstractDataset):
     def __init__(self, data_path: str, id_col: str = 'anime_id', title_col: str = 'title', desc_col: str = 'synopsis'):
@@ -39,7 +42,7 @@ class MediaDataset(AbstractDataset):
             media_id = int(media_id)
         except (ValueError, TypeError):
             # Handle cases where ID might not be purely numeric or is missing
-            print(f"Warning: Could not convert ID '{media_id}' to int at index {idx}. Using original value.")
+            logger.warning(f"Could not convert ID '{media_id}' to int at index {idx}. Using original value.")
             # Or decide on a default/error handling strategy
             pass 
         return media_id, item[self.title_col], item[self.desc_col]

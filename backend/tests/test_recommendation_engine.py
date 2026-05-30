@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import asyncio
 
-# Add the src directory to the path for imports
+# Needed so `from src.xxx import ...` resolves when running this test file directly
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 class TestOptimizedMediaRecommendationEngine(unittest.IsolatedAsyncioTestCase):

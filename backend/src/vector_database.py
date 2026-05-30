@@ -1,7 +1,10 @@
+import logging
 import os
 import asyncio
 from typing import List, Tuple, Dict, Any, Optional
 from pymilvus import MilvusClient, DataType
+
+logger = logging.getLogger(__name__)
 
 # Make llama_index import optional so the core functionality works without it
 LLAMA_INDEX_AVAILABLE = False
@@ -27,7 +30,7 @@ class MockEmbeddingModel(AbstractEmbeddingModel):
     def __init__(self, model_name: str = "mock-model", dimension: int = 384):
         self.model_name = model_name
         self.dimension = dimension
-        print(f"Initialized MockEmbeddingModel with dimension {dimension}")
+        logger.info(f"Initialized MockEmbeddingModel with dimension {dimension}")
         
     async def get_text_embedding(self, text: str) -> List[float]:
         """Generate a deterministic but unique mock embedding for a text"""

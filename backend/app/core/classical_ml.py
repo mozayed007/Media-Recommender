@@ -1,7 +1,10 @@
+import logging
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+
+logger = logging.getLogger(__name__)
 
 class ContentBasedFilter:
     """
@@ -46,7 +49,7 @@ class ContentBasedFilter:
         return combined_text.str.lower()
 
     def _build_feature_matrix(self):
-        print("Building feature matrix for content filtering...")
+        logger.info("Building feature matrix for content filtering...")
         
         parts = []
         

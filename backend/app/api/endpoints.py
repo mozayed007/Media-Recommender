@@ -1,14 +1,17 @@
-from fastapi import APIRouter, Depends, Query, HTTPException, status
+from fastapi import APIRouter, Depends, Query, HTTPException, status, Header
 from typing import List, Optional, Annotated
 from app.models.media import RecommendationRequest, RecommendationResponse, MediaRecommendation
 from app.services.recommender import RecommenderService
+from app.core.config import settings
 import logging
+import asyncio
 
 logger = logging.getLogger(__name__)
 
 media_router = APIRouter()
 
-# Dependency to get the initialized recommender service
+_ingestion_task: Optional[asyncio.Task] = None
+
 async def get_recommender_service() -> RecommenderService:
     from main import recommender_service
     try:
@@ -90,10 +93,20 @@ async def ingest_data(
     Trigger data ingestion into the vector database.
     This is an administrative operation.
     """
+    global _ingestion_task
+    if _ingestion_task and not _ingestion_task.done():
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Ingestion is already in progress"
+        )
     try:
-        # Run ingestion in the background
-        import asyncio
-        asyncio.create_task(service.ingest_data(batch_size=batch_size))
+        async def _run_ingestion():
+            try:
+                await service.ingest_data(batch_size=batch_size)
+            except Exception as e:
+                logger.error(f"Background ingestion failed: {e}", exc_info=True)
+
+        _ingestion_task = asyncio.create_task(_run_ingestion())
         return {"message": "Ingestion started in background"}
     except Exception as e:
         logger.error(f"Ingestion error: {e}")
@@ -101,6 +114,17 @@ async def ingest_data(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to start ingestion"
         )
+
+@media_router.get("/ingest/status")
+async def ingest_status():
+    """Check the status of the background ingestion task."""
+    if _ingestion_task is None:
+        return {"status": "no_task", "message": "No ingestion task has been started"}
+    if _ingestion_task.done():
+        if _ingestion_task.exception():
+            return {"status": "failed", "error": str(_ingestion_task.exception())}
+        return {"status": "completed"}
+    return {"status": "running"}
 
 @media_router.get("/health")
 async def health_check(service: RecommenderDep):

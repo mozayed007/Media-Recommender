@@ -7,7 +7,7 @@ import numpy as np
 from rich.console import Console
 from rich.table import Table
 from app.services.recommender import RecommenderService
-from app.models.anime import RecommendationRequest
+from app.models.media import RecommendationRequest, MediaRecommendation
 from app.core.logging_config import setup_logging
 
 # Setup logging
@@ -151,9 +151,8 @@ def search(
             table.add_column("MAL Score", style="magenta")
             
             for res in results:
-                # Use similarity_score for the table, and handle None for score
                 score_str = f"{res.score:.2f}" if res.score is not None else "N/A"
-                table.add_row(str(res.anime_id), res.title, f"{res.similarity_score:.4f}", score_str)
+                table.add_row(str(res.media_id), res.title, f"{res.similarity_score:.4f}", score_str)
                 
             console.print(table)
         except Exception as e:
@@ -166,7 +165,7 @@ def search(
 @app.command()
 def recommend(
     query: str = typer.Option(None, "--query", "-q", help="Natural language query"),
-    anime_id: int = typer.Option(None, "--id", help="Anime ID for similarity search"),
+    media_id: int = typer.Option(None, "--id", help="Media ID for similarity search"),
     limit: int = typer.Option(5, "--limit", "-l", help="Number of recommendations"),
     provider: str = typer.Option("qdrant", "--provider", "-p", help="Vector DB provider")
 ):
@@ -176,9 +175,9 @@ def recommend(
             service = await get_service(provider)
             
             if query:
-                request = RecommendationRequest(query=query, limit=limit)
-            elif anime_id:
-                request = RecommendationRequest(anime_id=anime_id, limit=limit)
+                request = RecommendationRequest(query=query, top_n=limit)
+            elif media_id:
+                request = RecommendationRequest(media_id=media_id, top_n=limit)
             else:
                 console.print("[bold red]Please provide either --query or --id[/bold red]")
                 return

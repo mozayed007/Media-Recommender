@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from unittest.mock import patch, MagicMock, mock_open, AsyncMock
 
-# Add the src directory to the path for imports
+# Needed so `from src.xxx import ...` resolves when running this test file directly
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.query_interface import parse_list_arg, parse_range_arg

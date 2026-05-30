@@ -1,8 +1,11 @@
 import os
 import asyncio
+import logging
 from typing import List, Tuple, Dict, Any, Optional
 from pymilvus import MilvusClient, DataType
 from app.core.vector_db import VectorDBInterface
+
+logger = logging.getLogger(__name__)
 
 class MilvusVectorDB(VectorDBInterface):
     def __init__(
@@ -17,17 +20,17 @@ class MilvusVectorDB(VectorDBInterface):
 
     async def initialize(self):
         if self.client.has_collection(self.collection_name):
-            print(f"Collection {self.collection_name} already exists.")
+            logger.info(f"Collection {self.collection_name} already exists.")
             return
 
-        print(f"Creating collection {self.collection_name}...")
+        logger.info(f"Creating collection {self.collection_name}...")
         self.client.create_collection(
             collection_name=self.collection_name,
             dimension=self.dimension,
             auto_id=False,
             enable_dynamic_field=True
         )
-        print(f"Collection {self.collection_name} created.")
+        logger.info(f"Collection {self.collection_name} created.")
 
     async def add_items(self, ids: List[int], embeddings: List[List[float]], metadata: List[Dict[str, Any]]):
         data = []
@@ -42,13 +45,17 @@ class MilvusVectorDB(VectorDBInterface):
         self.client.insert(collection_name=self.collection_name, data=data)
 
     async def search(self, query_vector: List[float], top_n: int = 10, filters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        ALLOWED_FILTER_KEYS = {"media_type", "genres", "score", "status"}
         filter_expr = ""
         if filters:
             expressions = []
             for key, value in filters.items():
+                if key not in ALLOWED_FILTER_KEYS:
+                    continue
                 if isinstance(value, str):
-                    expressions.append(f'{key} == "{value}"')
-                else:
+                    sanitized = value.replace('"', '').replace("'", "")
+                    expressions.append(f'{key} == "{sanitized}"')
+                elif isinstance(value, (int, float)):
                     expressions.append(f'{key} == {value}')
             filter_expr = " and ".join(expressions)
 

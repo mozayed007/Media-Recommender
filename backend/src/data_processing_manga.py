@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime
+from data_processing_utils import process_date
 
 manga = pd.read_json('../data/raw/manga_mal.json')
 
@@ -23,25 +24,6 @@ manga['chapters'] = manga['chapters'].replace(0, np.nan).astype('Int64')
 # Without adding False day 1 or False month January (i.e 2005 -> 2005-1-1)
 manga['real_start_date'] = manga['start_date']
 manga['real_end_date'] = manga['end_date']
-
-# Helper function to correctly process dates
-def process_date(x):
-    # Check for string type
-    if isinstance(x, str):
-        parts = x.split('-')
-        # If date string doesn't have a month or day component
-        if len(parts) < 3:
-            # If it doesn't have a month component, add '01'
-            if len(parts) == 1:
-                return f"{x}-01-01"
-            # If it has a month component but no day, add '01'
-            elif len(parts) == 2:
-                return f"{x}-01"
-        else:
-            return x
-    else:
-        # Handle NaN/float values
-        return np.nan
 
 # Apply the function to 'start_date' and 'end_date'
 manga['start_date'] = manga['start_date'].apply(process_date)
@@ -152,7 +134,7 @@ manga['tmp'] = manga['score'].rank(ascending=False) + manga['scored_by'].rank(as
 manga = manga.sort_values(['tmp', 'members', 'favorites', 'manga_id'], \
     ascending=[True, False, False, True]).reset_index(drop=True)
 manga.drop(columns=['tmp'], inplace=True)
-# Get the current month name
-current_month = datetime.datetime.now().strftime('%B')
 # Save to csv
+base_directory = '/data/processed'
+current_month = datetime.datetime.now().strftime('%B')
 manga.to_csv(f'..{base_directory}/manga_mal_{current_month}.csv', index=False)

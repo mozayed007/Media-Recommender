@@ -1,9 +1,12 @@
 import torch
 import numpy as np
 import asyncio
+import logging
 from typing import List, Union, Optional
 from sentence_transformers import SentenceTransformer
 from pydantic import ConfigDict
+
+logger = logging.getLogger(__name__)
 
 class GemmaEmbeddingModel:
     """
@@ -14,7 +17,7 @@ class GemmaEmbeddingModel:
         self.model_name = model_name
         self.device = device if device else ('cuda' if torch.cuda.is_available() else 'cpu')
         
-        print(f"Loading embedding model: {model_name} on {self.device}")
+        logger.info(f"Loading embedding model: {model_name} on {self.device}")
         try:
             self.model = SentenceTransformer(
                 model_name, 
@@ -22,17 +25,19 @@ class GemmaEmbeddingModel:
                 token=token
             )
         except Exception as e:
-            print(f"Failed to load Gemma model: {e}")
-            print("Falling back to Mock model for now. Please ensure you have accepted the model terms on Hugging Face.")
+            logger.error(f"Failed to load Gemma model: {e}")
+            logger.warning("Falling back to Mock model. Ensure you have accepted the model terms on Hugging Face.")
             self.model = None
 
     async def embed_text(self, text: str, task_type: str = "retrieval_query") -> List[float]:
         if self.model is None:
+            logger.warning("Embedding model not loaded, returning random vector. Recommendations will be meaningless.")
             return np.random.rand(768).tolist()
         return (await self.embed_batch([text], task_type=task_type))[0]
 
     async def embed_batch(self, texts: List[str], task_type: str = "retrieval_document") -> List[List[float]]:
         if self.model is None:
+            logger.warning("Embedding model not loaded, returning random vectors. Recommendations will be meaningless.")
             return [np.random.rand(768).tolist() for _ in texts]
         return await asyncio.to_thread(self._embed_sync, texts, task_type)
 

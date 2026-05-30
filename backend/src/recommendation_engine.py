@@ -1,9 +1,14 @@
+import logging
 import os
 import sys
 import pickle
 import asyncio
 import pandas as pd  # Added for DataFrame handling
+
+# Needed so `src.xxx` imports resolve when running this file directly or from tests
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+logger = logging.getLogger(__name__)
 from src.abstract_interface_classes import AbstractRecommendationEngine, AbstractEmbeddingModel, AbstractVectorDatabase
 from src.media_dataset import MediaDataset
 from src.content_filtering import ContentBasedFilter  # Import the new class
@@ -56,17 +61,17 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
 
     async def load_data(self):
         # Load the DataFrame using the dataset loader logic
-        print("Loading DataFrame for content filtering and processing...")
+        logger.info("Loading DataFrame for content filtering and processing...")
         try:
             # Assuming MediaDataset has a method to get the full DataFrame
             # If not, we might need to load it directly using pandas here
             self.media_df = self.dataset.get_dataframe()
             if self.media_df is None or self.media_df.empty:
                 raise ValueError("Failed to load DataFrame from MediaDataset.")
-            print(f"DataFrame loaded with shape: {self.media_df.shape}")
+            logger.info(f"DataFrame loaded with shape: {self.media_df.shape}")
 
             # Initialize ContentBasedFilter now that we have the DataFrame
-            print("Initializing ContentBasedFilter...")
+            logger.info("Initializing ContentBasedFilter...")
             try:
                 # First attempt with all features
                 self.content_filter = ContentBasedFilter(
@@ -75,10 +80,10 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
                     text_feature_cols=self.content_feature_cols.get('text', []),
                     numeric_feature_cols=self.content_feature_cols.get('numeric', [])
                 )
-                print("ContentBasedFilter initialized.")
+                logger.info("ContentBasedFilter initialized.")
             except Exception as cf_error:
-                print(f"Error initializing ContentBasedFilter with numeric features: {cf_error}")
-                print("Retrying with text features only...")
+                logger.warning(f"Error initializing ContentBasedFilter with numeric features: {cf_error}")
+                logger.info("Retrying with text features only...")
                 try:
                     # Fallback: try with only text features
                     self.content_filter = ContentBasedFilter(
@@ -87,25 +92,25 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
                         text_feature_cols=self.content_feature_cols.get('text', []),
                         numeric_feature_cols=[]
                     )
-                    print("ContentBasedFilter initialized with text features only.")
+                    logger.info("ContentBasedFilter initialized with text features only.")
                 except Exception as cf_error2:
-                    print(f"Error initializing ContentBasedFilter with text features only: {cf_error2}")
+                    logger.error(f"Error initializing ContentBasedFilter with text features only: {cf_error2}")
                     self.content_filter = None
 
         except Exception as e:
-            print(f"Error loading DataFrame or initializing ContentBasedFilter: {e}")
+            logger.error(f"Error loading DataFrame or initializing ContentBasedFilter: {e}")
             # Don't set media_df to None, keep it for filtering even if ContentBasedFilter fails
             self.content_filter = None
 
         # Try loading processed list data (IDs, titles, descriptions for vector DB)
         if self.load_processed_data():
-            print("Loaded processed list data from file.")
+            logger.info("Loaded processed list data from file.")
         else:
-            print("Processing raw data for vector database...")
+            logger.info("Processing raw data for vector database...")
             ids, titles, descriptions = [], [], []
             # Ensure DataFrame is loaded before iterating dataloader
             if self.media_df is None:
-                print("Error: Cannot process data for vector DB as DataFrame failed to load.")
+                logger.error("Cannot process data for vector DB as DataFrame failed to load.")
                 return  # Stop if DataFrame loading failed
 
             # Use the DataFrame directly if available, otherwise use dataloader
@@ -116,13 +121,13 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
                 descriptions = self.media_df[self.desc_col].fillna('').tolist()  # Handle potential NaNs
                 self.media_data = list(zip(ids, titles, descriptions))
                 self.save_processed_data()  # Save the processed list data
-                print("Processed list data saved.")
+                logger.info("Processed list data saved.")
             except Exception as e:
-                print(f"Error processing data from DataFrame for vector DB: {e}")
+                logger.error(f"Error processing data from DataFrame for vector DB: {e}")
 
         # Populate vector database (semantic search part)
         if self.media_data:
-            print(f"Adding {len(self.media_data)} items to Milvus collection '{self.vector_db.collection_name}'")
+            logger.info(f"Adding {len(self.media_data)} items to Milvus collection '{self.vector_db.collection_name}'")
             ids, titles, descriptions = zip(*self.media_data)
             # Ensure IDs are integers for Milvus
             int_ids = [int(i) for i in ids]
@@ -131,9 +136,9 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
             self.vector_db.save()
             # Debug: show count in Milvus
             count = await self.vector_db.count()
-            print(f"Milvus collection '{self.vector_db.collection_name}' now contains {count} items")
+            logger.info(f"Milvus collection '{self.vector_db.collection_name}' now contains {count} items")
         else:
-            print("No media data to load into Milvus.")
+            logger.warning("No media data to load into Milvus.")
 
     async def get_recommendations_by_description(self, query: str, k: int = 10) -> List[Tuple[int, str, float]]:
         # Use a more specific cache key with a prefix to avoid collisions
@@ -172,10 +177,10 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
                                           Returns empty list if content filter not available or item not found.
         """
         if self.content_filter is None:
-            print("Error: Content filter is not initialized.")
+            logger.error("Content filter is not initialized.")
             return []
         if self.media_df is None:
-            print("Error: Media DataFrame not available for retrieving titles.")
+            logger.error("Media DataFrame not available for retrieving titles.")
             return []
 
         try:
@@ -187,7 +192,7 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
                 enriched_recommendations.append((rec_id, title, score))
             return enriched_recommendations
         except Exception as e:
-            print(f"Error getting content-based recommendations for item {item_id}: {e}")
+            logger.error(f"Error getting content-based recommendations for item {item_id}: {e}")
             return []
 
     def get_item_details(self, item_id: int) -> Dict:
@@ -203,7 +208,7 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
             else:
                 return {}  # Item ID not found
         except Exception as e:
-            print(f"Error retrieving details for item {item_id}: {e}")
+            logger.error(f"Error retrieving details for item {item_id}: {e}")
             return {}
 
     async def batch_recommendations(self, queries: List[str], by_description: bool = True, k: int = 5) -> List[List[Tuple[int, str, float]]]:
@@ -238,7 +243,7 @@ class OptimizedMediaRecommendationEngine(AbstractRecommendationEngine):
         Returns:
             List[Tuple[int, str, float]]: Combined list of (id, title, combined_score).
         """
-        print("Warning: Combined recommendation logic is not yet fully implemented.")
+        logger.warning("Combined recommendation logic is not yet fully implemented.")
 
         semantic_recs = []
         content_recs = []

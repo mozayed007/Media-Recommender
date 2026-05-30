@@ -1,3 +1,4 @@
+import ast
 import pandas as pd
 import numpy as np
 import os
@@ -118,7 +119,7 @@ class RecommenderService:
     @retry(
         stop=stop_after_attempt(3),
         wait=wait_exponential(multiplier=1, min=2, max=10),
-        retry=retry_if_exception_type(Exception),
+        retry=retry_if_exception_type((ConnectionError, TimeoutError, OSError)),
         reraise=True
     )
     async def _init_vector_db(self):
@@ -127,7 +128,8 @@ class RecommenderService:
             self.vector_db = QdrantVectorDB(
                 host=settings.QDRANT_HOST,
                 port=settings.QDRANT_PORT,
-                path=settings.qdrant_storage_path
+                path=settings.qdrant_storage_path,
+                dimension=settings.EMBEDDING_DIMENSION
             )
         else:
             self.vector_db = MilvusVectorDB(
@@ -480,11 +482,11 @@ class RecommenderService:
                 all_genres.update(genres)
             elif isinstance(genres, str):
                 try:
-                    genres_list = eval(genres)
+                    genres_list = ast.literal_eval(genres)
                     if isinstance(genres_list, list):
                         all_genres.update(genres_list)
-                except:
-                    pass
+                except (ValueError, SyntaxError):
+                    logger.warning(f"Failed to parse genres string: {genres}")
         
         return sorted(list(all_genres))
     
@@ -591,25 +593,6 @@ class RecommenderService:
                 logger.error(f"Cross-media content filtering failed: {e}")
         
         return []
-    
-    def filter_by_media_type(
-        self,
-        recommendations: List[MediaRecommendation],
-        media_types: List[str]
-    ) -> List[MediaRecommendation]:
-        """Filter recommendations by media type.
-        
-        Args:
-            recommendations: List of recommendations
-            media_types: List of media types to include
-            
-        Returns:
-            Filtered recommendations
-        """
-        return [
-            rec for rec in recommendations
-            if rec.media_type in media_types
-        ]
 
     def _row_to_recommendation(self, row, score: float = 0.0) -> MediaRecommendation:
         def get_val(key, default=None):

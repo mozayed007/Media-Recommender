@@ -77,7 +77,7 @@ class IngestionOrchestrator:
                     self.logger.info(f"Resuming MAL {media_type} from offset {start_offset}")
             
             client = MALClient(client_id=client_id, rate_limit=10)
-            processor = AnimeProcessor()
+            processor = MangaProcessor() if media_type == 'manga' else AnimeProcessor()
             
             try:
                 await client.initialize()

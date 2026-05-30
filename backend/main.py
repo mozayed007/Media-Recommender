@@ -18,18 +18,16 @@ recommender_service = RecommenderService(provider=settings.VECTOR_DB_PROVIDER)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: Initialize the Recommender Service
     logger.info(f"Starting up: Initializing Recommender Service with {settings.VECTOR_DB_PROVIDER}...")
     try:
         await recommender_service.initialize()
         logger.info("Startup complete: Recommender Service is ready.")
     except Exception as e:
-        logger.error(f"Startup failed: {e}")
-        # In production, you might want to prevent startup if core service fails
+        logger.error(f"Startup failed: {e}", exc_info=True)
+        recommender_service.is_initialized = False
     
     yield
     
-    # Shutdown: Cleanup resources if needed
     logger.info("Shutting down: Recommender Service.")
 
 app = FastAPI(
@@ -60,13 +58,13 @@ async def general_exception_handler(request: Request, exc: Exception):
     logger.error(f"Unhandled exception: {exc}", exc_info=True)
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content={"detail": "Internal server error", "message": str(exc)},
+        content={"detail": "Internal server error"},
     )
 
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -81,7 +79,7 @@ app.include_router(media_router, prefix=f"{settings.API_V1_STR}/anime", tags=["a
 async def root():
     return {
         "project": settings.PROJECT_NAME,
-        "version": "1.0.0",
+        "version": "1.1.0",
         "docs": "/docs",
         "status": "running"
     }
